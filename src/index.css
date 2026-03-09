@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-vn-red: #da251d;
+  --color-vn-gold: #ffcd00;
+  --color-history-dark: #1c1917;
+  --color-history-paper: #fef3c7;
+  
+  --font-serif: "Lora", serif;
+  --font-sans: "Roboto", sans-serif;
+  
+  --background-image-hero-pattern: linear-gradient(to bottom, rgba(28, 25, 23, 0.8), rgba(28, 25, 23, 0.9)), url('https://upload.wikimedia.org/wikipedia/commons/3/30/Le_Duc_Tho_and_Henry_Kissinger.jpg');
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-history-paper text-gray-800 antialiased;
+    background-image: url('https://www.transparenttextures.com/patterns/rice-paper.png');
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold text-gray-900;
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply text-4xl md:text-5xl text-vn-red text-center mb-12 relative pb-4 uppercase tracking-wider;
+  }
+
+  .section-title::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-vn-gold;
+  }
+
+  .timeline-line::before {
+    content: '';
+    @apply absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-vn-red/30 rounded;
+    top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-line::before {
+    left: 24px;
+  }
+}

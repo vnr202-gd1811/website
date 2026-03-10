@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
 import './index.css';
 
-/* ─── Section nav config ─── */
+/* ─── Cấu hình điều hướng các phần ─── */
 const sections = [
   { id: 'hero',          label: 'Trang chủ' },
   { id: 'stats',         label: 'Thống kê' },
@@ -17,7 +17,7 @@ const sections = [
   { id: 'team',          label: 'Thành viên nhóm' },
 ];
 
-/* ─── Vietnamese 5-point star SVG ─── */
+/* ─── Biểu tượng Ngôi sao vàng Việt Nam ─── */
 function VNStar({ size = 48, className = '' }) {
   return (
     <svg width={size} height={size} viewBox="0 0 100 100" className={className} fill="#ffcd00">
@@ -26,7 +26,7 @@ function VNStar({ size = 48, className = '' }) {
   );
 }
 
-/* ─── Floating particle system ─── */
+/* ─── Hệ thống hạt trôi nổi ─── */
 function Particles({ count = 40 }) {
   const particles = useRef(
     Array.from({ length: count }, (_, i) => ({
@@ -60,7 +60,7 @@ function Particles({ count = 40 }) {
   );
 }
 
-/* ─── Animated counter ─── */
+/* ─── Bộ đếm số chuyển động ─── */
 function Counter({ target, suffix = '', duration = 2000 }) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
@@ -90,7 +90,7 @@ function Counter({ target, suffix = '', duration = 2000 }) {
   return <span ref={ref}>{count.toLocaleString()}{suffix}</span>;
 }
 
-/* ─── Scroll-reveal wrapper ─── */
+/* ─── Khối hiệu ứng xuất hiện khi cuộn ─── */
 function Reveal({ children, className = '', dir = 'up', delay = 0 }) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -118,16 +118,16 @@ function Reveal({ children, className = '', dir = 'up', delay = 0 }) {
   );
 }
 
-/* ─── Marquee ticker ─── */
+/* ─── Dòng chữ chạy (Marquee) ─── */
 const TICKER_ITEMS = [
-  '⚔ Điện Biên Phủ 7/5/1954',
-  '✦ Hội nghị Giơ-ne-vơ 8/5/1954',
-  '★ Hiệp định Giơ-ne-vơ 20/7/1954',
-  '⚔ Hội nghị Pa-ri khai mạc 13/5/1968',
-  '✦ Điện Biên Phủ trên không 12/1972',
-  '★ Hiệp định Pa-ri 27/1/1973',
+  '⚔ Chiến thắng Điện Biên Phủ 7/5/1954',
+  '✦ Khai mạc Hội nghị Giơ-ne-vơ 8/5/1954',
+  '★ Ký kết Hiệp định Giơ-ne-vơ 20/7/1954',
+  '⚔ Hội nghị Pa-ri chính thức khai mạc 13/5/1968',
+  '✦ Thắng lợi Điện Biên Phủ trên không 12/1972',
+  '★ Ký kết Hiệp định Pa-ri 27/1/1973',
   '⚔ Đại thắng mùa Xuân 30/4/1975',
-  '✦ Vừa đánh vừa đàm',
+  '✦ Sách lược "Vừa đánh vừa đàm"',
   '★ Độc lập – Tự do – Hạnh phúc',
 ];
 
@@ -146,7 +146,7 @@ function MarqueeTicker() {
   );
 }
 
-/* ─── MAIN APP ─── */
+/* ─── ỨNG DỤNG CHÍNH ─── */
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
 
@@ -173,7 +173,7 @@ function App() {
   return (
     <div className="min-h-screen">
 
-      {/* ── Bubble sidebar ── */}
+      {/* ── Thanh điều hướng dạng bong bóng ── */}
       <div className="fixed right-4 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-50">
         {sections.map((s) => (
           <div
@@ -193,7 +193,7 @@ function App() {
       </div>
 
       {/* ════════════════════════════════
-          HERO
+          PHẦN MỞ ĐẦU (HERO)
       ════════════════════════════════ */}
       <section
         id="hero"
@@ -202,12 +202,10 @@ function App() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-[#3b0000]/60 to-black/90 z-0" />
         <Particles count={50} />
 
-        {/* Spinning star watermark */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5 animate-star-spin pointer-events-none z-0">
           <VNStar size={600} />
         </div>
 
-        {/* Corner stars */}
         {['top-6 left-6', 'top-6 right-6', 'bottom-6 left-6', 'bottom-6 right-6'].map((pos, i) => (
           <div key={i} className={`absolute ${pos} opacity-60 z-10`} style={{ animationDelay: `${i * 0.5}s` }}>
             <VNStar size={28} />
@@ -215,12 +213,11 @@ function App() {
         ))}
 
         <div className="container mx-auto px-4 relative z-10 text-center flex flex-col items-center">
-          {/* Red top bar accent */}
           <div className="w-32 h-1 bg-vn-red mb-8 animate-pulse-red rounded" />
 
           <div className="border-2 border-vn-red p-8 md:p-16 bg-black/50 backdrop-blur-md max-w-5xl rounded-sm shadow-2xl animate-pulse-red">
             <p className="text-vn-red font-bold uppercase tracking-[0.4em] text-sm mb-6">
-              Chương II · Giáo trình VNR202
+              Chương II · Giáo trình Lịch sử Đảng Cộng sản Việt Nam (VNR202)
             </p>
 
             <div
@@ -267,33 +264,32 @@ function App() {
             onClick={() => scrollTo('stats')}
             className="mt-12 text-vn-gold border border-vn-gold/50 px-8 py-3 uppercase tracking-widest text-sm hover:bg-vn-gold hover:text-black transition-all duration-300 animate-pulse-gold"
           >
-            Khám phá ↓
+            Khám phá tiến trình lịch sử ↓
           </button>
         </div>
       </section>
 
-      {/* ── Marquee ticker ── */}
       <MarqueeTicker />
 
       {/* ════════════════════════════════
-          STATS COUNTER BAR
+          SỐ LIỆU THỐNG KÊ
       ════════════════════════════════ */}
       <section id="stats" className="py-20 bg-vn-red relative overflow-hidden noise-layer">
         <div className="absolute inset-0 bg-gradient-to-r from-[#8b0000] via-vn-red to-[#8b0000] animate-grad-shift" />
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
           <Reveal>
             <h2 className="text-3xl md:text-4xl text-vn-gold text-center font-serif font-bold uppercase tracking-wider mb-4">
-              Con Số Lịch Sử
+              Số liệu Thống kê Lịch sử
             </h2>
-            <p className="text-center text-red-200 text-sm mb-12 uppercase tracking-widest">Hội nghị Pa-ri 1968–1973</p>
+            <p className="text-center text-red-200 text-sm mb-12 uppercase tracking-widest">Hội nghị Pa-ri (1968–1973)</p>
           </Reveal>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { val: 201,  suffix: '',    label: 'Phiên họp công khai',    icon: '🏛️' },
               { val: 45,   suffix: '',    label: 'Cuộc gặp riêng cấp cao', icon: '🤝' },
-              { val: 500,  suffix: '+',   label: 'Cuộc họp báo',           icon: '📰' },
-              { val: 1000, suffix: '+',   label: 'Cuộc phỏng vấn',         icon: '🎙️' },
+              { val: 500,  suffix: '+',   label: 'Cuộc họp báo chuyên đề', icon: '📰' },
+              { val: 1000, suffix: '+',   label: 'Cuộc phỏng vấn báo chí', icon: '🎙️' },
             ].map((item, i) => (
               <Reveal key={i} delay={i * 120}>
                 <div className="bg-black/30 backdrop-blur-sm border border-vn-gold/30 p-6 text-center rounded-sm hover:bg-black/50 hover:border-vn-gold/70 transition-all duration-300 animate-float-card" style={{ animationDelay: `${i * 0.8}s` }}>
@@ -311,24 +307,23 @@ function App() {
             <Reveal dir="left">
               <div className="bg-black/30 border border-vn-gold/20 p-6 rounded-sm text-center">
                 <div className="text-5xl font-serif font-bold text-vn-gold mb-2">4 năm 8 tháng 14 ngày</div>
-                <div className="text-red-200 text-sm uppercase tracking-widest">Tổng thời gian đàm phán Pa-ri</div>
+                <div className="text-red-200 text-sm uppercase tracking-widest">Tổng thời gian tiến trình đàm phán Pa-ri</div>
               </div>
             </Reveal>
             <Reveal dir="right">
               <div className="bg-black/30 border border-vn-gold/20 p-6 rounded-sm text-center">
                 <div className="text-3xl font-serif font-bold text-vn-gold mb-2">75 ngày · 8 phiên rộng · 23 phiên hẹp</div>
-                <div className="text-red-200 text-sm uppercase tracking-widest">Hội nghị Giơ-ne-vơ 1954</div>
+                <div className="text-red-200 text-sm uppercase tracking-widest">Thời gian diễn ra Hội nghị Giơ-ne-vơ (1954)</div>
               </div>
             </Reveal>
           </div>
         </div>
       </section>
 
-      {/* ── Ticker 2 ── */}
       <MarqueeTicker />
 
       {/* ════════════════════════════════
-          MẶT TRẬN NGOẠI GIAO (NEW)
+          MẶT TRẬN NGOẠI GIAO TRONG KHÁNG CHIẾN
       ════════════════════════════════ */}
       <section id="mat-tran" className="py-24 bg-history-dark text-white relative overflow-hidden red-scanline">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0d0b09] via-[#1a0505] to-[#0d0b09]" />
@@ -337,11 +332,11 @@ function App() {
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
           <Reveal>
             <h2 className="text-4xl md:text-5xl text-vn-gold text-center relative pb-4 uppercase tracking-wider font-serif font-bold mb-4">
-              Ngoại Giao Là Một Mặt Trận
+              Vai trò của Mặt trận Ngoại giao
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-vn-red" />
             </h2>
             <p className="text-center text-gray-400 mb-16 max-w-3xl mx-auto font-serif italic text-lg">
-              "Trên hành trình giành độc lập và thống nhất đất nước, bàn đàm phán cũng là một chiến trường."
+              "Trong chiến tranh cách mạng, ngoại giao không phải là hoạt động phụ trợ mà là một mặt trận chiến lược có ý nghĩa quyết định."
             </p>
           </Reveal>
 
@@ -350,25 +345,25 @@ function App() {
               {
                 icon: '🌍',
                 title: 'Tranh thủ dư luận quốc tế',
-                text: 'Ngoại giao giúp tranh thủ sự đồng tình của thế giới, nhất là các nước xã hội chủ nghĩa, phong trào giải phóng dân tộc và lực lượng tiến bộ quốc tế. Biến sức ủng hộ toàn cầu thành sức ép chính trị lên đối phương.',
+                text: 'Ngoại giao góp phần quan trọng trong việc tranh thủ sự đồng tình và ủng hộ của nhân dân thế giới, đặc biệt là các nước xã hội chủ nghĩa, phong trào giải phóng dân tộc và các lực lượng tiến bộ, yêu chuộng hòa bình toàn cầu.',
                 color: 'border-vn-red',
               },
               {
                 icon: '🛡️',
-                title: 'Cô lập kẻ thù',
-                text: 'Ngoại giao góp phần cô lập đối phương về chính trị và pháp lý trên các diễn đàn quốc tế. Khẳng định tính chính nghĩa của cuộc kháng chiến trước dư luận thế giới.',
+                title: 'Cô lập các lực lượng xâm lược',
+                text: 'Mặt trận ngoại giao thực hiện nhiệm vụ cô lập đối phương về phương diện chính trị và pháp lý trên trường quốc tế, đồng thời khẳng định mạnh mẽ tính chính nghĩa của cuộc kháng chiến dân tộc.',
                 color: 'border-vn-gold',
               },
               {
                 icon: '⚔️',
-                title: 'Chuyển hóa thắng lợi chiến trường',
-                text: 'Ngoại giao chuyển hóa thắng lợi trên chiến trường thành thắng lợi trên bàn hội nghị. Điện Biên Phủ tạo lực cho Giơ-ne-vơ; chiến thắng 1972 tạo lực cho Pa-ri.',
+                title: 'Chuyển hóa thắng lợi quân sự',
+                text: 'Ngoại giao đóng vai trò chuyển hóa các kết quả giành được trên chiến trường thành thắng lợi thực chất trên bàn đàm phán. Chiến thắng Điện Biên Phủ tạo vị thế tại Giơ-ne-vơ; thắng lợi năm 1972 tạo tiền đề tại Pa-ri.',
                 color: 'border-vn-red',
               },
               {
                 icon: '📜',
-                title: 'Hợp thức hóa thành quả cách mạng',
-                text: 'Văn kiện quốc tế biến thắng lợi quân sự thành quyền lợi pháp lý được thừa nhận. Cả hai hiệp định đều xoay quanh hạt nhân: độc lập, chủ quyền, thống nhất, toàn vẹn lãnh thổ.',
+                title: 'Khẳng định quyền dân tộc cơ bản',
+                text: 'Thông qua các văn kiện quốc tế, ngoại giao xác lập cơ sở pháp lý vững chắc cho các quyền dân tộc cơ bản của Việt Nam bao gồm: Độc lập, chủ quyền, thống nhất và toàn vẹn lãnh thổ.',
                 color: 'border-vn-gold',
               },
             ].map((item, i) => (
@@ -376,23 +371,22 @@ function App() {
                 <div className={`bg-white/5 border-l-4 ${item.color} p-8 rounded-sm backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group`}>
                   <div className="text-4xl mb-4">{item.icon}</div>
                   <h4 className="text-xl text-vn-gold font-serif font-bold mb-3 uppercase tracking-wide">{item.title}</h4>
-                  <p className="text-gray-300 leading-relaxed">{item.text}</p>
+                  <p className="text-gray-300 leading-relaxed text-sm">{item.text}</p>
                 </div>
               </Reveal>
             ))}
           </div>
 
-          {/* "Vừa đánh vừa đàm" highlight */}
           <Reveal>
             <div className="animated-border rounded-sm p-1">
               <div className="bg-black/70 backdrop-blur-sm p-10 text-center rounded-sm">
-                <div className="text-vn-red text-xs font-bold uppercase tracking-[0.5em] mb-4">Đặc sắc của ngoại giao Việt Nam</div>
-                <div className="text-4xl md:text-6xl font-serif font-bold text-vn-gold mb-6 animate-fire">
+                <div className="text-vn-red text-xs font-bold uppercase tracking-[0.5em] mb-4">Nghệ thuật ngoại giao độc sắc của Đảng</div>
+                <div className="text-4xl md:text-6xl font-serif font-bold text-vn-gold mb-6 animate-fire uppercase">
                   "Vừa Đánh, Vừa Đàm"
                 </div>
                 <p className="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed font-serif italic">
-                  Ta không đàm phán từ thế yếu để xin nhượng bộ, mà đàm phán trên cơ sở thực lực chiến trường.
-                  Kiên định về nguyên tắc, nhưng cực kỳ linh hoạt về sách lược.
+                  Việt Nam không thực hiện đàm phán từ vị thế yếu để tìm kiếm sự nhượng bộ, mà tiến hành thương lượng dựa trên thực lực hiện hữu tại chiến trường. 
+                  Kiên định về nguyên tắc chiến lược nhưng linh hoạt và sắc bén trong sách lược ngoại giao.
                 </p>
               </div>
             </div>
@@ -401,7 +395,7 @@ function App() {
       </section>
 
       {/* ════════════════════════════════
-          BỐI CẢNH
+          BỐI CẢNH LỊCH SỬ
       ════════════════════════════════ */}
       <section id="context" className="py-24 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-[#fdf6e3] via-white to-[#fff5f5]" />
@@ -409,7 +403,7 @@ function App() {
           <Reveal>
             <h2 className="section-title">Bối Cảnh Lịch Sử</h2>
             <p className="text-center text-lg text-gray-600 mb-16 max-w-3xl mx-auto font-serif italic">
-              Ngoại giao thời chiến không đứng riêng lẻ, mà là một mặt trận chiến lược gắn với quân sự và chính trị.
+              Ngoại giao thời chiến là một cấu phần trong mặt trận tổng hợp chiến lược gắn liền với quân sự và chính trị.
             </p>
           </Reveal>
 
@@ -420,23 +414,23 @@ function App() {
                 <div className="relative overflow-hidden">
                   <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Dien_Bien_Phu_May_1954.jpg" alt="Điện Biên Phủ 1954" className="w-full h-52 object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-3 left-4 text-white font-bold text-sm uppercase tracking-wider">Điện Biên Phủ · 7/5/1954</div>
+                  <div className="absolute bottom-3 left-4 text-white font-bold text-sm uppercase tracking-wider">Chiến thắng Điện Biên Phủ · 7/5/1954</div>
                 </div>
                 <div className="p-8">
                   <div className="flex items-center gap-4 mb-6 pb-4 border-b-2 border-vn-red/20">
                     <span className="text-6xl text-vn-red font-serif font-bold drop-shadow text-glow-red">1954</span>
                     <div>
                       <h3 className="text-2xl text-history-dark font-serif uppercase tracking-wider">Giơ-ne-vơ</h3>
-                      <p className="text-vn-red font-semibold text-sm">Sự khởi đầu — Buộc Pháp chấm dứt chiến tranh</p>
+                      <p className="text-vn-red font-semibold text-sm">Giai đoạn xác lập quyền dân tộc cơ bản</p>
                     </div>
                   </div>
                   <ul className="space-y-3 text-gray-700 text-sm">
                     {[
-                      ['Thời gian chiến tranh', '1946 – 1954'],
-                      ['Đối tượng chính', 'Thực dân Pháp xâm lược, có can dự ngày càng sâu của Mỹ'],
-                      ['Mốc mở đàm phán', '8/5/1954 — ngay sau chiến thắng Điện Biên Phủ'],
-                      ['Mốc ký kết', '20/7/1954'],
-                      ['Hoàn cảnh', 'Chiến tranh Lạnh lan sang châu Á; các nước lớn muốn giải pháp đình chiến Đông Dương'],
+                      ['Thời kỳ kháng chiến', 'Kháng chiến chống thực dân Pháp (1946 – 1954)'],
+                      ['Đối tượng tác chiến', 'Thực dân Pháp xâm lược, có sự can thiệp và hỗ trợ từ Hoa Kỳ'],
+                      ['Thời điểm đàm phán', 'Khai mạc ngày 8/5/1954 - ngay sau thắng lợi tại Điện Biên Phủ'],
+                      ['Thời điểm ký kết', 'Chính thức vào ngày 20/7/1954'],
+                      ['Bối cảnh quốc tế', 'Sự xác lập của Trật tự Hai cực trong Chiến tranh Lạnh'],
                     ].map(([k, v], i) => (
                       <li key={i}><strong className="text-gray-900 font-bold uppercase text-[10px] tracking-wider mr-2 text-vn-red">{k}:</strong>{v}</li>
                     ))}
@@ -458,16 +452,16 @@ function App() {
                     <span className="text-6xl text-vn-gold font-serif font-bold drop-shadow">1973</span>
                     <div>
                       <h3 className="text-2xl text-history-dark font-serif uppercase tracking-wider">Pa-ri</h3>
-                      <p className="text-yellow-600 font-semibold text-sm">Đỉnh cao — Buộc Mỹ rút khỏi chiến tranh</p>
+                      <p className="text-yellow-600 font-semibold text-sm">Giai đoạn buộc Hoa Kỳ rút khỏi chiến tranh</p>
                     </div>
                   </div>
                   <ul className="space-y-3 text-gray-700 text-sm">
                     {[
-                      ['Thời gian chiến tranh', '1954 – 1975, trọng tâm đàm phán 1968–1973'],
-                      ['Đối tượng chính', 'Đế quốc Mỹ và chính quyền Sài Gòn'],
-                      ['Mốc mở đàm phán', '13/5/1968 tại Trung tâm Kléber, Paris'],
-                      ['Mốc ký kết', '27/1/1973'],
-                      ['Hoàn cảnh', 'Mỹ sa lầy quân sự; phong trào phản chiến dâng cao; quan hệ "tay ba" Mỹ–Xô–Trung phức tạp'],
+                      ['Thời kỳ kháng chiến', 'Chống Mỹ, cứu nước (1954 – 1975), trọng tâm đàm phán 1968–1973'],
+                      ['Đối tượng tác chiến', 'Đế quốc Mỹ và chính quyền Việt Nam Cộng hòa (VNCH)'],
+                      ['Thời điểm đàm phán', 'Khai mạc ngày 13/5/1968 tại Trung tâm Hội nghị Kléber, Paris'],
+                      ['Thời điểm ký kết', 'Chính thức vào ngày 27/1/1973'],
+                      ['Bối cảnh quốc tế', 'Hoa Kỳ sa lầy quân sự; phong trào phản chiến lan rộng toàn cầu'],
                     ].map(([k, v], i) => (
                       <li key={i}><strong className="font-bold uppercase text-[10px] tracking-wider mr-2 text-yellow-600">{k}:</strong>{v}</li>
                     ))}
@@ -477,17 +471,16 @@ function App() {
             </Reveal>
           </div>
 
-          {/* Post-Geneva context */}
           <Reveal className="mt-12">
             <div className="bg-gradient-to-r from-[#fff5f5] to-white border-l-4 border-vn-red p-8 rounded-sm shadow-lg">
-              <h3 className="text-xl font-serif font-bold text-history-dark uppercase tracking-wider mb-4">
-                Sau Giơ-ne-vơ: Thách thức mới
+              <h3 className="text-xl font-serif font-bold text-history-dark uppercase tracking-wider mb-4 font-serif">
+                Thách thức chiến lược sau năm 1954
               </h3>
               <p className="text-gray-700 leading-relaxed text-base">
-                Sau Hiệp định Giơ-ne-vơ, đất nước tạm thời bị chia làm hai miền với hai chế độ chính trị - xã hội khác nhau.
-                Mỹ từng bước thay chân Pháp, dựng chính quyền tay sai ở miền Nam và phá hoại Hiệp định Giơ-ne-vơ —
-                từ chối hiệp thương tổng tuyển cử thống nhất đất nước. Ngoại giao của ta chuyển sang đấu tranh
-                pháp lý, chính trị và dư luận quốc tế để bảo vệ quyền thống nhất đất nước.
+                Sau Hiệp định Giơ-ne-vơ, đất nước tạm thời bị chia làm hai miền với hai chế độ chính trị - xã hội khác biệt.
+                Chính phủ Hoa Kỳ đã từng bước thay thế thực dân Pháp, thiết lập chính quyền tay sai tại miền Nam và thực hiện các hoạt động phá hoại Hiệp định, 
+                đặc biệt là việc từ chối tổ chức hiệp thương tổng tuyển cử thống nhất đất nước. Trước tình hình đó, Phái đoàn Việt Nam đã chuyển trọng tâm sang đấu tranh
+                pháp lý và dư luận quốc tế để bảo vệ tính chính đáng của công cuộc thống nhất.
               </p>
             </div>
           </Reveal>
@@ -495,35 +488,34 @@ function App() {
       </section>
 
       {/* ════════════════════════════════
-          TIMELINE
+          LỘ TRÌNH ĐÀM PHÁN (TIMELINE)
       ════════════════════════════════ */}
       <section id="timeline" className="py-24 bg-history-dark text-white border-y-4 border-vn-red relative overflow-hidden red-scanline">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#1a0505_0%,_#0d0b09_70%)]" />
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <Reveal>
             <h2 className="text-4xl md:text-5xl text-vn-gold text-center mb-4 relative pb-4 uppercase tracking-wider font-serif font-bold">
-              Lộ Trình Đàm Phán
+              Lộ Trình Đàm Phán Lịch Sử
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-vn-red" />
             </h2>
-            <p className="text-center text-lg text-gray-400 mb-16 max-w-3xl mx-auto font-serif italic">
-              Từ buộc Pháp chấm dứt chiến tranh đến buộc Mỹ rút quân — cốt lõi là kết hợp chiến trường, chính trị và bàn đàm phán.
+            <p className="text-center text-lg text-gray-400 mb-16 max-w-3xl mx-auto font-serif italic text-sm md:text-base">
+              Hành trình chuyển hóa từ thực lực quân sự sang văn kiện pháp lý quốc tế.
             </p>
           </Reveal>
 
-          {/* Giơ-ne-vơ sub-header */}
           <Reveal>
             <div className="flex items-center gap-4 mb-8">
               <div className="h-px flex-1 bg-vn-red/40" />
-              <span className="bg-vn-red text-white px-4 py-1 text-xs font-bold uppercase tracking-widest rounded-sm">Giơ-ne-vơ 1954</span>
+              <span className="bg-vn-red text-white px-4 py-1 text-xs font-bold uppercase tracking-widest rounded-sm">Hội nghị Giơ-ne-vơ (1954)</span>
               <div className="h-px flex-1 bg-vn-red/40" />
             </div>
           </Reveal>
 
           <div className="relative timeline-line py-4">
             {[
-              { year: '8/5/1954',  tag: 'Khai mạc',  tagColor: 'bg-vn-red',  title: 'Hội nghị Giơ-ne-vơ khai mạc', desc: 'Một ngày sau chiến thắng Điện Biên Phủ. Ta bước vào đàm phán với tư thế người thắng trận. Thắng lợi quân sự lập tức tạo thế mạnh cho ngoại giao.', align: 'left', img: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Geneva_Conference_1954.jpg' },
-              { year: '20/7/1954', tag: 'Ký kết',    tagColor: 'bg-vn-gold text-black', title: 'Ký Hiệp định Giơ-ne-vơ', desc: 'Chấm dứt chiến tranh xâm lược của Pháp ở Đông Dương. Đất nước tạm thời chia cắt ở vĩ tuyến 17. Đặt cơ sở pháp lý quốc tế cho cuộc đấu tranh tiếp theo.', align: 'right' },
-              { year: '21/7/1954', tag: 'Tuyên bố',  tagColor: 'bg-vn-red',  title: 'Tuyên bố chung kết thúc Hội nghị', desc: 'Đặt ra vấn đề đình chỉ chiến sự, củng cố hòa bình và tổng tuyển cử thống nhất đất nước. Thắng lớn nhưng chưa phải thắng trọn — bài toán thống nhất chưa được giải quyết ngay.', align: 'left' },
+              { year: '8/5/1954',  tag: 'Khai mạc',  tagColor: 'bg-vn-red',  title: 'Khai mạc Hội nghị Giơ-ne-vơ', desc: 'Diễn ra chỉ một ngày sau chiến thắng lịch sử Điện Biên Phủ. Việt Nam bước vào bàn hội nghị với tư thế người thắng trận, tạo cơ sở thực lực mạnh mẽ cho mặt trận ngoại giao.', align: 'left', img: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Geneva_Conference_1954.jpg' },
+              { year: '20/7/1954', tag: 'Ký kết',    tagColor: 'bg-vn-gold text-black', title: 'Ký kết Hiệp định Giơ-ne-vơ', desc: 'Chấm dứt hoàn toàn sự hiện diện quân sự của Pháp tại Đông Dương về mặt pháp lý quốc tế. Tuy nhiên, đất nước bị chia cắt tạm thời tại vĩ tuyến 17.', align: 'right' },
+              { year: '21/7/1954', tag: 'Tuyên bố',  tagColor: 'bg-vn-red',  title: 'Thông qua Tuyên bố chung Hội nghị', desc: 'Đặt ra các khung pháp lý về đình chỉ chiến sự và dự kiến tổng tuyển cử thống nhất. Đây là thắng lợi lớn nhưng chưa trọn vẹn do các ràng buộc của trật tự Chiến tranh Lạnh.', align: 'left' },
             ].map((item, i) => (
               <Reveal key={i} dir={item.align === 'left' ? 'left' : 'right'} delay={i * 100}>
                 <div className="relative flex items-start group mb-10 w-full">
@@ -541,29 +533,28 @@ function App() {
             ))}
           </div>
 
-          {/* Pa-ri sub-header */}
           <Reveal>
             <div className="flex items-center gap-4 mt-4 mb-8">
               <div className="h-px flex-1 bg-vn-gold/40" />
-              <span className="bg-vn-gold text-black px-4 py-1 text-xs font-bold uppercase tracking-widest rounded-sm">Pa-ri 1968–1973</span>
+              <span className="bg-vn-gold text-black px-4 py-1 text-xs font-bold uppercase tracking-widest rounded-sm">Tiến trình Pa-ri (1968–1973)</span>
               <div className="h-px flex-1 bg-vn-gold/40" />
             </div>
           </Reveal>
 
           <div className="relative timeline-line py-4">
             {[
-              { year: '10/5/1968',    tag: 'Tiền trạm',  tagColor: 'bg-blue-700', title: 'Tiếp xúc đầu tiên qua trung gian Pháp', desc: 'Hà Văn Lâu và cố vấn Nguyễn Minh Vỹ tham gia cuộc tiếp xúc đầu tiên, chốt ngày 13/5/1968 cho phiên họp chính thức đầu tiên. Đàm phán lớn bắt đầu từ những bước "tiền trạm" cực kỳ kỹ lưỡng.', align: 'left' },
-              { year: '13/5/1968',    tag: 'Khai mạc',   tagColor: 'bg-vn-red',   title: 'Khai mạc đàm phán chính thức', desc: 'Tại Trung tâm Hội nghị quốc tế Kléber, Paris. Bắt đầu giai đoạn "vừa đánh, vừa đàm" công khai giữa VNDCCH và Mỹ.', align: 'right', img: 'https://upload.wikimedia.org/wikipedia/commons/4/46/Le_Duc_Tho_and_Xuan_Thuy_at_the_Paris_Peace_Talks.jpg' },
-              { year: '25/1/1969',    tag: 'Mở rộng',    tagColor: 'bg-vn-red',   title: 'Hội nghị 4 bên khai mạc', desc: 'Vấn đề miền Nam được đặt trong thế trận chính trị – pháp lý đầy đủ hơn. Có sự tham gia của Chính phủ CMLT CHMN VN với bà Nguyễn Thị Bình.', align: 'left' },
-              { year: '12/6/1969',    tag: 'Chính danh', tagColor: 'bg-red-800',  title: 'CMLT CHMN VN chính thức tham gia', desc: 'Bà Nguyễn Thị Bình là Trưởng đoàn. Tăng tính chính danh và sức mạnh đại diện của cách mạng miền Nam trên bàn đàm phán quốc tế.', align: 'right' },
-              { year: '21/2/1970',    tag: 'Bí mật',     tagColor: 'bg-gray-700', title: 'Lê Đức Thọ trực tiếp xuất trận', desc: 'Cuộc gặp riêng đầu tiên giữa Lê Đức Thọ – Xuân Thủy với Kissinger. Mở ra kênh thương lượng kín, nơi nhiều nút thắt thực chất được xử lý.', align: 'left' },
-              { year: '26/6–1/7/1971',tag: 'Sáng kiến', tagColor: 'bg-vn-red',   title: 'Ta đưa ra sáng kiến 9 điểm và 7 điểm', desc: 'Gây sức ép ngoại giao, tranh thủ dư luận quốc tế và chính giới Mỹ. Mặt trận ngoại giao chủ động ra đòn.', align: 'right' },
-              { year: '30/3/1972',    tag: 'Chiến trường',tagColor: 'bg-orange-700','title': 'Tiến công chiến lược Xuân – Hè 1972', desc: 'Ta mở cuộc tiến công chiến lược quy mô lớn. Thắng lợi chiến trường kéo đàm phán vào thực chất từ tháng 7/1972.', align: 'left' },
-              { year: '8/10/1972',    tag: 'Đột phá',    tagColor: 'bg-vn-gold text-black', title: 'Lê Đức Thọ đưa ra dự thảo Hiệp định', desc: 'Bước ngoặt đột phá. Kissinger thừa nhận: "Hòa bình đã ở trong tầm tay". Chuyển từ tranh luận khung sang đàm thẳng vào điều khoản.', align: 'right', img: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Signing_the_Paris_Peace_Accords_1973.jpg' },
-              { year: '20/10/1972',   tag: 'Thỏa thuận', tagColor: 'bg-vn-gold text-black', title: 'Hai bên đạt thỏa thuận cơ bản', desc: 'Dự kiến ký ngày 31/10. Mỹ đã chấp nhận nhiều nguyên tắc cốt lõi của ta. Song Mỹ sau đó trì hoãn và leo thang.', align: 'left' },
-              { year: '18–30/12/1972',tag: 'Chiến thắng',tagColor: 'bg-vn-red',   title: '"Điện Biên Phủ trên không"', desc: 'Ta đập tan cuộc tập kích chiến lược B-52. Mỹ buộc ngừng ném bom toàn bộ miền Bắc và đề nghị nối lại đàm phán. Chiến trường đập gãy sức ép ngoại giao của Mỹ.', align: 'right', img: 'https://upload.wikimedia.org/wikipedia/commons/5/5f/Hanoi_B-52_wreckage.jpg' },
-              { year: '8–23/1/1973',  tag: 'Vòng cuối',  tagColor: 'bg-gray-700', title: 'Vòng đàm phán cuối — ký tắt Hiệp định', desc: 'Hoàn tất văn bản, ký tắt hiệp định. Ta giữ được các nguyên tắc lớn đã đấu tranh suốt gần 5 năm.', align: 'left' },
-              { year: '27/1/1973',    tag: 'Thành quả',  tagColor: 'bg-vn-gold text-black', title: 'Ký chính thức Hiệp định Pa-ri', desc: 'Buộc Mỹ chấm dứt chiến tranh, rút hết quân viễn chinh và quân chư hầu. Mở đường cho Đại thắng mùa Xuân 1975.', align: 'right' },
+              { year: '10/5/1968',    tag: 'Tiền trạm',  tagColor: 'bg-blue-700', title: 'Tiếp xúc sơ bộ qua trung gian', desc: 'Đại sứ Hà Văn Lâu và cố vấn Việt Nam chuẩn bị các điều kiện cần thiết cho phiên họp chính thức, thể hiện sự chuyên nghiệp trong khâu tiền trạm đàm phán.', align: 'left' },
+              { year: '13/5/1968',    tag: 'Khai mạc',   tagColor: 'bg-vn-red',   title: 'Khai mạc đàm phán chính thức', desc: 'Bắt đầu giai đoạn đấu trí công khai tại Paris giữa Phái đoàn Việt Nam Dân chủ Cộng hòa (VNDCCH) và chính phủ Hoa Kỳ.', align: 'right', img: 'https://upload.wikimedia.org/wikipedia/commons/4/46/Le_Duc_Tho_and_Xuan_Thuy_at_the_Paris_Peace_Talks.jpg' },
+              { year: '25/1/1969',    tag: 'Hội nghị 4 bên',tagColor: 'bg-vn-red',   title: 'Chuyển sang đàm phán bốn bên', desc: 'Vấn đề miền Nam được đưa vào chương trình nghị sự với sự tham gia của Phái đoàn Chính phủ Cách mạng lâm thời Cộng hòa miền Nam Việt Nam (CP CMLT CHMN VN).', align: 'left' },
+              { year: '12/6/1969',    tag: 'Chính danh', tagColor: 'bg-red-800',  title: 'Xác lập vị thế của CP CMLT CHMN VN', desc: 'Góp phần tăng cường tính chính danh và đại diện của lực lượng cách mạng miền Nam trên diễn đàn quốc tế dưới sự lãnh đạo của bà Nguyễn Thị Bình.', align: 'right' },
+              { year: '21/2/1970',    tag: 'Tiếp xúc riêng',tagColor: 'bg-gray-700', title: 'Bắt đầu đàm phán bí mật', desc: 'Cuộc gặp kín đầu tiên giữa cố vấn Lê Đức Thọ – Bộ trưởng Xuân Thủy với Henry Kissinger để xử lý các vấn đề cốt lõi của thỏa thuận.', align: 'left' },
+              { year: '26/6–1/7/1971',tag: 'Sáng kiến', tagColor: 'bg-vn-red',   title: 'Chủ động đưa ra các giải pháp hòa bình', desc: 'Phái đoàn Việt Nam đưa ra các sáng kiến 9 điểm và 7 điểm nhằm gây sức ép ngoại giao và tranh thủ dư luận quốc tế.', align: 'right' },
+              { year: '30/3/1972',    tag: 'Thắng lợi quân sự',tagColor: 'bg-orange-700','title': 'Cuộc tiến công chiến lược Xuân – Hè 1972', desc: 'Những bước tiến quan trọng trên chiến trường đã buộc phía Hoa Kỳ phải đi vào thảo luận thực chất từ giữa năm 1972.', align: 'left' },
+              { year: '8/10/1972',    tag: 'Dự thảo',    tagColor: 'bg-vn-gold text-black', title: 'Trình dự thảo Hiệp định đầu tiên', desc: 'Việt Nam chủ động trình bày dự thảo "Hiệp định về chấm dứt chiến tranh, lập lại hòa bình ở Việt Nam", đưa cuộc đàm phán vào giai đoạn quyết định.', align: 'right', img: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Signing_the_Paris_Peace_Accords_1973.jpg' },
+              { year: '20/10/1972',   tag: 'Thỏa thuận', tagColor: 'bg-vn-gold text-black', title: 'Xác lập khung thỏa thuận cơ bản', desc: 'Chính phủ Hoa Kỳ cơ bản chấp thuận các nguyên tắc cốt lõi, nhưng sau đó đã trì hoãn và thực hiện hành động leo thang quân sự.', align: 'left' },
+              { year: '18–30/12/1972',tag: 'Chiến thắng',tagColor: 'bg-vn-red',   title: 'Chiến thắng "Điện Biên Phủ trên không"', desc: 'Đập tan cuộc tập kích chiến lược bằng máy bay B-52 của Mỹ, buộc đối phương phải chấm dứt phá hoại miền Bắc và quay lại bàn hội nghị.', align: 'right', img: 'https://upload.wikimedia.org/wikipedia/commons/5/5f/Hanoi_B-52_wreckage.jpg' },
+              { year: '8–23/1/1973',  tag: 'Ký tắt',     tagColor: 'bg-gray-700', title: 'Hoàn tất văn bản và ký tắt', desc: 'Các bên hoàn thiện các điều khoản sau gần 5 năm đấu trí căng thẳng, bảo vệ thành công các nguyên tắc độc lập dân tộc.', align: 'left' },
+              { year: '27/1/1973',    tag: 'Chính thức', tagColor: 'bg-vn-gold text-black', title: 'Ký kết chính thức Hiệp định Pa-ri', desc: 'Buộc Hoa Kỳ phải chấm dứt chiến tranh và rút toàn bộ quân đội viễn chinh, mở đường cho cuộc tổng tiến công năm 1975.', align: 'right' },
             ].map((item, i) => (
               <Reveal key={i} dir={item.align === 'left' ? 'left' : 'right'} delay={i * 60}>
                 <div className="relative flex items-start group mb-10 w-full">
@@ -584,7 +575,7 @@ function App() {
       </section>
 
       {/* ════════════════════════════════
-          NỘI DUNG & Ý NGHĨA HIỆP ĐỊNH
+          NỘI DUNG CỐT LÕI CỦA HIỆP ĐỊNH
       ════════════════════════════════ */}
       <section id="treaty-content" className="py-24 bg-[#fdf6e3] relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/rice-paper.png')] opacity-60" />
@@ -593,14 +584,11 @@ function App() {
           <Reveal>
             <h2 className="section-title">Nội Dung Hai Hiệp Định</h2>
             <p className="text-center text-lg text-gray-600 mb-16 max-w-3xl mx-auto font-serif italic">
-              Những điều khoản cốt lõi mà Việt Nam kiên trì đấu tranh để đưa vào văn kiện pháp lý quốc tế.
+              Các điều khoản pháp lý trọng yếu phản ánh thắng lợi của sự kết hợp giữa mặt trận chính trị, quân sự và ngoại giao.
             </p>
           </Reveal>
 
-          {/* 2-column treaty content */}
           <div className="grid md:grid-cols-2 gap-8 mb-16">
-
-            {/* Giơ-ne-vơ content */}
             <Reveal dir="left">
               <div className="bg-white border-t-4 border-vn-red shadow-xl rounded-sm overflow-hidden">
                 <div className="bg-vn-red px-6 py-4 flex items-center gap-4">
@@ -611,13 +599,13 @@ function App() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <p className="text-xs text-gray-500 uppercase tracking-widest font-bold mb-4">4 điểm nội dung chính</p>
+                  <p className="text-xs text-gray-500 uppercase tracking-widest font-bold mb-4 font-sans">Các nội dung trọng tâm</p>
                   <ul className="space-y-4">
                     {[
-                      { num: '01', title: 'Đình chỉ chiến sự', text: 'Đình chỉ chiến sự ở Đông Dương — chấm dứt chiến tranh xâm lược của Pháp về mặt pháp lý quốc tế.' },
-                      { num: '02', title: 'Tôn trọng quyền dân tộc cơ bản', text: 'Tôn trọng độc lập, chủ quyền, thống nhất và toàn vẹn lãnh thổ của Việt Nam, Lào, Campuchia.' },
-                      { num: '03', title: 'Tập kết — Vĩ tuyến 17', text: 'Tập kết, chuyển quân. Lấy vĩ tuyến 17 làm giới tuyến quân sự tạm thời — không phải ranh giới lãnh thổ hay chính trị.' },
-                      { num: '04', title: 'Tổng tuyển cử thống nhất', text: 'Dự kiến tổng tuyển cử thống nhất đất nước vào tháng 7/1956 — điều khoản sau này bị liên minh Mỹ–Diệm phá hoại.' },
+                      { num: '01', title: 'Chấm dứt chiến sự', text: 'Thực hiện đình chỉ chiến sự tại Đông Dương - khẳng định sự thất bại của thực dân Pháp trên phương diện pháp lý.' },
+                      { num: '02', title: 'Quyền dân tộc cơ bản', text: 'Các bên cam kết tôn trọng độc lập, chủ quyền, thống nhất và toàn vẹn lãnh thổ của Việt Nam, Lào, Campuchia.' },
+                      { num: '03', title: 'Phân chia quân sự tạm thời', text: 'Thực hiện tập kết và chuyển quân theo vĩ tuyến 17 - được xác định là giới tuyến quân sự tạm thời, không phải ranh giới lãnh thổ.' },
+                      { num: '04', title: 'Hướng tới thống nhất', text: 'Xác lập lộ trình tổng tuyển cử thống nhất đất nước vào năm 1956 - nội dung sau đó bị chính quyền Mỹ - Diệm phá hoại.' },
                     ].map((pt) => (
                       <li key={pt.num} className="flex gap-4 items-start">
                         <span className="text-vn-red font-serif font-bold text-xl shrink-0 leading-none mt-0.5">{pt.num}</span>
@@ -632,7 +620,6 @@ function App() {
               </div>
             </Reveal>
 
-            {/* Pa-ri content */}
             <Reveal dir="right">
               <div className="bg-white border-t-4 border-vn-gold shadow-xl rounded-sm overflow-hidden">
                 <div className="bg-history-dark px-6 py-4 flex items-center gap-4">
@@ -643,13 +630,13 @@ function App() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <p className="text-xs text-gray-500 uppercase tracking-widest font-bold mb-4">4 điểm nội dung chính</p>
+                  <p className="text-xs text-gray-500 uppercase tracking-widest font-bold mb-4 font-sans">Các nội dung trọng tâm</p>
                   <ul className="space-y-4">
                     {[
-                      { num: '01', title: 'Tôn trọng quyền dân tộc cơ bản', text: 'Hoa Kỳ và các nước tôn trọng độc lập, chủ quyền, thống nhất và toàn vẹn lãnh thổ của Việt Nam.' },
-                      { num: '02', title: 'Mỹ chấm dứt chiến tranh, rút quân', text: 'Hoa Kỳ chấm dứt dính líu quân sự, rút hết quân Mỹ và quân chư hầu ra khỏi miền Nam Việt Nam.' },
-                      { num: '03', title: 'Ngừng bắn — trao trả tù binh', text: 'Các bên ở miền Nam ngừng bắn tại chỗ. Trao trả tù binh và dân thường bị bắt.' },
-                      { num: '04', title: 'Nhân dân miền Nam tự quyết', text: 'Nhân dân miền Nam tự quyết định tương lai chính trị của mình — không có sự can thiệp từ bên ngoài.' },
+                      { num: '01', title: 'Tôn trọng chủ quyền toàn vẹn', text: 'Hoa Kỳ và các nước tham gia cam kết tôn trọng tuyệt đối độc lập, chủ quyền và toàn vẹn lãnh thổ Việt Nam.' },
+                      { num: '02', title: 'Rút quân đội viễn chinh', text: 'Hoa Kỳ thực hiện chấm dứt dính líu quân sự và rút toàn bộ quân đội cùng quân chư hầu ra khỏi lãnh thổ Việt Nam.' },
+                      { num: '03', title: 'Giải quyết vấn đề tù binh', text: 'Thực hiện ngừng bắn tại chỗ và trao trả toàn bộ tù binh, dân thường bị bắt giữ giữa các bên.' },
+                      { num: '04', title: 'Quyền tự quyết chính trị', text: 'Khẳng định nhân dân miền Nam có quyền tự quyết tương lai chính trị mà không có sự can thiệp từ thế lực bên ngoài.' },
                     ].map((pt) => (
                       <li key={pt.num} className="flex gap-4 items-start">
                         <span className="text-vn-gold font-serif font-bold text-xl shrink-0 leading-none mt-0.5">{pt.num}</span>
@@ -665,21 +652,20 @@ function App() {
             </Reveal>
           </div>
 
-          {/* Lập trường đàm phán Pa-ri */}
           <Reveal>
             <div className="bg-history-dark text-white rounded-sm shadow-2xl overflow-hidden mb-10">
               <div className="bg-vn-red px-8 py-4">
                 <h3 className="font-serif font-bold uppercase tracking-wider text-white text-lg">
-                  Lập Trường Đàm Phán của Ta tại Pa-ri
+                  Nguyên tắc chiến lược của Việt Nam tại Hội nghị Pa-ri
                 </h3>
-                <p className="text-red-200 text-xs mt-1">4 nguyên tắc kiên trì suốt 4 năm 8 tháng 14 ngày</p>
+                <p className="text-red-200 text-xs mt-1">Lập trường kiên định xuyên suốt tiến trình đàm phán</p>
               </div>
               <div className="grid md:grid-cols-2 gap-0">
                 {[
-                  { icon: '🛡️', title: 'Mỹ phải chấm dứt chiến tranh xâm lược', text: 'Đây là nguyên tắc không thể nhân nhượng. Không có bất kỳ điều khoản nào được ký kết nếu Mỹ không thừa nhận tính xâm lược của cuộc chiến.' },
-                  { icon: '✊', title: 'Rút toàn bộ quân Mỹ và quân chư hầu', text: 'Không chấp nhận giải pháp rút từng phần hay cam kết mơ hồ. Phải rút hết quân Mỹ và lính các nước đồng minh.' },
-                  { icon: '🗺️', title: 'Tôn trọng độc lập, chủ quyền, thống nhất', text: 'Toàn vẹn lãnh thổ Việt Nam phải được khẳng định trong văn kiện — không chấp nhận sự chia cắt vĩnh viễn.' },
-                  { icon: '🗳️', title: 'Nhân dân miền Nam tự quyết định', text: 'Tương lai chính trị của miền Nam phải do người miền Nam quyết định — không phải do Washington hay Sài Gòn.' },
+                  { icon: '🛡️', title: 'Yêu cầu Hoa Kỳ chấm dứt chiến tranh', text: 'Đây là nguyên tắc tiên quyết không thể nhân nhượng, buộc Mỹ phải thừa nhận tính chất xâm lược của cuộc chiến.' },
+                  { icon: '✊', title: 'Rút toàn bộ lực lượng quân sự nước ngoài', text: 'Đòi hỏi Mỹ và các quốc gia đồng minh phải rút hết quân đội, không chấp nhận các giải pháp rút quân từng phần.' },
+                  { icon: '🗺️', title: 'Bảo vệ tính toàn vẹn của lãnh thổ', text: 'Chủ quyền quốc gia và sự thống nhất của đất nước phải được ghi nhận rõ ràng, bác bỏ mọi âm mưu chia cắt vĩnh viễn.' },
+                  { icon: '🗳️', title: 'Xác lập quyền tự quyết của nhân dân', text: 'Tương lai chính trị miền Nam phải do nhân dân Việt Nam tự quyết định, không chịu sự áp đặt từ Washington hay Sài Gòn.' },
                 ].map((pt, i) => (
                   <div key={i} className={`p-6 flex gap-4 items-start ${i < 2 ? 'border-b border-white/10' : ''} ${i % 2 === 0 ? 'md:border-r border-white/10' : ''}`}>
                     <span className="text-2xl shrink-0">{pt.icon}</span>
@@ -693,21 +679,20 @@ function App() {
             </div>
           </Reveal>
 
-          {/* Ý nghĩa lịch sử */}
           <div className="grid md:grid-cols-2 gap-8">
             <Reveal dir="left">
               <div className="bg-white border border-gray-200 rounded-sm shadow-lg p-8 h-full">
                 <div className="flex items-center gap-3 mb-5 pb-4 border-b-2 border-vn-red">
                   <span className="text-2xl font-serif font-bold text-vn-red">1954</span>
-                  <h3 className="font-serif font-bold text-history-dark uppercase tracking-wider">Ý nghĩa Giơ-ne-vơ</h3>
+                  <h3 className="font-serif font-bold text-history-dark uppercase tracking-wider">Ý nghĩa của Hiệp định Giơ-ne-vơ</h3>
                 </div>
-                <ul className="space-y-3 text-sm text-gray-700 leading-relaxed">
+                <ul className="space-y-3 text-sm text-gray-700 leading-relaxed font-sans">
                   {[
-                    'Thắng lợi ngoại giao lớn đầu tiên của VNDCCH trên diễn đàn quốc tế hiện đại.',
-                    'Chấm dứt chiến tranh xâm lược của Pháp ở Đông Dương — giải phóng hoàn toàn miền Bắc.',
-                    'Miền Bắc trở thành hậu phương lớn, căn cứ địa vững chắc cho cả nước.',
-                    'Đặt cơ sở pháp lý quốc tế cho cuộc đấu tranh tiếp theo nhằm thống nhất đất nước.',
-                    <span className="text-vn-red font-semibold">Hạn chế: đất nước bị chia cắt tạm thời ở vĩ tuyến 17 — "Thắng lớn, nhưng chưa phải thắng trọn."</span>,
+                    'Đánh dấu thắng lợi ngoại giao đa phương đầu tiên của nhà nước Việt Nam Dân chủ Cộng hòa (VNDCCH).',
+                    'Chấm dứt hoàn toàn sự thống trị của thực dân Pháp, giải phóng miền Bắc làm hậu phương chiến lược.',
+                    'Xác lập cơ sở pháp lý quốc tế vững chắc cho công cuộc đấu tranh thống nhất đất nước sau này.',
+                    'Xác lập vị thế chính danh của nước Việt Nam mới trên trường quốc tế.',
+                    <span className="text-vn-red font-semibold">Hạn chế khách quan: Tình trạng đất nước bị chia cắt tạm thời gây khó khăn cho tiến trình thống nhất ngay lập tức.</span>,
                   ].map((pt, i) => (
                     <li key={i} className="flex gap-2 items-start">
                       <VNStar size={14} className="shrink-0 mt-0.5" />
@@ -722,15 +707,15 @@ function App() {
               <div className="bg-history-dark border border-vn-red/30 rounded-sm shadow-lg p-8 h-full text-white">
                 <div className="flex items-center gap-3 mb-5 pb-4 border-b-2 border-vn-gold">
                   <span className="text-2xl font-serif font-bold text-vn-gold">1973</span>
-                  <h3 className="font-serif font-bold text-vn-gold uppercase tracking-wider">Ý nghĩa Pa-ri</h3>
+                  <h3 className="font-serif font-bold text-vn-gold uppercase tracking-wider">Ý nghĩa của Hiệp định Pa-ri</h3>
                 </div>
-                <ul className="space-y-3 text-sm text-gray-300 leading-relaxed">
+                <ul className="space-y-3 text-sm text-gray-300 leading-relaxed font-sans">
                   {[
-                    'Đỉnh cao của ngoại giao thời chiến Việt Nam — đè bẹp ý chí xâm lược của đế quốc Mỹ.',
-                    'Buộc Mỹ chấm dứt chiến tranh, rút toàn bộ quân viễn chinh và quân chư hầu.',
-                    'Thay đổi hẳn so sánh lực lượng — tạo thời cơ chiến lược mới.',
-                    { text: 'Từ "Đánh cho Mỹ cút" → tạo bàn đạp để "Đánh cho ngụy nhào" → Đại thắng mùa Xuân 1975.', bold: true },
-                    'Pa-ri không phải điểm kết thúc cuối cùng — mà là bàn đạp quyết định dẫn tới thống nhất đất nước.',
+                    'Đỉnh cao nghệ thuật ngoại giao của Đảng, góp phần đè bẹp hoàn toàn ý chí xâm lược của đế quốc Mỹ.',
+                    'Hoàn thành mục tiêu chiến lược "Đánh cho Mỹ cút", tạo chuyển biến căn bản về tương quan lực lượng.',
+                    'Xác lập tư thế của người chiến thắng, tạo tiền đề quyết định cho cuộc Tổng tiến công và nổi dậy năm 1975.',
+                    { text: 'Hiện thực hóa mục tiêu "Đánh cho Mỹ cút" để tiến tới "Đánh cho ngụy nhào", thống nhất Tổ quốc.', bold: true },
+                    'Pa-ri không chỉ là kết quả của một cuộc đàm phán mà là một mốc son chói lọi trong lịch sử ngoại giao dân tộc.',
                   ].map((pt, i) => (
                     <li key={i} className="flex gap-2 items-start">
                       <VNStar size={14} className="shrink-0 mt-0.5" />
@@ -745,7 +730,7 @@ function App() {
       </section>
 
       {/* ════════════════════════════════
-          SO SÁNH
+          SO SÁNH CHIẾN LƯỢC
       ════════════════════════════════ */}
       <section id="comparison" className="py-24 bg-white relative">
         <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-vn-red via-vn-gold to-vn-red" />
@@ -754,17 +739,16 @@ function App() {
             <h2 className="section-title">So Sánh Chiều Sâu Chiến Lược</h2>
           </Reveal>
 
-          {/* Similarity strip */}
           <Reveal className="mb-12">
             <div className="bg-gradient-to-r from-[#fff5f5] via-white to-[#fffbeb] border border-gray-200 rounded-sm p-6 shadow-lg">
               <h3 className="text-center text-lg font-serif font-bold text-history-dark uppercase tracking-wider mb-4">
-                Điểm chung của cả hai Hiệp định
+                Các thuộc tính chung của hai Hiệp định
               </h3>
               <div className="grid md:grid-cols-3 gap-4">
                 {[
-                  'Đều là thắng lợi lớn về ngoại giao và đều gắn chặt với thắng lợi quân sự trên chiến trường',
-                  'Đều khẳng định độc lập, chủ quyền, thống nhất, toàn vẹn lãnh thổ của Việt Nam',
-                  'Đều biến thành quả quân sự thành văn kiện pháp lý được thừa nhận trên trường quốc tế',
+                  'Đều là những thắng lợi ngoại giao mang tính thời đại gắn liền với các thành tựu quân sự trên thực địa.',
+                  'Đều xác lập nền tảng pháp lý cho độc lập, chủ quyền và tính toàn vẹn lãnh thổ của dân tộc Việt Nam.',
+                  'Đều thể hiện bản lĩnh và sự lãnh đạo tài tình của Đảng trong việc kết hợp sức mạnh dân tộc và sức mạnh thời đại.',
                 ].map((text, i) => (
                   <div key={i} className="flex items-start gap-3 p-4 bg-white rounded-sm border border-vn-gold/30 shadow-sm">
                     <VNStar size={20} className="shrink-0 mt-0.5" />
@@ -780,26 +764,26 @@ function App() {
               <table className="w-full text-left border-collapse min-w-[800px]">
                 <thead>
                   <tr className="bg-history-dark text-white">
-                    <th className="p-6 font-serif text-lg border-b-4 border-vn-red w-1/4 uppercase tracking-wider">Tiêu chí</th>
-                    <th className="p-6 font-serif text-lg border-b-4 border-vn-red border-l border-white/10 w-3/8 text-vn-gold">
+                    <th className="p-6 font-serif text-lg border-b-4 border-vn-red w-1/4 uppercase tracking-wider">Tiêu chí đối chiếu</th>
+                    <th className="p-6 font-serif text-lg border-b-4 border-vn-red border-l border-white/10 w-3/8 text-vn-gold uppercase">
                       Giơ-ne-vơ (1954)
                     </th>
-                    <th className="p-6 font-serif text-lg border-b-4 border-vn-red border-l border-white/10 w-3/8 text-vn-gold">
+                    <th className="p-6 font-serif text-lg border-b-4 border-vn-red border-l border-white/10 w-3/8 text-vn-gold uppercase">
                       Pa-ri (1973)
                     </th>
                   </tr>
                 </thead>
                 <tbody className="font-sans text-base">
                   {[
-                    ['Vị thế đàm phán', 'Đa phương (9 bên), dễ bị các cường quốc chi phối', 'Song phương / Bốn bên — Việt Nam hoàn toàn chủ động', true],
-                    ['Bối cảnh quân sự', 'Sau chiến thắng Điện Biên Phủ — Pháp sụp đổ ý chí xâm lược', 'Sau chiến thắng Xuân–Hè 1972 và "Điện Biên Phủ trên không"', true],
-                    ['Vai trò đồng minh', 'Ảnh hưởng quyết định đến kết quả — thỏa hiệp của các nước lớn', 'Hỗ trợ, nhưng Việt Nam tự quyết định ("Lách qua khe cửa hẹp")', false],
-                    ['Kết quả rút quân', 'Cả hai bên cùng tập kết — vĩ tuyến 17 làm giới tuyến tạm thời', 'Chỉ có Mỹ rút quân — quân ta ở lại miền Nam (có lợi cho ta)', true],
-                    ['Kết quả lãnh thổ', 'Đất nước tạm thời chia cắt — bài toán thống nhất chưa giải quyết', 'Tạo bàn đạp thực tế cho thống nhất, mở đường cho 1975', true],
-                    ['Tính chất lịch sử', 'Kết thúc chiến tranh chống Pháp, giải phóng hoàn toàn miền Bắc', 'Bước ngoặt buộc Mỹ rút — mở đường thực tế cho thống nhất', true],
+                    ['Vị thế ngoại giao', 'Đàm phán đa phương, chịu sự chi phối nhất định từ quan hệ của các cường quốc.', 'Đàm phán song phương và bốn bên - Việt Nam hoàn toàn giữ thế chủ động chiến lược.', true],
+                    ['Thực lực quân sự', 'Diễn ra ngay sau chiến thắng Điện Biên Phủ, làm sụp đổ ý chí xâm lược của Pháp.', 'Kết quả của sự kết hợp giữa chiến thắng quân sự 1972 và "Điện Biên Phủ trên không".', true],
+                    ['Tính tự chủ chiến lược', 'Phụ thuộc vào sự thỏa hiệp giữa các nước lớn trong bối cảnh Chiến tranh Lạnh.', 'Việt Nam tự quyết định tiến trình đàm phán, tranh thủ sự hỗ trợ của đồng minh.', false],
+                    ['Hệ quả rút quân', 'Thực hiện tập kết quân sự của cả hai bên ra hai khu vực ngăn cách bởi vĩ tuyến 17.', 'Chỉ có lực lượng Hoa Kỳ rút quân, quân đội cách mạng giữ vững vị thế tại miền Nam.', true],
+                    ['Tiến trình thống nhất', 'Tạo ra sự chia cắt tạm thời và không giải quyết dứt điểm mục tiêu thống nhất quốc gia.', 'Xác lập bàn đạp thực tiễn và tạo thời cơ chiến lược để thống nhất đất nước hoàn toàn.', true],
+                    ['Ý nghĩa lịch sử', 'Kết thúc giai đoạn kháng chiến chống Pháp, giải phóng miền Bắc xã hội chủ nghĩa.', 'Xác lập bước ngoặt buộc Mỹ rút quân, tạo tiền đề giải phóng miền Nam năm 1975.', true],
                   ].map(([criteria, gnv, pri, highlight], i) => (
                     <tr key={i} className={`border-b border-gray-200 hover:bg-red-50/50 transition-colors ${i % 2 === 0 ? 'bg-gray-50/30' : 'bg-white'}`}>
-                      <td className="p-5 font-bold text-gray-800 text-sm uppercase tracking-wide bg-gray-50">{criteria}</td>
+                      <td className="p-5 font-bold text-gray-800 text-xs uppercase tracking-wide bg-gray-50">{criteria}</td>
                       <td className="p-5 text-gray-600 border-l border-gray-200 text-sm leading-relaxed">{gnv}</td>
                       <td className={`p-5 border-l border-gray-200 text-sm leading-relaxed ${highlight ? 'text-vn-red font-semibold bg-red-50/30' : 'text-gray-600'}`}>{pri}</td>
                     </tr>
@@ -809,12 +793,11 @@ function App() {
             </div>
           </Reveal>
 
-          {/* Câu chốt so sánh */}
           <Reveal className="mt-10">
             <div className="bg-history-dark text-center p-10 rounded-sm border-l-4 border-r-4 border-vn-red shadow-2xl">
               <p className="text-vn-gold font-serif italic text-xl md:text-2xl leading-relaxed">
-                "Nếu Giơ-ne-vơ là mốc kết thúc chiến tranh với Pháp nhưng để lại thế chia cắt tạm thời,
-                thì Pa-ri là mốc buộc Mỹ rút khỏi cuộc chiến và mở đường thực tế cho thống nhất đất nước."
+                "Nếu Hiệp định Giơ-ne-vơ là mốc kết thúc chiến tranh với Pháp nhưng để lại tình trạng chia cắt,
+                thì Hiệp định Pa-ri là mốc buộc Mỹ rút khỏi cuộc chiến và mở ra con đường hiện thực để thống nhất Tổ quốc."
               </p>
             </div>
           </Reveal>
@@ -822,7 +805,7 @@ function App() {
       </section>
 
       {/* ════════════════════════════════
-          BÀI HỌC KINH NGHIỆM
+          BÀI HỌC KINH NGHIỆM ĐỐI NGOẠI
       ════════════════════════════════ */}
       <section id="lessons" className="py-24 bg-gradient-to-b from-[#1a0505] to-history-dark text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/black-scales.png')] opacity-5 pointer-events-none" />
@@ -830,12 +813,9 @@ function App() {
 
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
           <Reveal>
-            <h2 className="text-4xl md:text-5xl text-vn-gold text-center relative pb-4 uppercase tracking-wider font-serif font-bold mb-4">
-              Bài Học Lịch Sử
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-vn-red" />
-            </h2>
+            <h2 className="section-title">Bài Học Kinh Nghiệm</h2>
             <p className="text-center text-lg text-gray-400 mb-16 max-w-3xl mx-auto font-serif italic">
-              Từ Hiệp định Pa-ri đến thế hệ hôm nay — những giá trị cốt lõi vẫn còn nguyên giá trị thực tiễn.
+              Những giá trị cốt lõi từ lịch sử vẫn mang tính thời đại trong công cuộc hội nhập quốc tế hiện nay.
             </p>
           </Reveal>
 
@@ -843,26 +823,26 @@ function App() {
             {[
               {
                 num: '01', icon: '✊',
-                title: 'Phải có thực lực thì mới đàm phán có trọng lượng',
-                text: 'Cả hai hội nghị đều cho thấy bàn đàm phán không thể tách khỏi chiến trường. Điện Biên Phủ tạo lực cho Giơ-ne-vơ; chiến thắng Xuân–Hè 1972 và "Điện Biên Phủ trên không" tạo lực cho Pa-ri. Không có thực lực, đàm phán dễ thành màn nghe người khác đọc điều khoản cho mình.',
+                title: 'Xác lập vị thế dựa trên thực lực dân tộc',
+                text: 'Các hội nghị ngoại giao cho thấy bàn đàm phán luôn gắn liền với thực địa chiến trường. Ngày nay, thực lực chính là sự phát triển bền vững của nội lực kinh tế, tạo nền tảng vững chắc để có tiếng nói trọng lượng trong các tổ chức quốc tế như WTO, CPTPP.',
                 color: 'border-vn-red',
               },
               {
                 num: '02', icon: '🎋',
-                title: '"Dĩ bất biến, ứng vạn biến"',
-                text: 'Nguồn sức mạnh ngoại giao Việt Nam là giữ rất chắc cái lõi: độc lập, chủ quyền, thống nhất, toàn vẹn lãnh thổ. Nhưng cách đi, cách nói, cách chốt văn bản thì cực kỳ linh hoạt. Bài học này vẫn còn nguyên giá trị trong đối ngoại hiện đại, đàm phán kinh tế, thậm chí thương lượng doanh nghiệp.',
+                title: 'Sách lược "Dĩ bất biến, ứng vạn biến"',
+                text: 'Giữ vững mục tiêu độc lập dân tộc và lợi ích quốc gia làm "bất biến", đồng thời ứng dụng linh hoạt các biện pháp sách lược. Bài học này vẫn nguyên giá trị trong đàm phán kinh tế, xử lý các quan hệ quốc tế phức tạp hiện nay.',
                 color: 'border-vn-gold',
               },
               {
                 num: '03', icon: '⚙️',
-                title: 'Đàm phán là công việc của cả hệ thống',
-                text: 'Ngoài các nhà thương lượng, còn có bộ máy tham mưu, phiên dịch, truyền thông, an ninh, bảo mật, hậu cần. Lực lượng bảo vệ an ninh âm thầm bảo vệ phái đoàn Việt Nam gần 5 năm trên đất Pháp. Làm việc lớn không có chỗ cho kiểu "anh hùng solo everything".',
+                title: 'Sự phối hợp đồng bộ của hệ thống chính trị',
+                text: 'Công tác đàm phán đòi hỏi sự phối hợp chặt chẽ giữa các cấp, từ tham mưu, an ninh đến truyền thông và hậu cần. Làm việc lớn đòi hỏi sự đồng thuận và sức mạnh của cả hệ thống thay vì những nỗ lực cá nhân đơn lẻ.',
                 color: 'border-vn-red',
               },
               {
                 num: '04', icon: '🌍',
-                title: 'Tranh thủ sức mạnh quốc tế nhưng không phụ thuộc',
-                text: 'Giơ-ne-vơ và Pa-ri đều chịu tác động mạnh của dư luận thế giới, phong trào phản chiến và quan hệ nước lớn. Bài học: phải biết tranh thủ môi trường quốc tế, nhưng quyết định cuối cùng vẫn phải dựa trên lợi ích dân tộc và bản lĩnh tự chủ.',
+                title: 'Kết hợp sức mạnh dân tộc và sức mạnh thời đại',
+                text: 'Biết cách tranh thủ sự ủng hộ của môi trường quốc tế nhưng luôn giữ vững tính độc lập và tự chủ. Quyết định cuối cùng luôn phải xuất phát từ lợi ích dân tộc và bản lĩnh của người làm chủ vận mệnh quốc gia.',
                 color: 'border-vn-gold',
               },
             ].map((lesson, i) => (
@@ -877,12 +857,10 @@ function App() {
             ))}
           </div>
 
-          {/* Câu kết */}
           <Reveal className="mt-12">
             <div className="text-center border-t border-vn-red/30 pt-12">
-              <p className="text-2xl md:text-3xl font-serif italic text-vn-gold animate-fire leading-relaxed max-w-4xl mx-auto">
-                "Từ Giơ-ne-vơ đến Pa-ri, ngoại giao Việt Nam đã chứng minh: hòa bình không phải món quà được trao,
-                mà là kết quả của bản lĩnh, trí tuệ và sức mạnh."
+              <p className="text-2xl md:text-3xl font-serif italic text-vn-gold animate-fire leading-relaxed max-w-4xl mx-auto uppercase">
+                "Hòa bình không phải là sự ban phát, mà là kết quả của bản lĩnh, trí tuệ và sức mạnh dân tộc."
               </p>
             </div>
           </Reveal>
@@ -890,7 +868,7 @@ function App() {
       </section>
 
       {/* ════════════════════════════════
-          KIẾN TRÚC SƯ VN
+          NHÀ NGOẠI GIAO VIỆT NAM (KIẾN TRÚC SƯ)
       ════════════════════════════════ */}
       <section id="real-world" className="py-24 bg-history-dark text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#111] to-[#1a0505]" />
@@ -898,36 +876,36 @@ function App() {
         <div className="container mx-auto px-4 max-w-7xl relative z-10">
           <Reveal>
             <h2 className="text-4xl md:text-5xl text-vn-gold text-center mb-4 relative pb-4 uppercase tracking-wider font-serif font-bold">
-              Những "Kiến Trúc Sư" Việt Nam
+              Các Nhà Ngoại Giao Tiêu Biểu
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-vn-red" />
             </h2>
             <p className="text-center text-lg text-gray-400 mb-16 max-w-3xl mx-auto font-serif italic">
-              Sức mạnh — Sự linh hoạt — Chính nghĩa: Sự phối hợp hoàn hảo của phái đoàn Việt Nam tại Paris.
+              Sức mạnh - Sự linh hoạt - Chính nghĩa: Sự phối hợp hoàn hảo của phái đoàn Việt Nam tại Hội nghị Pa-ri.
             </p>
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {[
               {
-                name: 'Lê Đức Thọ', title: '"Vị sứ giả gang thép"', color: 'border-vn-gold', glow: 'hover:shadow-[0_10px_40px_rgba(255,205,0,0.2)]',
+                name: 'Lê Đức Thọ', title: 'Cố vấn Đặc biệt', color: 'border-vn-gold', glow: 'hover:shadow-[0_10px_40px_rgba(255,205,0,0.2)]',
                 img: 'https://upload.wikimedia.org/wikipedia/commons/e/ee/Le_Duc_Tho.jpg',
                 nameColor: 'text-vn-gold',
                 tagStyle: 'text-vn-red bg-vn-red/10',
-                desc: 'Cố vấn đặc biệt — đối đầu trực tiếp Kissinger trong các cuộc đàm phán bí mật. Kiên quyết về nguyên tắc, buộc Mỹ phải nhượng bộ. Đại diện cho kiểu nhà đàm phán "mềm về cách, cứng về lõi". Từ chối giải Nobel Hòa bình 1973.',
+                desc: 'Đại diện đàm phán bí mật - người trực tiếp đấu trí với Henry Kissinger. Ông nổi tiếng với phong thái điềm tĩnh nhưng vô cùng quyết liệt trong việc giữ vững các nguyên tắc cốt lõi của dân tộc. Từ chối giải Nobel Hòa bình 1973.',
               },
               {
-                name: 'Xuân Thủy', title: '"Nụ cười ngoại giao"', color: 'border-gray-400', glow: 'hover:shadow-[0_10px_40px_rgba(255,255,255,0.05)]',
+                name: 'Xuân Thủy', title: 'Bộ trưởng Ngoại giao', color: 'border-gray-400', glow: 'hover:shadow-[0_10px_40px_rgba(255,255,255,0.05)]',
                 img: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Xuan_Thuy.jpg',
                 nameColor: 'text-white',
                 tagStyle: 'text-gray-400 bg-gray-800',
-                desc: 'Trưởng đoàn VNDCCH từ phiên khai mạc 13/5/1968. Gương mặt nổi bật ở diễn đàn công khai — mềm mỏng, uyển chuyển, cầm nhịp phiên họp để tạo khoảng không cho đàm phán bí mật.',
+                desc: 'Trưởng đoàn Việt Nam Dân chủ Cộng hòa (VNDCCH) tại diễn đàn công khai. Ông đảm nhiệm vai trò cầm nhịp và điều phối các phiên họp, tạo ra không gian chiến thuật cho các cuộc tiếp xúc bí mật đạt kết quả.',
               },
               {
-                name: 'Nguyễn Thị Bình', title: '"Bông hồng thép"', color: 'border-vn-red', glow: 'hover:shadow-[0_10px_40px_rgba(218,37,29,0.2)]',
+                name: 'Nguyễn Thị Bình', title: 'Bộ trưởng Ngoại giao', color: 'border-vn-red', glow: 'hover:shadow-[0_10px_40px_rgba(218,37,29,0.2)]',
                 img: 'https://upload.wikimedia.org/wikipedia/commons/7/75/Nguyen_Thi_Binh.jpg',
                 nameColor: 'text-white',
                 tagStyle: 'text-vn-red bg-vn-red/10',
-                desc: 'Trưởng đoàn Chính phủ CMLT CHMN VN từ 6/1969. Tăng tính chính danh của cách mạng miền Nam. Hóa giải hình ảnh "Việt Cộng", huy động làn sóng phản chiến quốc tế. Người phụ nữ duy nhất ký Hiệp định Pa-ri.',
+                desc: 'Trưởng đoàn Chính phủ Cách mạng lâm thời Cộng hòa miền Nam Việt Nam (CP CMLT CHMN VN). Bà là biểu tượng của tính chính nghĩa và sức mạnh phụ nữ Việt Nam, góp phần lan tỏa tiếng vang của cuộc kháng chiến trên trường quốc tế.',
               },
             ].map((person, i) => (
               <Reveal key={i} delay={i * 120}>
@@ -947,13 +925,13 @@ function App() {
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
-                icon: '🤝', name: 'Đại sứ Hà Văn Lâu', tag: 'Người "tiền trạm"',
-                desc: 'Ngày 10/5/1968 tham gia cuộc tiếp xúc đầu tiên với đại diện Mỹ qua trung gian Pháp. Góp phần chốt ngày 13/5/1968 cho phiên họp chính thức đầu tiên — đàm phán lớn bắt đầu từ những bước tiền trạm cực kỳ kỹ lưỡng.',
+                icon: '🤝', name: 'Đại sứ Hà Văn Lâu', tag: 'Công tác chuẩn bị đàm phán',
+                desc: 'Thực hiện nhiệm vụ tiếp xúc sơ bộ và chuẩn bị các điều kiện kỹ thuật cho Hội nghị Pa-ri. Sự tỉ mỉ và chuyên nghiệp trong khâu tiền trạm đã góp phần quan trọng vào thành công chung của phái đoàn.',
                 border: 'hover:border-vn-gold/50',
               },
               {
-                icon: '🛡️', name: 'Lực lượng Cận vệ', tag: 'Những người thầm lặng',
-                desc: 'Âm thầm bảo vệ an ninh, hậu cần, mã hóa liên lạc cho phái đoàn Việt Nam gần 5 năm trên đất Pháp. Chiến dịch đàm phán là chiến dịch tổng lực — từ bảo mật tài liệu đến an toàn con người.',
+                icon: '🛡️', name: 'Lực lượng Cận vệ', tag: 'Công tác bảo vệ bí mật',
+                desc: 'Đảm bảo an toàn tuyệt đối và bảo mật thông tin liên lạc cho phái đoàn trong suốt tiến trình đàm phán dài ngày. Đây là minh chứng cho sự phối hợp tổng lực trong công tác đối ngoại.',
                 border: 'hover:border-vn-red/50',
               },
             ].map((item, i) => (
@@ -973,7 +951,7 @@ function App() {
       </section>
 
       {/* ════════════════════════════════
-          PHÍA ĐỐI LẬP
+          PHÍA ĐỐI LẬP (USA & CHÍNH QUYỀN SÀI GÒN)
       ════════════════════════════════ */}
       <section id="opposing-side" className="py-24 bg-[#0a0a12] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#0a0a1a_0%,_#000_80%)]" />
@@ -984,7 +962,7 @@ function App() {
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-blue-600" />
             </h2>
             <p className="text-center text-lg text-gray-500 mb-16 max-w-3xl mx-auto font-serif italic">
-              Các nhân vật quyết định chính sách phía bên kia chiến tuyến.
+              Các cá nhân đại diện cho các quyết sách của phía Hoa Kỳ và chính quyền Việt Nam Cộng hòa (VNCH).
             </p>
           </Reveal>
 
@@ -994,19 +972,19 @@ function App() {
                 name: 'Richard Nixon', role: 'Tổng thống Mỹ',
                 img: 'https://upload.wikimedia.org/wikipedia/commons/2/2c/Richard_Nixon_presidential_portrait.jpg',
                 border: 'border-blue-800', hoverBorder: 'hover:border-blue-500/50',
-                desc: 'Đề ra "Học thuyết Nixon" và chiến lược "Việt Nam hóa chiến tranh". Người đưa ra các quyết định quân sự khốc liệt — kể cả chiến dịch B-52 tháng 12/1972 — để tạo sức ép lên bàn đàm phán Pa-ri.',
+                desc: 'Người đề ra "Học thuyết Nixon" và chiến lược "Việt Nam hóa chiến tranh". Ông là người đưa ra các quyết định leo thang quân sự khốc liệt nhằm tìm kiếm vị thế trên bàn hội nghị.',
               },
               {
-                name: 'Henry Kissinger', role: 'Cố vấn An ninh Quốc gia',
+                name: 'Henry Kissinger', role: 'Cố vấn An ninh Quốc gia Hoa Kỳ',
                 img: 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Henry_Kissinger_1974.jpg',
                 border: 'border-blue-600', hoverBorder: 'hover:border-blue-400/50',
-                desc: 'Đại diện phía Mỹ trong các cuộc đàm phán bí mật với cố vấn Lê Đức Thọ. Kissinger thừa nhận sự kiên định của phái đoàn Việt Nam là "không thể lay chuyển". Nhận Nobel Hòa bình 1973 nhưng bị chỉ trích vì chiến dịch B-52.',
+                desc: 'Nhà ngoại giao kỳ cựu đại diện phía Hoa Kỳ trong các cuộc gặp riêng. Ông đã phải thừa nhận sự kiên định không thể lay chuyển của Phái đoàn Việt Nam trước các sức ép quân sự của Mỹ.',
               },
               {
-                name: 'Ngô Đình Diệm', role: 'Chính quyền Sài Gòn',
+                name: 'Ngô Đình Diệm', role: 'Tổng thống VNCH (1955-1963)',
                 img: 'https://upload.wikimedia.org/wikipedia/commons/1/11/Ngo_Dinh_Diem_-_Color_Portrait.jpg',
                 border: 'border-blue-900', hoverBorder: 'hover:border-blue-700/50',
-                desc: 'Đại diện giai đoạn hậu 1954. Liên minh "Mỹ–Diệm" phá hoại Hiệp định Giơ-ne-vơ — từ chối hiệp thương tổng tuyển cử, đẩy miền Nam vào tình trạng chia cắt kéo dài và kéo Mỹ can thiệp sâu hơn.',
+                desc: 'Đại diện cho giai đoạn hậu 1954 tại miền Nam. Liên minh Mỹ - Diệm bị lịch sử ghi nhận với các hành động phá hoại Hiệp định Giơ-ne-vơ và từ chối hiệp thương tổng tuyển cử quốc gia.',
               },
             ].map((person, i) => (
               <Reveal key={i} delay={i * 120}>
@@ -1025,7 +1003,7 @@ function App() {
       </section>
 
       {/* ════════════════════════════════
-          TƯ LIỆU THAM KHẢO
+          DANH MỤC TƯ LIỆU THAM KHẢO
       ════════════════════════════════ */}
       <section id="references" className="py-24 bg-[#fdf6e3] relative">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/rice-paper.png')] opacity-50" />
@@ -1036,19 +1014,19 @@ function App() {
 
           <div className="grid md:grid-cols-2 gap-6 mt-16">
             {[
-              { icon: '📖', title: 'Giáo trình VNR202', desc: 'Chương 2: Đảng lãnh đạo hai cuộc kháng chiến chống ngoại xâm, thống nhất đất nước (1945–1975). Nguồn số liệu chính cho thống kê Hội nghị Pa-ri.' },
-              { icon: '🏛️', title: 'Cổng thông tin Bộ Ngoại giao', desc: 'Tư liệu chính thống về ý nghĩa, bài học ngoại giao, các nhân vật lịch sử và đánh giá vai trò của Lê Đức Thọ.' },
-              { icon: '📰', title: 'Báo Nhân Dân', desc: 'Chuyên trang lưu trữ timeline chi tiết Hội nghị Pa-ri và Giơ-ne-vơ — nguồn dễ dùng và đáng tin cậy cho nội dung web.' },
-              { icon: '🇺🇸', title: 'Office of the Historian (U.S. State Dept.)', desc: 'Tài liệu của Bộ Ngoại giao Mỹ — góc nhìn quốc tế về tiến trình đàm phán Pa-ri và các ràng buộc chiến lược từ phía Mỹ.' },
-              { icon: '🏆', title: 'NobelPrize.org', desc: 'Tư liệu về giải Nobel Hòa bình 1973 và quyết định từ chối nhận giải của cố vấn Lê Đức Thọ — minh chứng cho bản lĩnh ngoại giao Việt Nam.' },
-              { icon: '🏛️', title: 'Bảo tàng Lịch sử Quốc gia', desc: 'Ghi nhận các hoạt động thầm lặng của lực lượng bảo vệ an ninh cho phái đoàn Việt Nam gần 5 năm tại Paris.' },
+              { icon: '📖', title: 'Giáo trình Lịch sử Đảng Cộng sản Việt Nam (VNR202)', desc: 'Nội dung cốt lõi thuộc Chương 2 về sự lãnh đạo của Đảng trong kháng chiến chống ngoại xâm (1945–1975).' },
+              { icon: '🏛️', title: 'Cổng thông tin điện tử Bộ Ngoại giao Việt Nam', desc: 'Các báo cáo chính thống về ý nghĩa và bài học ngoại giao của Hiệp định Pa-ri và Hiệp định Giơ-ne-vơ.' },
+              { icon: '📰', title: 'Chuyên mục Lịch sử - Báo Nhân Dân', desc: 'Hệ thống lưu trữ timeline và các văn kiện quan trọng phục vụ công tác nghiên cứu học tập.' },
+              { icon: '🇺🇸', title: 'Office of the Historian (Bộ Ngoại giao Hoa Kỳ)', desc: 'Cung cấp góc nhìn quốc tế và các tài liệu giải mật về tiến trình đàm phán từ phía chính phủ Mỹ.' },
+              { icon: '🏆', title: 'Hệ thống giải Nobel (NobelPrize.org)', desc: 'Tài liệu về quyết định từ chối giải Nobel Hòa bình năm 1973 của cố vấn Lê Đức Thọ.' },
+              { icon: '🏛️', title: 'Bảo tàng Lịch sử Quốc gia Việt Nam', desc: 'Tư liệu về các hoạt động hỗ trợ thầm lặng của lực lượng phục vụ và bảo vệ phái đoàn tại Paris.' },
             ].map((ref, i) => (
               <Reveal key={i} delay={i * 80}>
                 <div className="bg-white p-6 border-l-4 border-vn-gold shadow-lg flex gap-5 items-start hover:-translate-y-1 hover:shadow-xl transition-all duration-300 rounded-sm">
                   <div className="text-3xl mt-1">{ref.icon}</div>
                   <div>
                     <h4 className="font-bold text-history-dark text-base mb-2 font-serif">{ref.title}</h4>
-                    <p className="text-sm text-gray-600 leading-relaxed">{ref.desc}</p>
+                    <p className="text-sm text-gray-600 leading-relaxed font-sans">{ref.desc}</p>
                   </div>
                 </div>
               </Reveal>
@@ -1058,7 +1036,7 @@ function App() {
       </section>
 
       {/* ════════════════════════════════
-          THÀNH VIÊN
+          DANH SÁCH THÀNH VIÊN NHÓM
       ════════════════════════════════ */}
       <section id="team" className="py-24 bg-white border-t-4 border-vn-red relative">
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
@@ -1068,10 +1046,10 @@ function App() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
             {[
-              { name: 'Nguyễn Văn A', role: 'Thuyết trình viên 1', task: 'Slide 1–2 · Nội dung & Bố cục', slides: 'Slide 1–2' },
-              { name: 'Trần Thị B',   role: 'Thuyết trình viên 2', task: 'Slide 3–4 · Tìm kiếm tư liệu', slides: 'Slide 3–4' },
-              { name: 'Lê Văn C',     role: 'Thuyết trình viên 3', task: 'Slide 5–7 · Thiết kế web',      slides: 'Slide 5–7' },
-              { name: 'Phạm Thị D',   role: 'Thuyết trình viên 4', task: 'Slide 8–10 · Tổng hợp bài học', slides: 'Slide 8–10' },
+              { name: 'Nguyễn Văn A', role: 'Thuyết trình viên 1', task: 'Phần 1–2 · Nội dung & Bố cục', slides: 'Nội dung Slide 1–2' },
+              { name: 'Trần Thị B',   role: 'Thuyết trình viên 2', task: 'Phần 3–4 · Nghiên cứu tư liệu', slides: 'Nội dung Slide 3–4' },
+              { name: 'Lê Văn C',     role: 'Thuyết trình viên 3', task: 'Phần 5–7 · Thiết kế kỹ thuật',      slides: 'Nội dung Slide 5–7' },
+              { name: 'Phạm Thị D',   role: 'Thuyết trình viên 4', task: 'Phần 8–10 · Tổng hợp bài học', slides: 'Nội dung Slide 8–10' },
             ].map((member, i) => (
               <Reveal key={i} delay={i * 100}>
                 <div className="bg-[#fcfcfc] p-6 text-center border-t-4 border-vn-red shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 rounded-sm group">
@@ -1081,7 +1059,7 @@ function App() {
                   <h4 className="font-serif font-bold text-history-dark text-base mb-1">{member.name}</h4>
                   <p className="text-vn-red text-xs font-bold uppercase tracking-wider mb-1">{member.role}</p>
                   <p className="text-vn-gold text-xs font-bold uppercase tracking-wide mb-2">{member.slides}</p>
-                  <p className="text-gray-500 text-xs">{member.task}</p>
+                  <p className="text-gray-500 text-xs font-sans">{member.task}</p>
                 </div>
               </Reveal>
             ))}
@@ -1089,20 +1067,19 @@ function App() {
         </div>
       </section>
 
-      {/* ── Final marquee ── */}
       <MarqueeTicker />
 
-      {/* ── Footer ── */}
+      {/* ── Chân trang ── */}
       <footer className="bg-history-dark border-t-2 border-vn-red text-center py-10 relative">
         <div className="flex justify-center mb-4">
           <VNStar size={36} className="animate-flicker" />
         </div>
         <p className="text-gray-500 text-xs font-sans tracking-widest uppercase mb-2">
-          © 2026 Nội dung tham khảo phục vụ học tập
-          <span className="text-vn-gold"> Giáo trình VNR202</span>
+          © 2026 Nội dung phục vụ học tập học phần
+          <span className="text-vn-gold"> Lịch sử Đảng Cộng sản Việt Nam (VNR202)</span>
         </p>
         <p className="text-gray-600 text-xs italic font-serif">
-          "Trên hành trình giành độc lập và thống nhất đất nước, bàn đàm phán cũng là một chiến trường."
+          "Độc lập, chủ quyền, thống nhất và toàn vẹn lãnh thổ là những quyền dân tộc cơ bản bất biến của Việt Nam."
         </p>
       </footer>
     </div>

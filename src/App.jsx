@@ -1193,34 +1193,82 @@ function App() {
       </section>
 
       {/* ════════════════════════════════
-          DANH SÁCH NHÂN SỰ THỰC HIỆN
+          DANH SÁCH CÔNG CỤ AI ĐÃ DÙNG
       ════════════════════════════════ */}
-      <section id="team" className="py-24 bg-white border-t-4 border-vn-red relative font-sans">
-        <div className="container mx-auto px-4 max-w-5xl relative z-10 text-center">
+      <section id="ai-tools" className="py-24 bg-[#0d0b09] text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_#0d1a0d_0%,_#0d0b09_70%)]" />
+        <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <Reveal>
-            <h2 className="section-title">Thành Viên Nhóm Nghiên Cứu</h2>
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="h-px w-16 bg-green-700/60" />
+              <span className="text-green-500 text-xs font-bold uppercase tracking-[0.4em]">Công nghệ hỗ trợ</span>
+              <div className="h-px w-16 bg-green-700/60" />
+            </div>
+            <h2 className="text-4xl md:text-5xl text-green-400 text-center relative pb-4 uppercase tracking-wider font-serif font-bold mb-4">
+              Công Cụ AI Đã Sử Dụng
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-green-600" />
+            </h2>
+            <p className="text-center text-gray-400 mb-16 max-w-2xl mx-auto font-serif italic">
+              Các mô hình trí tuệ nhân tạo được nhóm sử dụng trong quá trình nghiên cứu, tổng hợp nội dung và thiết kế web.
+            </p>
           </Reveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 text-center">
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
             {[
-              { name: 'Nguyễn Văn A', role: 'Thuyết trình viên 1', task: 'Phần 1–2 · Phân tích bối cảnh', slides: 'Nội dung Slide 1–2' },
-              { name: 'Trần Thị B',   role: 'Thuyết trình viên 2', task: 'Phần 3–4 · Nghiên cứu sử liệu', slides: 'Nội dung Slide 3–4' },
-              { name: 'Lê Văn C',     role: 'Thuyết trình viên 3', task: 'Phần 5–7 · Thiết kế kỹ thuật',      slides: 'Nội dung Slide 5–7' },
-              { name: 'Phạm Thị D',   role: 'Thuyết trình viên 4', task: 'Phần 8–10 · Tổng hợp bài học', slides: 'Nội dung Slide 8–10' },
-            ].map((member, i) => (
+              {
+                name: 'Claude (Anthropic)',
+                logo: '🤖',
+                version: 'claude-sonnet-4-6',
+                role: 'Tổng hợp nội dung · Thiết kế web',
+                desc: 'Dùng để nghiên cứu nội dung lịch sử, soạn thảo văn bản thuyết trình, và viết toàn bộ mã nguồn giao diện web này.',
+                color: 'border-orange-500',
+                tag: 'Chính',
+                tagColor: 'bg-orange-500 text-white',
+              },
+              {
+                name: 'ChatGPT (OpenAI)',
+                logo: '💬',
+                version: 'GPT-4o',
+                role: 'Phác thảo ý tưởng · Kiểm tra chéo',
+                desc: '[Nhóm tự điền] — ví dụ: dùng để phác thảo bố cục slide ban đầu hoặc kiểm tra lại các thông tin lịch sử.',
+                color: 'border-green-500',
+                tag: 'Hỗ trợ',
+                tagColor: 'bg-green-700 text-white',
+              },
+              {
+                name: 'Gemini (Google)',
+                logo: '✨',
+                version: 'Gemini 1.5 Pro',
+                role: 'Tìm kiếm · Tóm tắt tài liệu',
+                desc: '[Nhóm tự điền] — ví dụ: dùng để tóm tắt các tài liệu dài hoặc tra cứu nhanh số liệu từ nguồn tiếng Anh.',
+                color: 'border-blue-500',
+                tag: 'Hỗ trợ',
+                tagColor: 'bg-blue-700 text-white',
+              },
+            ].map((tool, i) => (
               <Reveal key={i} delay={i * 100}>
-                <div className="bg-[#fcfcfc] p-8 text-center border-t-4 border-vn-red shadow-xl hover:-translate-y-3 transition-all duration-700 rounded-sm group flex flex-col items-center">
-                  <div className="w-20 h-20 bg-history-dark text-vn-gold flex items-center justify-center rounded-full text-3xl font-serif font-bold mb-6 group-hover:bg-vn-red group-hover:text-white transition-all duration-500 shadow-2xl">
-                    {member.name.charAt(0)}
+                <div className={`bg-white/5 border ${tool.color} border-opacity-40 rounded-sm p-7 hover:bg-white/10 hover:border-opacity-80 transition-all duration-300 group h-full flex flex-col`}>
+                  <div className="flex items-start justify-between mb-4">
+                    <span className="text-4xl">{tool.logo}</span>
+                    <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm ${tool.tagColor}`}>{tool.tag}</span>
                   </div>
-                  <h4 className="font-serif font-bold text-history-dark text-lg mb-2 uppercase tracking-wide leading-none">{member.name}</h4>
-                  <p className="text-vn-red text-[10px] font-bold uppercase tracking-[0.2em] mb-2">{member.role}</p>
-                  <p className="text-vn-gold text-[9px] font-bold uppercase tracking-widest mb-4 border-b border-vn-gold/20 pb-1">{member.slides}</p>
-                  <p className="text-gray-500 text-[11px] font-medium leading-relaxed italic">{member.task}</p>
+                  <h3 className="font-serif font-bold text-white text-lg mb-1">{tool.name}</h3>
+                  <p className="text-gray-500 text-xs font-mono mb-2">{tool.version}</p>
+                  <p className={`text-xs font-bold uppercase tracking-wider mb-4 ${i === 0 ? 'text-orange-400' : i === 1 ? 'text-green-400' : 'text-blue-400'}`}>{tool.role}</p>
+                  <p className="text-gray-400 text-sm leading-relaxed flex-1">{tool.desc}</p>
                 </div>
               </Reveal>
             ))}
           </div>
+
+          <Reveal>
+            <div className="bg-white/5 border border-white/10 rounded-sm p-6 text-center">
+              <p className="text-gray-500 text-sm italic font-serif">
+                * Toàn bộ nội dung lịch sử được kiểm chứng dựa trên Giáo trình VNR202 và các nguồn tư liệu chính thống.
+                Các công cụ AI chỉ hỗ trợ tổng hợp và trình bày — không phải nguồn sử liệu.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 

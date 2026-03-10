@@ -12,9 +12,10 @@ const sections = [
   { id: 'comparison',    label: 'So sánh & Ý nghĩa' },
   { id: 'lessons',       label: 'Bài học kinh nghiệm' },
   { id: 'real-world',    label: 'Kiến trúc sư VN' },
+  { id: 'secret-talks',  label: 'Cuộc họp kín' },
   { id: 'opposing-side', label: 'Phía đối lập' },
   { id: 'references',    label: 'Tư liệu tham khảo' },
-  { id: 'team',          label: 'Thành viên nhóm' },
+  { id: 'ai-tools',      label: 'Công cụ AI' },
 ];
 
 /* ─── Biểu tượng Ngôi sao vàng Việt Nam ─── */
@@ -953,6 +954,178 @@ function App() {
       {/* ════════════════════════════════
           PHÍA ĐỐI LẬP (USA & CHÍNH QUYỀN SÀI GÒN)
       ════════════════════════════════ */}
+      {/* ════════════════════════════════
+          CUỘC HỌP KÍN LÊ ĐỨC THỌ – KISSINGER
+      ════════════════════════════════ */}
+      <section id="secret-talks" className="py-24 bg-[#0a0805] text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_#1a0a00_0%,_#0a0805_60%)]" />
+        {/* Diagonal stripe accent */}
+        <div className="absolute inset-0 opacity-5 pointer-events-none"
+          style={{ backgroundImage: 'repeating-linear-gradient(45deg, #da251d 0, #da251d 1px, transparent 0, transparent 50%)', backgroundSize: '20px 20px' }} />
+
+        <div className="container mx-auto px-4 max-w-6xl relative z-10">
+          <Reveal>
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="h-px w-16 bg-vn-red/60" />
+              <span className="text-vn-red text-xs font-bold uppercase tracking-[0.4em]">Hậu trường đàm phán</span>
+              <div className="h-px w-16 bg-vn-red/60" />
+            </div>
+            <h2 className="text-4xl md:text-5xl text-vn-gold text-center relative pb-4 uppercase tracking-wider font-serif font-bold mb-4">
+              Cuộc Họp Kín
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-vn-red" />
+            </h2>
+            <p className="text-center text-lg text-gray-400 mb-16 max-w-3xl mx-auto font-serif italic">
+              45 cuộc gặp riêng cấp cao — nơi những nút thắt thực chất nhất của Hiệp định Pa-ri được tháo gỡ, xa tầm mắt dư luận.
+            </p>
+          </Reveal>
+
+          {/* Hai nhân vật đối diện */}
+          <div className="grid md:grid-cols-2 gap-0 mb-14 rounded-sm overflow-hidden border border-white/10 shadow-2xl">
+            <Reveal dir="left">
+              <div className="bg-[#1a0505] border-r border-white/10 p-8 flex flex-col items-center text-center h-full">
+                <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-vn-red mb-5 shadow-[0_0_25px_rgba(218,37,29,0.4)]">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Le_Duc_Tho.jpg" alt="Lê Đức Thọ"
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                </div>
+                <h3 className="text-2xl font-serif font-bold text-vn-gold uppercase tracking-wide mb-1">Lê Đức Thọ</h3>
+                <p className="text-vn-red text-xs font-bold uppercase tracking-widest mb-4">Cố vấn đặc biệt · Việt Nam DCCH</p>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  Người được Bộ Chính trị trao toàn quyền quyết định trong các buổi gặp bí mật. Chiến thuật của ông là
+                  <span className="text-vn-gold font-semibold"> im lặng có chủ đích</span> — để đối phương tự lộ ra áp lực
+                  nội bộ từ phía Mỹ, sau đó mới ra đòn nguyên tắc. Kissinger sau này thừa nhận: <em>"Ông ấy là đối thủ đàm phán
+                  giỏi nhất tôi từng gặp."</em>
+                </p>
+              </div>
+            </Reveal>
+            <Reveal dir="right">
+              <div className="bg-[#00050f] p-8 flex flex-col items-center text-center h-full">
+                <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-700 mb-5 shadow-[0_0_25px_rgba(59,130,246,0.3)]">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Henry_Kissinger_1974.jpg" alt="Henry Kissinger"
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                </div>
+                <h3 className="text-2xl font-serif font-bold text-blue-400 uppercase tracking-wide mb-1">Henry Kissinger</h3>
+                <p className="text-blue-500 text-xs font-bold uppercase tracking-widest mb-4">Cố vấn An ninh Quốc gia · Mỹ</p>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  Kiến trúc sư của chiến lược <span className="text-blue-400 font-semibold">"ngoại giao con thoi"</span> — đồng thời
+                  chịu sức ép khổng lồ từ Nixon, Quốc hội, dư luận và đồng minh Sài Gòn. Ông muốn kết thúc chiến tranh
+                  đủ nhanh để Mỹ "rút lui trong danh dự", nhưng liên tục bị phía Việt Nam buộc phải nhượng bộ thực chất.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Timeline cuộc họp kín */}
+          <Reveal>
+            <h3 className="text-center text-vn-gold font-serif font-bold text-xl uppercase tracking-wider mb-10">
+              Diễn Biến Các Cuộc Gặp Bí Mật Quan Trọng
+            </h3>
+          </Reveal>
+
+          <div className="space-y-6 mb-14">
+            {[
+              {
+                date: '21/2/1970', location: 'Paris (bí mật)',
+                title: 'Lần gặp đầu tiên — Thăm dò lập trường',
+                vn: 'Ta tuyên bố rõ 4 nguyên tắc không thể nhân nhượng. Từ chối mọi đề xuất "giải pháp trung gian" của phía Mỹ.',
+                us: 'Kissinger thăm dò khả năng Việt Nam chấp nhận một giải pháp "trung lập hoá" miền Nam tương tự Lào.',
+                result: 'Không đột phá, nhưng mở ra kênh bí mật như một thực tế song hành với diễn đàn công khai.',
+                tag: 'Mở đường', tagColor: 'bg-gray-700',
+              },
+              {
+                date: '26/6/1971', location: 'Paris (bí mật)',
+                title: 'Ta đưa ra sáng kiến 9 điểm — Chủ động ra đòn',
+                vn: 'Lê Đức Thọ chủ động đưa ra bản đề xuất 9 điểm, sau đó rút gọn thành 7 điểm — gây sức ép và tranh thủ dư luận.',
+                us: 'Kissinger lúng túng trước thế chủ động của ta, phải đối phó thay vì dẫn dắt đàm phán.',
+                result: 'Dư luận quốc tế và chính giới Mỹ bắt đầu nhìn nhận ta như bên có lập trường xây dựng hơn.',
+                tag: 'Chủ động', tagColor: 'bg-vn-red',
+              },
+              {
+                date: '8–11/10/1972', location: 'Paris (bí mật)',
+                title: 'Đột phá lịch sử — Dự thảo hiệp định hoàn chỉnh',
+                vn: 'Ta đưa ra toàn bộ dự thảo Hiệp định — một bước đi táo bạo và chủ động hoàn toàn.',
+                us: 'Kissinger thốt lên: "Hòa bình đã ở trong tầm tay." Hai bên thỏa thuận nguyên tắc, dự kiến ký 31/10/1972.',
+                result: 'Bước ngoặt quyết định. Lần đầu tiên Mỹ thực sự chấp nhận các điều khoản cốt lõi mà ta đặt ra.',
+                tag: 'Đột phá', tagColor: 'bg-vn-gold text-black',
+              },
+              {
+                date: '23/11–13/12/1972', location: 'Paris (bí mật)',
+                title: 'Mỹ trở mặt — Ta kiên quyết không nhượng bộ',
+                vn: 'Khi Mỹ đưa thêm 69 sửa đổi theo yêu cầu của Nguyễn Văn Thiệu, Lê Đức Thọ bác bỏ toàn bộ và tuyên bố đình chỉ đàm phán.',
+                us: 'Nixon phê duyệt chiến dịch Linebacker II (B-52 ném bom Hà Nội) nhằm ép ta trở lại bàn đàm phán với điều kiện có lợi cho Mỹ hơn.',
+                result: 'Kế hoạch tạo sức ép quân sự thất bại hoàn toàn sau 12 ngày đêm "Điện Biên Phủ trên không".',
+                tag: 'Đối đầu', tagColor: 'bg-orange-700',
+              },
+              {
+                date: '8–23/1/1973', location: 'Paris (bí mật)',
+                title: 'Vòng cuối — Mỹ chấp nhận gần như nguyên văn dự thảo tháng 10',
+                vn: 'Ta giữ nguyên lập trường. Chỉ đồng ý một số chỉnh lý kỹ thuật không ảnh hưởng đến các điều khoản cốt lõi.',
+                us: 'Kissinger thừa nhận thất bại trong chiến lược dùng áp lực quân sự. Văn bản ký tắt ngày 23/1/1973 gần như giống hệt bản tháng 10/1972.',
+                result: 'Hiệp định Pa-ri được ký chính thức ngày 27/1/1973. Ta đạt được mục tiêu chiến lược đề ra từ đầu.',
+                tag: 'Thắng lợi', tagColor: 'bg-vn-gold text-black',
+              },
+            ].map((talk, i) => (
+              <Reveal key={i} delay={i * 80}>
+                <div className="bg-white/5 border border-white/10 rounded-sm overflow-hidden hover:border-vn-red/40 transition-all duration-300 group">
+                  {/* Header */}
+                  <div className="flex items-center gap-4 px-6 py-4 border-b border-white/10 bg-black/30">
+                    <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm ${talk.tagColor}`}>{talk.tag}</span>
+                    <span className="text-vn-gold font-bold text-sm font-serif">{talk.date}</span>
+                    <span className="text-gray-500 text-xs">·</span>
+                    <span className="text-gray-400 text-xs uppercase tracking-wider">{talk.location}</span>
+                  </div>
+                  <div className="p-6">
+                    <h4 className="text-vn-gold font-serif font-bold text-base mb-5">{talk.title}</h4>
+                    <div className="grid md:grid-cols-2 gap-4 mb-4">
+                      <div className="bg-vn-red/10 border border-vn-red/20 rounded-sm p-4">
+                        <div className="text-vn-red text-[10px] font-bold uppercase tracking-widest mb-2">🇻🇳 Phía Việt Nam</div>
+                        <p className="text-gray-300 text-sm leading-relaxed">{talk.vn}</p>
+                      </div>
+                      <div className="bg-blue-900/20 border border-blue-800/30 rounded-sm p-4">
+                        <div className="text-blue-400 text-[10px] font-bold uppercase tracking-widest mb-2">🇺🇸 Phía Mỹ</div>
+                        <p className="text-gray-300 text-sm leading-relaxed">{talk.us}</p>
+                      </div>
+                    </div>
+                    <div className="bg-white/5 border-l-2 border-vn-gold pl-4 py-2">
+                      <span className="text-vn-gold text-[10px] font-bold uppercase tracking-widest">Kết quả · </span>
+                      <span className="text-gray-300 text-sm">{talk.result}</span>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          {/* Nhận định tổng kết */}
+          <Reveal>
+            <div className="animated-border rounded-sm p-px">
+              <div className="bg-black/80 rounded-sm p-8 md:p-10 text-center">
+                <p className="text-xs text-vn-red font-bold uppercase tracking-[0.4em] mb-4">Nhận định lịch sử</p>
+                <p className="text-vn-gold font-serif italic text-xl md:text-2xl leading-relaxed max-w-3xl mx-auto">
+                  "Tại bàn đàm phán bí mật, Lê Đức Thọ không chỉ đàm phán cho một hiệp định —
+                  ông đàm phán cho thế trận chiến lược sau hiệp định."
+                </p>
+                <div className="mt-6 flex justify-center gap-8 text-center">
+                  <div>
+                    <div className="text-3xl font-serif font-bold text-vn-gold">45</div>
+                    <div className="text-gray-500 text-xs uppercase tracking-wider mt-1">Cuộc gặp riêng cấp cao</div>
+                  </div>
+                  <div className="w-px bg-white/10" />
+                  <div>
+                    <div className="text-3xl font-serif font-bold text-vn-gold">24</div>
+                    <div className="text-gray-500 text-xs uppercase tracking-wider mt-1">Cuộc họp hoàn toàn bí mật</div>
+                  </div>
+                  <div className="w-px bg-white/10" />
+                  <div>
+                    <div className="text-3xl font-serif font-bold text-vn-gold">~3 năm</div>
+                    <div className="text-gray-500 text-xs uppercase tracking-wider mt-1">Thời gian kênh bí mật hoạt động</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       <section id="opposing-side" className="py-24 bg-[#0a0a12] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#0a0a1a_0%,_#000_80%)]" />
         <div className="container mx-auto px-4 max-w-6xl relative z-10 text-center">
@@ -1038,32 +1211,80 @@ function App() {
       {/* ════════════════════════════════
           DANH SÁCH THÀNH VIÊN NHÓM
       ════════════════════════════════ */}
-      <section id="team" className="py-24 bg-white border-t-4 border-vn-red relative">
+      <section id="ai-tools" className="py-24 bg-[#0d0b09] text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_#0d1a0d_0%,_#0d0b09_70%)]" />
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <Reveal>
-            <h2 className="section-title">Thành Viên Nhóm</h2>
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="h-px w-16 bg-green-700/60" />
+              <span className="text-green-500 text-xs font-bold uppercase tracking-[0.4em]">Công nghệ hỗ trợ</span>
+              <div className="h-px w-16 bg-green-700/60" />
+            </div>
+            <h2 className="text-4xl md:text-5xl text-green-400 text-center relative pb-4 uppercase tracking-wider font-serif font-bold mb-4">
+              Công Cụ AI Đã Sử Dụng
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-green-600" />
+            </h2>
+            <p className="text-center text-gray-400 mb-16 max-w-2xl mx-auto font-serif italic">
+              Các mô hình trí tuệ nhân tạo được nhóm sử dụng trong quá trình nghiên cứu, tổng hợp nội dung và thiết kế web.
+            </p>
           </Reveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
             {[
-              { name: 'Nguyễn Văn A', role: 'Thuyết trình viên 1', task: 'Phần 1–2 · Nội dung & Bố cục', slides: 'Nội dung Slide 1–2' },
-              { name: 'Trần Thị B',   role: 'Thuyết trình viên 2', task: 'Phần 3–4 · Nghiên cứu tư liệu', slides: 'Nội dung Slide 3–4' },
-              { name: 'Lê Văn C',     role: 'Thuyết trình viên 3', task: 'Phần 5–7 · Thiết kế kỹ thuật',      slides: 'Nội dung Slide 5–7' },
-              { name: 'Phạm Thị D',   role: 'Thuyết trình viên 4', task: 'Phần 8–10 · Tổng hợp bài học', slides: 'Nội dung Slide 8–10' },
-            ].map((member, i) => (
+              {
+                name: 'Claude (Anthropic)',
+                logo: '🤖',
+                version: 'claude-sonnet-4-6',
+                role: 'Tổng hợp nội dung · Thiết kế web',
+                desc: 'Dùng để nghiên cứu nội dung lịch sử, soạn thảo văn bản thuyết trình, và viết toàn bộ mã nguồn giao diện web này.',
+                color: 'border-orange-500',
+                tag: 'Chính',
+                tagColor: 'bg-orange-500 text-white',
+              },
+              {
+                name: 'ChatGPT (OpenAI)',
+                logo: '💬',
+                version: 'GPT-4o',
+                role: 'Phác thảo ý tưởng · Kiểm tra chéo',
+                desc: '[Nhóm tự điền] — ví dụ: dùng để phác thảo bố cục slide ban đầu hoặc kiểm tra lại các thông tin lịch sử.',
+                color: 'border-green-500',
+                tag: 'Hỗ trợ',
+                tagColor: 'bg-green-700 text-white',
+              },
+              {
+                name: 'Gemini (Google)',
+                logo: '✨',
+                version: 'Gemini 1.5 Pro',
+                role: 'Tìm kiếm · Tóm tắt tài liệu',
+                desc: '[Nhóm tự điền] — ví dụ: dùng để tóm tắt các tài liệu dài hoặc tra cứu nhanh số liệu từ nguồn tiếng Anh.',
+                color: 'border-blue-500',
+                tag: 'Hỗ trợ',
+                tagColor: 'bg-blue-700 text-white',
+              },
+            ].map((tool, i) => (
               <Reveal key={i} delay={i * 100}>
-                <div className="bg-[#fcfcfc] p-6 text-center border-t-4 border-vn-red shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 rounded-sm group">
-                  <div className="w-16 h-16 mx-auto bg-history-dark text-vn-gold flex items-center justify-center rounded-full text-2xl font-serif font-bold mb-4 group-hover:bg-vn-red group-hover:text-white transition-colors duration-300 shadow-lg">
-                    {member.name.charAt(0)}
+                <div className={`bg-white/5 border ${tool.color} border-opacity-40 rounded-sm p-7 hover:bg-white/10 hover:border-opacity-80 transition-all duration-300 group h-full flex flex-col`}>
+                  <div className="flex items-start justify-between mb-4">
+                    <span className="text-4xl">{tool.logo}</span>
+                    <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm ${tool.tagColor}`}>{tool.tag}</span>
                   </div>
-                  <h4 className="font-serif font-bold text-history-dark text-base mb-1">{member.name}</h4>
-                  <p className="text-vn-red text-xs font-bold uppercase tracking-wider mb-1">{member.role}</p>
-                  <p className="text-vn-gold text-xs font-bold uppercase tracking-wide mb-2">{member.slides}</p>
-                  <p className="text-gray-500 text-xs font-sans">{member.task}</p>
+                  <h3 className="font-serif font-bold text-white text-lg mb-1">{tool.name}</h3>
+                  <p className="text-gray-500 text-xs font-mono mb-2">{tool.version}</p>
+                  <p className={`text-xs font-bold uppercase tracking-wider mb-4 ${i === 0 ? 'text-orange-400' : i === 1 ? 'text-green-400' : 'text-blue-400'}`}>{tool.role}</p>
+                  <p className="text-gray-400 text-sm leading-relaxed flex-1">{tool.desc}</p>
                 </div>
               </Reveal>
             ))}
           </div>
+
+          <Reveal>
+            <div className="bg-white/5 border border-white/10 rounded-sm p-6 text-center">
+              <p className="text-gray-500 text-sm italic font-serif">
+                * Toàn bộ nội dung lịch sử được kiểm chứng dựa trên Giáo trình VNR202 và các nguồn tư liệu chính thống.
+                Các công cụ AI chỉ hỗ trợ tổng hợp và trình bày — không phải nguồn sử liệu.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 

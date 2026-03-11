@@ -537,7 +537,7 @@ function App() {
 
           <div className="relative timeline-line py-4">
             {[
-              { year: '8/5/1954',  tag: 'Khai mạc',  tagColor: 'bg-vn-red',  title: 'Khai mạc Hội nghị Giơ-ne-vơ', desc: 'Diễn ra ngay sau chiến thắng Điện Biên Phủ. Các thành tựu trên mặt trận quân sự đã trực tiếp củng cố vị thế cho mặt trận ngoại giao của Việt Nam.', align: 'left', img: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Geneva_Conference_1954.jpg' },
+              { year: '8/5/1954',  tag: 'Khai mạc',  tagColor: 'bg-vn-red',  title: 'Khai mạc Hội nghị Giơ-ne-vơ', desc: 'Diễn ra ngay sau chiến thắng Điện Biên Phủ. Các thành tựu trên mặt trận quân sự đã trực tiếp củng cố vị thế cho mặt trận ngoại giao của Việt Nam.', align: 'left', img: 'https://file3.qdnd.vn/data/images/0/2022/05/02/tvkimgiang/hoi-nghi-gionevo.jpg?dpi=150&quality=100&w=870' },
               { year: '20/7/1954', tag: 'Ký kết',    tagColor: 'bg-vn-gold text-black', title: 'Ký kết Hiệp định Giơ-ne-vơ', desc: 'Chấm dứt sự hiện diện quân sự của thực dân Pháp tại Đông Dương. Xác lập quyền độc lập, chủ quyền của ba nước Đông Dương trên phương diện pháp lý quốc tế.', align: 'right' },
               { year: '21/7/1954', tag: 'Tuyên bố',  tagColor: 'bg-vn-red',  title: 'Thông qua Tuyên bố chung Hội nghị', desc: 'Xác lập các điều khoản về đình chỉ chiến sự và dự kiến tổng tuyển cử. Đạt được những kết quả quan trọng nhưng còn tồn tại hạn chế do sự chi phối của các cường quốc.', align: 'left' },
             ].map((item, i) => (
@@ -568,13 +568,13 @@ function App() {
           <div className="relative timeline-line py-4">
             {[
               { year: '10/5/1968',    tag: 'Chuẩn bị',  tagColor: 'bg-blue-800', title: 'Công tác chuẩn bị và tiếp xúc sơ bộ', desc: 'Đại sứ Hà Văn Lâu và phái đoàn chuẩn bị các điều kiện cần thiết cho phiên họp chính thức, thể hiện tính chuyên nghiệp trong ngoại giao chuẩn bị.', align: 'left' },
-              { year: '13/5/1968',    tag: 'Khai mạc',   tagColor: 'bg-vn-red',   title: 'Khai mạc đàm phán chính thức', desc: 'Bắt đầu tiến trình đấu trí ngoại giao công khai tại Paris giữa Phái đoàn Việt Nam Dân chủ Cộng hòa (VNDCCH) và Chính phủ Hoa Kỳ.', align: 'right', img: 'https://upload.wikimedia.org/wikipedia/commons/4/46/Le_Duc_Tho_and_Xuan_Thuy_at_the_Paris_Peace_Talks.jpg' },
+              { year: '13/5/1968',    tag: 'Khai mạc',   tagColor: 'bg-vn-red',   title: 'Khai mạc đàm phán chính thức', desc: 'Bắt đầu tiến trình đấu trí ngoại giao công khai tại Paris giữa Phái đoàn Việt Nam Dân chủ Cộng hòa (VNDCCH) và Chính phủ Hoa Kỳ.', align: 'right', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7C0aw08UGI0jNuqmCUfofBqfi2jfJicRhhA&s' },
               { year: '25/1/1969',    tag: 'Bốn bên',    tagColor: 'bg-vn-red',   title: 'Chuyển sang cơ chế đàm phán bốn bên', desc: 'Vấn đề miền Nam được thảo luận thực chất với sự tham gia của Phái đoàn Chính phủ Cách mạng lâm thời Cộng hòa miền Nam Việt Nam (CP CMLT CHMN VN).', align: 'left' },
               { year: '12/6/1969',    tag: 'Chính danh', tagColor: 'bg-red-900',  title: 'Khẳng định vị thế của CP CMLT CHMN VN', desc: 'Tăng cường tính chính danh pháp lý và đại diện cho nguyện vọng của nhân dân miền Nam Việt Nam trên bàn hội nghị quốc tế.', align: 'right' },
               { year: '21/2/1970',    tag: 'Bí mật',     tagColor: 'bg-gray-800', title: 'Khởi đầu tiến trình đàm phán bí mật', desc: 'Các cuộc gặp kín giữa cố vấn Việt Nam và đại diện phía Mỹ bắt đầu tháo gỡ những nút thắt căn bản nhất của bản dự thảo.', align: 'left' },
               { year: '26/6–1/7/1971',tag: 'Sáng kiến', tagColor: 'bg-vn-red',   title: 'Việt Nam đưa ra các giải pháp hòa bình', desc: 'Chủ động đưa ra các sáng kiến 9 điểm và 7 điểm nhằm tranh thủ sự đồng tình của dư luận quốc tế và chính giới Hoa Kỳ.', align: 'right' },
               { year: '30/3/1972',    tag: 'Tác động',   tagColor: 'bg-orange-800','title': 'Ảnh hưởng từ cuộc Tiến công Xuân – Hè', desc: 'Thành tựu quân sự trên chiến trường buộc phía Hoa Kỳ phải chuyển sang giai đoạn thảo luận thực chất về các điều khoản rút quân.', align: 'left' },
-              { year: '8/10/1972',    tag: 'Đột phá',    tagColor: 'bg-vn-gold text-black', title: 'Trình dự thảo Hiệp định đầu tiên', desc: 'Việt Nam chủ động đưa ra dự thảo toàn văn hiệp định, tạo bước ngoặt đột phá cho toàn bộ tiến trình đàm phán kéo dài nhiều năm.', align: 'right', img: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Signing_the_Paris_Peace_Accords_1973.jpg' },
+              { year: '8/10/1972',    tag: 'Đột phá',    tagColor: 'bg-vn-gold text-black', title: 'Trình dự thảo Hiệp định đầu tiên', desc: 'Việt Nam chủ động đưa ra dự thảo toàn văn hiệp định, tạo bước ngoặt đột phá cho toàn bộ tiến trình đàm phán kéo dài nhiều năm.', align: 'right', img: 'https://ttdn.vn/Uploads/Images/2023/1/26/21/cac-dau-moc-chinh-trong-cuoc-dam-phan-hiep-dinh-paris-20230113091825.jpg' },
               { year: '20/10/1972',   tag: 'Thỏa thuận', tagColor: 'bg-vn-gold text-black', title: 'Đạt khung thỏa thuận nguyên tắc', desc: 'Hai bên cơ bản thống nhất các nội dung chính, tuy nhiên phía Hoa Kỳ sau đó đã có các hành động trì hoãn và leo thang quân sự.', align: 'left' },
               { year: '18–30/12/1972',tag: 'Vô hiệu hóa',tagColor: 'bg-vn-red',   title: 'Vô hiệu hóa các áp lực quân sự của Mỹ', desc: 'Chiến thắng "Điện Biên Phủ trên không" đã đập tan ý đồ sử dụng sức mạnh quân sự B-52 để ép buộc Việt Nam chấp nhận các điều kiện phi lý.', align: 'right', img: 'https://upload.wikimedia.org/wikipedia/commons/5/5f/Hanoi_B-52_wreckage.jpg' },
               { year: '8–23/1/1973',  tag: 'Hoàn thiện', tagColor: 'bg-gray-800', title: 'Hoàn tất và ký tắt văn bản hiệp định', desc: 'Sau các nỗ lực đấu tranh không mệt mỏi, các điều khoản cốt lõi về độc lập dân tộc đã được bảo vệ thành công trong văn bản cuối cùng.', align: 'left' },
@@ -1154,8 +1154,14 @@ function App() {
             </p>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
+              {
+                name: 'Pierre Mendès France', role: 'Thủ tướng Pháp (1954)',
+                img: 'https://upload.wikimedia.org/wikipedia/commons/4/46/Pierre_Mend%C3%A8s_France_1954.jpg',
+                border: 'border-blue-900/40', hoverBorder: 'hover:border-blue-500/60',
+                desc: 'Người đại diện chính phủ Pháp ký kết Hiệp định Giơ-ne-vơ. Ông đã đưa ra cam kết lịch sử về việc giải quyết hòa bình tại Đông Dương trong thời hạn 30 ngày đàm phán.',
+              },
               {
                 name: 'Richard Nixon', role: 'Tổng thống Hoa Kỳ',
                 img: 'https://upload.wikimedia.org/wikipedia/commons/2/2c/Richard_Nixon_presidential_portrait.jpg',

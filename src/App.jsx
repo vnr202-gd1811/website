@@ -147,13 +147,6 @@ function MarqueeTicker() {
   );
 }
 
-/* ─── Đường dẫn hình ảnh cục bộ (Local Assets) ─── */
-const getImg = (name) => {
-  const isProd = import.meta.env.PROD;
-  const base = isProd ? '/VNR202' : '';
-  return `${base}/images/${name}`;
-};
-
 /* ─── ỨNG DỤNG CHÍNH ─── */
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -443,7 +436,7 @@ function App() {
             <Reveal dir="left">
               <div className="bg-white border-t-8 border-vn-red shadow-2xl rounded-sm overflow-hidden group hover:-translate-y-2 transition-transform duration-500 h-full">
                 <div className="relative overflow-hidden">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Dien_Bien_Phu_May_1954.jpg" alt="Điện Biên Phủ 1954" className="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Victory_in_Battle_of_Dien_Bien_Phu.jpg" alt="Điện Biên Phủ 1954" className="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                   <div className="absolute bottom-4 left-5 text-white font-bold text-xs uppercase tracking-[0.2em]">Thắng lợi Điện Biên Phủ · 1954</div>
                 </div>
@@ -474,16 +467,16 @@ function App() {
             <Reveal dir="right">
               <div className="bg-white border-t-8 border-vn-gold shadow-2xl rounded-sm overflow-hidden group hover:-translate-y-2 transition-transform duration-500 h-full">
                 <div className="relative overflow-hidden">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/B-52D_Vietnam.jpg" alt="B-52" className="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Paris_Conference_on_Vietnam_1973.jpg" alt="Hội nghị Pa-ri 1973" className="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                  <div className="absolute bottom-4 left-5 text-white font-bold text-xs uppercase tracking-[0.2em]">Cục diện chiến tranh Hoa Kỳ · 1973</div>
+                  <div className="absolute bottom-4 left-5 text-white font-bold text-xs uppercase tracking-[0.2em]">Hội nghị Pa-ri · 1973</div>
                 </div>
                 <div className="p-8 flex flex-col justify-between">
                   <div className="flex items-center gap-4 mb-6 pb-4 border-b-2 border-vn-gold/25">
                     <span className="text-6xl text-vn-gold font-serif font-bold drop-shadow">1973</span>
                     <div>
                       <h3 className="text-2xl text-history-dark font-serif uppercase tracking-wider">Pa-ri</h3>
-                      <p className="text-yellow-600 font-semibold text-xs uppercase tracking-widest">Buộc Hoa Kỳ rút khỏi chiến tranh</p>
+                      <p className="text-yellow-600 font-semibold text-xs uppercase tracking-widest">Giai đoạn đấu trí ngoại giao đỉnh cao</p>
                     </div>
                   </div>
                   <ul className="space-y-4 text-gray-700 text-sm font-sans">

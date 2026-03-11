@@ -912,28 +912,35 @@ function App() {
             </p>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {[
               {
-                name: 'Lê Đức Thọ', title: 'Cố vấn Đặc biệt', color: 'border-vn-gold', glow: 'hover:shadow-[0_10px_40px_rgba(255,205,0,0.2)]',
+                name: 'Phạm Văn Đồng', title: 'Trưởng phái đoàn (1954)', color: 'border-vn-gold', glow: 'hover:shadow-[0:10px_40px_rgba(255,205,0:0.2)]',
+                img: 'https://upload.wikimedia.org/wikipedia/commons/3/3d/Pham_Van_Dong_cropped.jpg',
+                nameColor: 'text-vn-gold',
+                tagStyle: 'text-vn-red bg-vn-red/10',
+                desc: 'Trưởng phái đoàn Việt Nam Dân chủ Cộng hòa (VNDCCH) tại Hội nghị Giơ-ne-vơ 1954. Với bản lĩnh và sự sắc sảo, ông đã đấu tranh quyết liệt để quốc tế công nhận độc lập, chủ quyền của Việt Nam.',
+              },
+              {
+                name: 'Lê Đức Thọ', title: 'Cố vấn Đặc biệt (1973)', color: 'border-vn-gold', glow: 'hover:shadow-[0_10px_40px_rgba(255,205,0,0.2)]',
                 img: 'https://upload.wikimedia.org/wikipedia/commons/e/ee/Le_Duc_Tho.jpg',
                 nameColor: 'text-vn-gold',
                 tagStyle: 'text-vn-red bg-vn-red/10',
-                desc: 'Đại diện đàm phán bí mật — người trực tiếp đấu trí với Henry Kissinger. Ông kiên trì với những nguyên tắc nền tảng nhưng linh hoạt trong sách lược, buộc đối phương phải đi vào thỏa thuận thực chất.',
+                desc: 'Đại diện đàm phán bí mật tại Pa-ri — người trực tiếp đối trọng với Henry Kissinger. Ông nổi tiếng với phong thái kiên định về nguyên tắc chiến lược nhưng linh hoạt trong sách lược ngoại giao.',
               },
               {
-                name: 'Xuân Thủy', title: 'Trưởng đoàn Đàm phán', color: 'border-gray-400', glow: 'hover:shadow-[0_10px_40px_rgba(255,255,255,0.05)]',
+                name: 'Xuân Thủy', title: 'Trưởng đoàn Đàm phán (1973)', color: 'border-gray-400', glow: 'hover:shadow-[0_255,255,255,0.05)]',
                 img: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Xuan_Thuy.jpg',
                 nameColor: 'text-white',
                 tagStyle: 'text-gray-400 bg-gray-800',
-                desc: 'Trưởng đoàn Việt Nam Dân chủ Cộng hòa (VNDCCH) tại các phiên họp công khai. Ông đảm nhiệm vai trò cầm nhịp đàm phán, tạo ra không gian chiến thuật cần thiết cho các cuộc tiếp xúc bí mật.',
+                desc: 'Trưởng đoàn VNDCCH tại các phiên họp công khai Hội nghị Pa-ri. Ông đảm nhiệm vai trò cầm nhịp và điều phối, tạo không gian chiến thuật cho các cuộc tiếp xúc bí mật đạt kết quả.',
               },
               {
-                name: 'Nguyễn Thị Bình', title: 'Trưởng đoàn Đàm phán', color: 'border-vn-red', glow: 'hover:shadow-[0_10px_40px_rgba(218,37,29,0.2)]',
+                name: 'Nguyễn Thị Bình', title: 'Trưởng đoàn Đàm phán (1973)', color: 'border-vn-red', glow: 'hover:shadow-[0_10px_40px_rgba(218,37,29,0.2)]',
                 img: 'https://upload.wikimedia.org/wikipedia/commons/7/75/Nguyen_Thi_Binh.jpg',
                 nameColor: 'text-white',
                 tagStyle: 'text-vn-red bg-vn-red/10',
-                desc: 'Trưởng đoàn Chính phủ Cách mạng lâm thời Cộng hòa miền Nam Việt Nam (CP CMLT CHMN VN). Bà là biểu tượng của tính chính nghĩa và nhạy bén chính trị trên trường quốc tế.',
+                desc: 'Trưởng đoàn Chính phủ Cách mạng lâm thời Cộng hòa miền Nam Việt Nam (CP CMLT CHMN VN). Bà là biểu tượng cho tính chính nghĩa và nhạy bén chính trị trên trường quốc tế.',
               },
             ].map((person, i) => (
               <Reveal key={i} delay={i * 120}>

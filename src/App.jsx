@@ -436,9 +436,9 @@ function App() {
             <Reveal dir="left">
               <div className="bg-white border-t-8 border-vn-red shadow-2xl rounded-sm overflow-hidden group hover:-translate-y-2 transition-transform duration-500 h-full">
                 <div className="relative overflow-hidden">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Victory_in_Battle_of_Dien_Bien_Phu.jpg" alt="Điện Biên Phủ 1954" className="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" />
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6AW-CpE97cKpAtLSnTZAvsCuMgNwv96KWbw&s" alt="Điện Biên Phủ 1954" className="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                  <div className="absolute bottom-4 left-5 text-white font-bold text-xs uppercase tracking-[0.2em]">Thắng lợi Điện Biên Phủ · 1954</div>
+                  <div className="absolute bottom-4 left-5 text-white font-bold text-xs uppercase tracking-[0.2em]">Hiệp định Genève · 1954</div>
                 </div>
                 <div className="p-8 flex flex-col justify-between">
                   <div className="flex items-center gap-4 mb-6 pb-4 border-b-2 border-vn-red/15">

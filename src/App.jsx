@@ -274,45 +274,69 @@ function App() {
       ════════════════════════════════ */}
       <section id="stats" className="py-20 bg-vn-red relative overflow-hidden noise-layer">
         <div className="absolute inset-0 bg-gradient-to-r from-[#8b0000] via-vn-red to-[#8b0000]" />
-        <div className="container mx-auto px-4 max-w-6xl relative z-10">
+        <div className="container mx-auto px-4 max-w-7xl relative z-10">
           <Reveal>
             <h2 className="text-3xl md:text-4xl text-vn-gold text-center font-serif font-bold uppercase tracking-wider mb-4">
               Dữ liệu Thống kê Tiến trình
             </h2>
-            <p className="text-center text-red-100 text-xs md:text-sm mb-12 uppercase tracking-[0.2em] font-medium opacity-80">Hội nghị Pa-ri (1968–1973)</p>
+            <p className="text-center text-red-100 text-xs md:text-sm mb-12 uppercase tracking-[0.2em] font-medium opacity-80">Quy mô các cuộc đàm phán lịch sử tiêu biểu (1954 & 1973)</p>
           </Reveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { val: 201,  suffix: '',    label: 'Phiên họp công khai',    icon: '🏛️' },
-              { val: 45,   suffix: '',    label: 'Cuộc gặp riêng cấp cao', icon: '🤝' },
-              { val: 500,  suffix: '+',   label: 'Cuộc họp báo chuyên đề', icon: '📰' },
-              { val: 1000, suffix: '+',   label: 'Cuộc phỏng vấn báo chí', icon: '🎙️' },
-            ].map((item, i) => (
-              <Reveal key={i} delay={i * 120}>
-                <div className="bg-black/25 backdrop-blur-sm border border-vn-gold/20 p-6 text-center rounded-sm hover:bg-black/45 transition-all duration-300">
-                  <div className="text-3xl mb-3 opacity-80">{item.icon}</div>
-                  <div className="text-4xl md:text-5xl font-serif font-bold text-vn-gold mb-2">
-                    <Counter target={item.val} suffix={item.suffix} />
-                  </div>
-                  <div className="text-[10px] md:text-xs text-red-100 uppercase tracking-widest font-semibold">{item.label}</div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-
-          <div className="mt-10 grid md:grid-cols-2 gap-6">
+          <div className="grid lg:grid-cols-2 gap-10">
+            {/* Thống kê Giơ-ne-vơ */}
             <Reveal dir="left">
-              <div className="bg-black/30 border border-vn-gold/20 p-8 rounded-sm text-center">
-                <div className="text-4xl md:text-5xl font-serif font-bold text-vn-gold mb-2 leading-tight">4 năm 8 tháng 14 ngày</div>
-                <div className="text-red-100 text-xs uppercase tracking-widest opacity-80">Tổng thời gian đàm phán tại Pa-ri</div>
+              <div className="bg-black/20 backdrop-blur-sm border border-vn-gold/20 p-8 rounded-sm h-full">
+                <div className="flex items-center gap-4 mb-8 pb-4 border-b border-white/10">
+                  <span className="text-3xl font-serif font-bold text-vn-gold">1954</span>
+                  <h3 className="text-white font-bold uppercase tracking-widest text-sm">Hội nghị Giơ-ne-vơ</h3>
+                </div>
+                <div className="grid grid-cols-3 gap-4">
+                  {[
+                    { val: 75, suffix: '',  label: 'Ngày thương lượng', icon: '⏳' },
+                    { val: 8,  suffix: '',  label: 'Phiên họp rộng',    icon: '🏛️' },
+                    { val: 23, suffix: '',  label: 'Phiên họp hẹp',     icon: '👥' },
+                  ].map((item, i) => (
+                    <div key={i} className="text-center">
+                      <div className="text-2xl md:text-3xl font-serif font-bold text-vn-gold mb-1">
+                        <Counter target={item.val} suffix={item.suffix} />
+                      </div>
+                      <div className="text-[9px] text-red-100 uppercase tracking-widest leading-tight">{item.label}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-8 bg-white/5 p-4 rounded-sm">
+                  <p className="text-red-100 text-xs italic leading-relaxed opacity-80 font-sans">
+                    "Tiến trình đàm phán đa phương đầu tiên của Việt Nam Dân chủ Cộng hòa (VNDCCH) trên diễn đàn quốc tế, diễn ra trong bối cảnh cục diện Chiến tranh Lạnh đang định hình."
+                  </p>
+                </div>
               </div>
             </Reveal>
+
+            {/* Thống kê Pa-ri */}
             <Reveal dir="right">
-              <div className="bg-black/30 border border-vn-gold/20 p-8 rounded-sm text-center">
-                <div className="text-2xl md:text-3xl font-serif font-bold text-vn-gold mb-2 leading-tight text-center flex flex-col justify-center h-full">
-                  75 ngày đàm phán<br/>
-                  <span className="text-base text-red-200 uppercase tracking-widest mt-2">Hội nghị Giơ-ne-vơ (1954)</span>
+              <div className="bg-black/20 backdrop-blur-sm border border-vn-gold/20 p-8 rounded-sm h-full">
+                <div className="flex items-center gap-4 mb-8 pb-4 border-b border-white/10">
+                  <span className="text-3xl font-serif font-bold text-vn-gold">1973</span>
+                  <h3 className="text-white font-bold uppercase tracking-widest text-sm">Hội nghị Pa-ri</h3>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                  {[
+                    { val: 201,  suffix: '',  label: 'Phiên công khai', icon: '🏛️' },
+                    { val: 45,   suffix: '',  label: 'Gặp riêng cấp cao', icon: '🤝' },
+                    { val: 500,  suffix: '+', label: 'Cuộc họp báo',     icon: '📰' },
+                    { val: 1000, suffix: '+', label: 'Cuộc phỏng vấn',   icon: '🎙️' },
+                  ].map((item, i) => (
+                    <div key={i} className="text-center">
+                      <div className="text-xl md:text-2xl font-serif font-bold text-vn-gold mb-1">
+                        <Counter target={item.val} suffix={item.suffix} />
+                      </div>
+                      <div className="text-[9px] text-red-100 uppercase tracking-widest leading-tight">{item.label}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="bg-white/5 p-4 rounded-sm text-center">
+                  <div className="text-2xl md:text-3xl font-serif font-bold text-vn-gold leading-tight">4 năm 8 tháng 14 ngày</div>
+                  <div className="text-red-100 text-[10px] uppercase tracking-widest opacity-80 mt-1 font-sans">Tổng thời gian tiến trình đàm phán tại Pa-ri</div>
                 </div>
               </div>
             </Reveal>

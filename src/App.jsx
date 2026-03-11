@@ -467,7 +467,7 @@ function App() {
             <Reveal dir="right">
               <div className="bg-white border-t-8 border-vn-gold shadow-2xl rounded-sm overflow-hidden group hover:-translate-y-2 transition-transform duration-500 h-full">
                 <div className="relative overflow-hidden">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Paris_Conference_on_Vietnam_1973.jpg" alt="Hội nghị Pa-ri 1973" className="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" />
+                  <img src="https://cdn.tienphong.vn/images/814b5533c866dc3540018a126103e93562013c5781a55280ecb18b6bbfcbb27a7f4c7dfff60df460ce0fefbf7032ac543318f0bafb8a85aff7d30db4e140aaee/1973-7123.jpg" alt="Hội nghị Pa-ri 1973" className="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                   <div className="absolute bottom-4 left-5 text-white font-bold text-xs uppercase tracking-[0.2em]">Hội nghị Pa-ri · 1973</div>
                 </div>
@@ -576,7 +576,7 @@ function App() {
               { year: '30/3/1972',    tag: 'Tác động',   tagColor: 'bg-orange-800','title': 'Ảnh hưởng từ cuộc Tiến công Xuân – Hè', desc: 'Thành tựu quân sự trên chiến trường buộc phía Hoa Kỳ phải chuyển sang giai đoạn thảo luận thực chất về các điều khoản rút quân.', align: 'left' },
               { year: '8/10/1972',    tag: 'Đột phá',    tagColor: 'bg-vn-gold text-black', title: 'Trình dự thảo Hiệp định đầu tiên', desc: 'Việt Nam chủ động đưa ra dự thảo toàn văn hiệp định, tạo bước ngoặt đột phá cho toàn bộ tiến trình đàm phán kéo dài nhiều năm.', align: 'right', img: 'https://ttdn.vn/Uploads/Images/2023/1/26/21/cac-dau-moc-chinh-trong-cuoc-dam-phan-hiep-dinh-paris-20230113091825.jpg' },
               { year: '20/10/1972',   tag: 'Thỏa thuận', tagColor: 'bg-vn-gold text-black', title: 'Đạt khung thỏa thuận nguyên tắc', desc: 'Hai bên cơ bản thống nhất các nội dung chính, tuy nhiên phía Hoa Kỳ sau đó đã có các hành động trì hoãn và leo thang quân sự.', align: 'left' },
-              { year: '18–30/12/1972',tag: 'Vô hiệu hóa',tagColor: 'bg-vn-red',   title: 'Vô hiệu hóa các áp lực quân sự của Mỹ', desc: 'Chiến thắng "Điện Biên Phủ trên không" đã đập tan ý đồ sử dụng sức mạnh quân sự B-52 để ép buộc Việt Nam chấp nhận các điều kiện phi lý.', align: 'right', img: 'https://upload.wikimedia.org/wikipedia/commons/5/5f/Hanoi_B-52_wreckage.jpg' },
+              { year: '18–30/12/1972',tag: 'Vô hiệu hóa',tagColor: 'bg-vn-red',   title: 'Vô hiệu hóa các áp lực quân sự của Mỹ', desc: 'Chiến thắng "Điện Biên Phủ trên không" đã đập tan ý đồ sử dụng sức mạnh quân sự B-52 để ép buộc Việt Nam chấp nhận các điều kiện phi lý.', align: 'right', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh9QiiszSpGWEazIVoNBIrH1arCL6y4RcjXQ&s' },
               { year: '8–23/1/1973',  tag: 'Hoàn thiện', tagColor: 'bg-gray-800', title: 'Hoàn tất và ký tắt văn bản hiệp định', desc: 'Sau các nỗ lực đấu tranh không mệt mỏi, các điều khoản cốt lõi về độc lập dân tộc đã được bảo vệ thành công trong văn bản cuối cùng.', align: 'left' },
               { year: '27/1/1973',    tag: 'Chính thức', tagColor: 'bg-vn-gold text-black', title: 'Ký kết chính thức Hiệp định Pa-ri', desc: 'Hoa Kỳ cam kết rút toàn bộ quân đội, hoàn thành mục tiêu chiến lược "Đánh cho Mỹ cút", tạo đà cho thắng lợi hoàn toàn năm 1975.', align: 'right' },
             ].map((item, i) => (
@@ -916,28 +916,28 @@ function App() {
             {[
               {
                 name: 'Phạm Văn Đồng', title: 'Trưởng phái đoàn (1954)', color: 'border-vn-gold', glow: 'hover:shadow-[0:10px_40px_rgba(255,205,0:0.2)]',
-                img: 'https://upload.wikimedia.org/wikipedia/commons/3/3d/Pham_Van_Dong_cropped.jpg',
+                img: 'https://upload.wikimedia.org/wikipedia/commons/2/25/PhamVanDong1954.jpg',
                 nameColor: 'text-vn-gold',
                 tagStyle: 'text-vn-red bg-vn-red/10',
                 desc: 'Trưởng phái đoàn Việt Nam Dân chủ Cộng hòa (VNDCCH) tại Hội nghị Giơ-ne-vơ 1954. Với bản lĩnh và sự sắc sảo, ông đã đấu tranh quyết liệt để quốc tế công nhận độc lập, chủ quyền của Việt Nam.',
               },
               {
                 name: 'Lê Đức Thọ', title: 'Cố vấn Đặc biệt (1973)', color: 'border-vn-gold', glow: 'hover:shadow-[0_10px_40px_rgba(255,205,0,0.2)]',
-                img: 'https://upload.wikimedia.org/wikipedia/commons/e/ee/Le_Duc_Tho.jpg',
+                img: 'https://upload.wikimedia.org/wikipedia/vi/1/10/Le_Duc_Tho.jpg',
                 nameColor: 'text-vn-gold',
                 tagStyle: 'text-vn-red bg-vn-red/10',
                 desc: 'Đại diện đàm phán bí mật tại Pa-ri — người trực tiếp đối trọng với Henry Kissinger. Ông nổi tiếng với phong thái kiên định về nguyên tắc chiến lược nhưng linh hoạt trong sách lược ngoại giao.',
               },
               {
                 name: 'Xuân Thủy', title: 'Trưởng đoàn Đàm phán (1973)', color: 'border-gray-400', glow: 'hover:shadow-[0_255,255,255,0.05)]',
-                img: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Xuan_Thuy.jpg',
+                img: 'https://upload.wikimedia.org/wikipedia/vi/c/c2/Xu%C3%A2n_Thu%E1%BB%B7.jpg',
                 nameColor: 'text-white',
                 tagStyle: 'text-gray-400 bg-gray-800',
                 desc: 'Trưởng đoàn VNDCCH tại các phiên họp công khai Hội nghị Pa-ri. Ông đảm nhiệm vai trò cầm nhịp và điều phối, tạo không gian chiến thuật cho các cuộc tiếp xúc bí mật đạt kết quả.',
               },
               {
                 name: 'Nguyễn Thị Bình', title: 'Trưởng đoàn Đàm phán (1973)', color: 'border-vn-red', glow: 'hover:shadow-[0_10px_40px_rgba(218,37,29,0.2)]',
-                img: 'https://upload.wikimedia.org/wikipedia/commons/7/75/Nguyen_Thi_Binh.jpg',
+                img: 'https://cdn2.tuoitre.vn/thumb_w/730/471584752817336320/2023/1/8/kienthuc-madam-binh-03-copy-16731629946371333670470.jpg',
                 nameColor: 'text-white',
                 tagStyle: 'text-vn-red bg-vn-red/10',
                 desc: 'Trưởng đoàn Chính phủ Cách mạng lâm thời Cộng hòa miền Nam Việt Nam (CP CMLT CHMN VN). Bà là biểu tượng cho tính chính nghĩa và nhạy bén chính trị trên trường quốc tế.',
@@ -1013,7 +1013,7 @@ function App() {
             <Reveal dir="left">
               <div className="bg-[#1a0505] border-r border-white/5 p-10 flex flex-col items-center text-center h-full group">
                 <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-vn-red mb-6 shadow-2xl relative">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Le_Duc_Tho.jpg" alt="Lê Đức Thọ"
+                  <img src="https://upload.wikimedia.org/wikipedia/vi/1/10/Le_Duc_Tho.jpg" alt="Lê Đức Thọ"
                     className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0" />
                 </div>
                 <h3 className="text-2xl font-serif font-bold text-vn-gold uppercase tracking-widest mb-1 leading-none">Lê Đức Thọ</h3>
@@ -1028,7 +1028,7 @@ function App() {
             <Reveal dir="right">
               <div className="bg-[#00050f] p-10 flex flex-col items-center text-center h-full group">
                 <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-blue-800 mb-6 shadow-2xl relative">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Henry_Kissinger_1974.jpg" alt="Henry Kissinger"
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Henry_Kissinger.jpg/500px-Henry_Kissinger.jpg" alt="Henry Kissinger"
                     className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0" />
                 </div>
                 <h3 className="text-2xl font-serif font-bold text-blue-400 uppercase tracking-widest mb-1 leading-none">Henry Kissinger</h3>
@@ -1158,25 +1158,25 @@ function App() {
             {[
               {
                 name: 'Pierre Mendès France', role: 'Thủ tướng Pháp (1954)',
-                img: 'https://upload.wikimedia.org/wikipedia/commons/4/46/Pierre_Mend%C3%A8s_France_1954.jpg',
+                img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Pierre_Mend%C3%A8s_France_1968.jpg/250px-Pierre_Mend%C3%A8s_France_1968.jpg',
                 border: 'border-blue-900/40', hoverBorder: 'hover:border-blue-500/60',
                 desc: 'Người đại diện chính phủ Pháp ký kết Hiệp định Giơ-ne-vơ. Ông đã đưa ra cam kết lịch sử về việc giải quyết hòa bình tại Đông Dương trong thời hạn 30 ngày đàm phán.',
               },
               {
                 name: 'Richard Nixon', role: 'Tổng thống Hoa Kỳ',
-                img: 'https://upload.wikimedia.org/wikipedia/commons/2/2c/Richard_Nixon_presidential_portrait.jpg',
+                img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Richard_Nixon_presidential_portrait.jpg/250px-Richard_Nixon_presidential_portrait.jpg',
                 border: 'border-blue-900/40', hoverBorder: 'hover:border-blue-500/60',
                 desc: 'Người đề ra "Học thuyết Nixon" và triển khai chiến lược "Việt Nam hóa chiến tranh". Ông là người ra các quyết sách leo thang quân sự khốc liệt nhằm tìm kiếm vị thế đàm phán có lợi cho Mỹ.',
               },
               {
                 name: 'Henry Kissinger', role: 'Cố vấn An ninh Quốc gia Mỹ',
-                img: 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Henry_Kissinger_1974.jpg',
+                img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Henry_Kissinger.jpg/500px-Henry_Kissinger.jpg',
                 border: 'border-blue-800/40', hoverBorder: 'hover:border-blue-400/60',
                 desc: 'Nhà ngoại giao kỳ cựu trực tiếp tham gia tiến trình đàm phán bí mật. Sau này, ông đã thừa nhận sự kiên định và mưu lược của phái đoàn Việt Nam vượt xa các dự báo chiến lược từ phía Mỹ.',
               },
               {
                 name: 'Ngô Đình Diệm', role: 'Tổng thống VNCH (1955-1963)',
-                img: 'https://upload.wikimedia.org/wikipedia/commons/1/11/Ngo_Dinh_Diem_-_Color_Portrait.jpg',
+                img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/President_NGO-DINH-DIEM_of_the_Republic_of_Viet-Nam.jpg/250px-President_NGO-DINH-DIEM_of_the_Republic_of_Viet-Nam.jpg',
                 border: 'border-blue-900/40', hoverBorder: 'hover:border-blue-700/60',
                 desc: 'Nhân vật tiêu biểu cho chính sách phá hoại Hiệp định Giơ-ne-vơ sau năm 1954 tại miền Nam. Liên minh Mỹ - Diệm bị ghi nhận với các hành động từ chối hiệp thương tổng tuyển cử quốc gia.',
               },

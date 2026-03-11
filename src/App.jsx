@@ -147,6 +147,13 @@ function MarqueeTicker() {
   );
 }
 
+/* ─── Đường dẫn hình ảnh cục bộ (Local Assets) ─── */
+const getImg = (name) => {
+  const isProd = import.meta.env.PROD;
+  const base = isProd ? '/VNR202' : '';
+  return `${base}/images/${name}`;
+};
+
 /* ─── ỨNG DỤNG CHÍNH ─── */
 function App() {
   const [activeSection, setActiveSection] = useState('hero');

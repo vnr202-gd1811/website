@@ -18,13 +18,6 @@ const sections = [
   { id: 'team',          label: 'Thành viên nhóm' },
 ];
 
-/* ─── Đường dẫn hình ảnh cục bộ (Local Assets) ─── */
-const getImg = (name) => {
-  const isProd = import.meta.env.PROD;
-  const base = isProd ? '/website' : '';
-  return `${base}/images/${name}`;
-};
-
 /* ─── Biểu tượng Ngôi sao vàng Việt Nam ─── */
 function VNStar({ size = 48, className = '' }) {
   return (
@@ -279,7 +272,7 @@ function App() {
       {/* ════════════════════════════════
           SỐ LIỆU THỐNG KÊ KHOA HỌC
       ════════════════════════════════ */}
-      <section id="stats" className="py-20 bg-vn-red relative overflow-hidden noise-layer font-sans">
+      <section id="stats" className="py-20 bg-vn-red relative overflow-hidden noise-layer">
         <div className="absolute inset-0 bg-gradient-to-r from-[#8b0000] via-vn-red to-[#8b0000]" />
         <div className="container mx-auto px-4 max-w-7xl relative z-10">
           <Reveal>
@@ -382,7 +375,7 @@ function App() {
               {
                 icon: '🛡️',
                 title: 'Cô lập đối trọng ngoại giao',
-                text: 'Mặt trận ngoại giao thực hiện nhiệm vụ cô lập các thế lực xâm lược về phương diện pháp lý và chính trị trên các diễn đàn đa phương, đồng thời khẳng định tính chính nghĩa tối thượng của cuộc đấu tranh dân tộc Việt Nam.',
+                text: 'Mặt trận ngoại giao thực hiện nhiệm vụ cô lập các thế lực xâm lược về phương diện pháp lý và chính trị trên các diễn đàn đa phương, đồng thời khẳng định tính chính nghĩa của cuộc đấu tranh dân tộc Việt Nam.',
                 color: 'border-vn-gold',
               },
               {
@@ -428,7 +421,7 @@ function App() {
       {/* ════════════════════════════════
           BỐI CẢNH LỊCH SỬ KHÁCH QUAN
       ════════════════════════════════ */}
-      <section id="context" className="py-24 relative overflow-hidden font-sans">
+      <section id="context" className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#fdf6e3] via-white to-[#fff5f5]" />
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
           <Reveal>
@@ -443,9 +436,9 @@ function App() {
             <Reveal dir="left">
               <div className="bg-white border-t-8 border-vn-red shadow-2xl rounded-sm overflow-hidden group hover:-translate-y-2 transition-transform duration-500 h-full">
                 <div className="relative overflow-hidden">
-                  <img src={getImg('dien-bien-phu.jpg')} alt="Điện Biên Phủ 1954" className="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" />
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6AW-CpE97cKpAtLSnTZAvsCuMgNwv96KWbw&s" alt="Điện Biên Phủ 1954" className="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                  <div className="absolute bottom-4 left-5 text-white font-bold text-xs uppercase tracking-[0.2em]">Thắng lợi Điện Biên Phủ · 1954</div>
+                  <div className="absolute bottom-4 left-5 text-white font-bold text-xs uppercase tracking-[0.2em]">Hiệp định Genève · 1954</div>
                 </div>
                 <div className="p-8 flex flex-col justify-between">
                   <div className="flex items-center gap-4 mb-6 pb-4 border-b-2 border-vn-red/15">
@@ -474,7 +467,7 @@ function App() {
             <Reveal dir="right">
               <div className="bg-white border-t-8 border-vn-gold shadow-2xl rounded-sm overflow-hidden group hover:-translate-y-2 transition-transform duration-500 h-full">
                 <div className="relative overflow-hidden">
-                  <img src={getImg('paris-talks.jpg')} alt="Hội nghị Pa-ri 1973" className="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" />
+                  <img src="https://cdn.tienphong.vn/images/814b5533c866dc3540018a126103e93562013c5781a55280ecb18b6bbfcbb27a7f4c7dfff60df460ce0fefbf7032ac543318f0bafb8a85aff7d30db4e140aaee/1973-7123.jpg" alt="Hội nghị Pa-ri 1973" className="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                   <div className="absolute bottom-4 left-5 text-white font-bold text-xs uppercase tracking-[0.2em]">Hội nghị Pa-ri · 1973</div>
                 </div>
@@ -488,7 +481,7 @@ function App() {
                   </div>
                   <ul className="space-y-4 text-gray-700 text-sm font-sans">
                     {[
-                      ['Giai đoạn', 'Kháng chiến chống Mỹ, cứu nước (1954 – 1975), trọng tâm đàm phán 1968–1973'],
+                      ['Giai đoạn', 'Kháng chiến chống Mỹ, cứu nước (1954 – 1975), trọng tâm 1968–1973'],
                       ['Đối trọng chính', 'Đế quốc Mỹ và chính quyền Việt Nam Cộng hòa (VNCH)'],
                       ['Thời điểm', 'Khai mạc ngày 13/5/1968 tại Trung tâm Hội nghị Kléber, Paris'],
                       ['Văn kiện', 'Hiệp định được ký kết chính thức vào ngày 27/1/1973'],
@@ -509,7 +502,7 @@ function App() {
               </h3>
               <p className="text-gray-700 leading-relaxed text-base font-sans">
                 Sau Hiệp định Giơ-ne-vơ, thực tiễn đất nước tồn tại tình trạng chia cắt tạm thời với hai chế độ chính trị khác biệt.
-                Hoa Kỳ đã thay thế vị thế của thực dân Pháp tại miền Nam, thiết lập chính quyền tay sai và thực hiện các chính sách phá hoại hiệp định, 
+                Hoa Kỳ đã thay thế vị thế của thực dân Pháp tại miền Nam, thiết lập chính quyền Việt Nam Cộng hòa do Hoa Kỳ hậu thuẫn và thực hiện các chính sách phá hoại hiệp định, 
                 đặc biệt là việc từ chối tổ chức hiệp thương tổng tuyển cử thống nhất quốc gia. Trong bối cảnh đó, Phái đoàn Việt Nam đã chuyển trọng tâm sang đấu tranh
                 pháp lý và ngoại giao trên các diễn đàn quốc tế nhằm bảo vệ quyền tự quyết dân tộc và tính chính đáng của công cuộc thống nhất.
               </p>
@@ -542,9 +535,9 @@ function App() {
             </div>
           </Reveal>
 
-          <div className="relative timeline-line py-4 font-sans">
+          <div className="relative timeline-line py-4">
             {[
-              { year: '8/5/1954',  tag: 'Khai mạc',  tagColor: 'bg-vn-red',  title: 'Khai mạc Hội nghị Giơ-ne-vơ', desc: 'Diễn ra ngay sau chiến thắng Điện Biên Phủ. Các thành tựu trên mặt trận quân sự đã trực tiếp củng cố vị thế cho mặt trận ngoại giao của Việt Nam.', align: 'left', img: getImg('geneva-conference.jpg') },
+              { year: '8/5/1954',  tag: 'Khai mạc',  tagColor: 'bg-vn-red',  title: 'Khai mạc Hội nghị Giơ-ne-vơ', desc: 'Diễn ra ngay sau chiến thắng Điện Biên Phủ. Các thành tựu trên mặt trận quân sự đã trực tiếp củng cố vị thế cho mặt trận ngoại giao của Việt Nam.', align: 'left', img: 'https://file3.qdnd.vn/data/images/0/2022/05/02/tvkimgiang/hoi-nghi-gionevo.jpg?dpi=150&quality=100&w=870' },
               { year: '20/7/1954', tag: 'Ký kết',    tagColor: 'bg-vn-gold text-black', title: 'Ký kết Hiệp định Giơ-ne-vơ', desc: 'Chấm dứt sự hiện diện quân sự của thực dân Pháp tại Đông Dương. Xác lập quyền độc lập, chủ quyền của ba nước Đông Dương trên phương diện pháp lý quốc tế.', align: 'right' },
               { year: '21/7/1954', tag: 'Tuyên bố',  tagColor: 'bg-vn-red',  title: 'Thông qua Tuyên bố chung Hội nghị', desc: 'Xác lập các điều khoản về đình chỉ chiến sự và dự kiến tổng tuyển cử. Đạt được những kết quả quan trọng nhưng còn tồn tại hạn chế do sự chi phối của các cường quốc.', align: 'left' },
             ].map((item, i) => (
@@ -575,15 +568,15 @@ function App() {
           <div className="relative timeline-line py-4">
             {[
               { year: '10/5/1968',    tag: 'Chuẩn bị',  tagColor: 'bg-blue-800', title: 'Công tác chuẩn bị và tiếp xúc sơ bộ', desc: 'Đại sứ Hà Văn Lâu và phái đoàn chuẩn bị các điều kiện cần thiết cho phiên họp chính thức, thể hiện tính chuyên nghiệp trong ngoại giao chuẩn bị.', align: 'left' },
-              { year: '13/5/1968',    tag: 'Khai mạc',   tagColor: 'bg-vn-red',   title: 'Khai mạc đàm phán chính thức', desc: 'Bắt đầu tiến trình đấu trí ngoại giao công khai tại Paris giữa Phái đoàn Việt Nam Dân chủ Cộng hòa (VNDCCH) và Chính phủ Hoa Kỳ.', align: 'right', img: getImg('paris-talks.jpg') },
+              { year: '13/5/1968',    tag: 'Khai mạc',   tagColor: 'bg-vn-red',   title: 'Khai mạc đàm phán chính thức', desc: 'Bắt đầu tiến trình đấu trí ngoại giao công khai tại Paris giữa Phái đoàn Việt Nam Dân chủ Cộng hòa (VNDCCH) và Chính phủ Hoa Kỳ.', align: 'right', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7C0aw08UGI0jNuqmCUfofBqfi2jfJicRhhA&s' },
               { year: '25/1/1969',    tag: 'Bốn bên',    tagColor: 'bg-vn-red',   title: 'Chuyển sang cơ chế đàm phán bốn bên', desc: 'Vấn đề miền Nam được thảo luận thực chất với sự tham gia của Phái đoàn Chính phủ Cách mạng lâm thời Cộng hòa miền Nam Việt Nam (CP CMLT CHMN VN).', align: 'left' },
               { year: '12/6/1969',    tag: 'Chính danh', tagColor: 'bg-red-900',  title: 'Khẳng định vị thế của CP CMLT CHMN VN', desc: 'Tăng cường tính chính danh pháp lý và đại diện cho nguyện vọng của nhân dân miền Nam Việt Nam trên bàn hội nghị quốc tế.', align: 'right' },
               { year: '21/2/1970',    tag: 'Bí mật',     tagColor: 'bg-gray-800', title: 'Khởi đầu tiến trình đàm phán bí mật', desc: 'Các cuộc gặp kín giữa cố vấn Việt Nam và đại diện phía Mỹ bắt đầu tháo gỡ những nút thắt căn bản nhất của bản dự thảo.', align: 'left' },
               { year: '26/6–1/7/1971',tag: 'Sáng kiến', tagColor: 'bg-vn-red',   title: 'Việt Nam đưa ra các giải pháp hòa bình', desc: 'Chủ động đưa ra các sáng kiến 9 điểm và 7 điểm nhằm tranh thủ sự đồng tình của dư luận quốc tế và chính giới Hoa Kỳ.', align: 'right' },
               { year: '30/3/1972',    tag: 'Tác động',   tagColor: 'bg-orange-800','title': 'Ảnh hưởng từ cuộc Tiến công Xuân – Hè', desc: 'Thành tựu quân sự trên chiến trường buộc phía Hoa Kỳ phải chuyển sang giai đoạn thảo luận thực chất về các điều khoản rút quân.', align: 'left' },
-              { year: '8/10/1972',    tag: 'Đột phá',    tagColor: 'bg-vn-gold text-black', title: 'Trình dự thảo Hiệp định đầu tiên', desc: 'Việt Nam chủ động đưa ra dự thảo toàn văn hiệp định, tạo bước ngoặt đột phá cho toàn bộ tiến trình đàm phán kéo dài nhiều năm.', align: 'right', img: getImg('signing-paris.jpg') },
+              { year: '8/10/1972',    tag: 'Đột phá',    tagColor: 'bg-vn-gold text-black', title: 'Trình dự thảo Hiệp định đầu tiên', desc: 'Việt Nam chủ động đưa ra dự thảo toàn văn hiệp định, tạo bước ngoặt đột phá cho toàn bộ tiến trình đàm phán kéo dài nhiều năm.', align: 'right', img: 'https://ttdn.vn/Uploads/Images/2023/1/26/21/cac-dau-moc-chinh-trong-cuoc-dam-phan-hiep-dinh-paris-20230113091825.jpg' },
               { year: '20/10/1972',   tag: 'Thỏa thuận', tagColor: 'bg-vn-gold text-black', title: 'Đạt khung thỏa thuận nguyên tắc', desc: 'Hai bên cơ bản thống nhất các nội dung chính, tuy nhiên phía Hoa Kỳ sau đó đã có các hành động trì hoãn và leo thang quân sự.', align: 'left' },
-              { year: '18–30/12/1972',tag: 'Vô hiệu hóa',tagColor: 'bg-vn-red',   title: 'Vô hiệu hóa các áp lực quân sự của Mỹ', desc: 'Chiến thắng "Điện Biên Phủ trên không" đã đập tan ý đồ sử dụng sức mạnh quân sự B-52 để ép buộc Việt Nam chấp nhận các điều kiện phi lý.', align: 'right', img: getImg('b52-wreckage.jpg') },
+              { year: '18–30/12/1972',tag: 'Vô hiệu hóa',tagColor: 'bg-vn-red',   title: 'Vô hiệu hóa các áp lực quân sự của Mỹ', desc: 'Chiến thắng "Điện Biên Phủ trên không" đã làm suy giảm hiệu quả của sức ép quân sự do Hoa Kỳ sử dụng trong giai đoạn cuối đàm phán.', align: 'right', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh9QiiszSpGWEazIVoNBIrH1arCL6y4RcjXQ&s' },
               { year: '8–23/1/1973',  tag: 'Hoàn thiện', tagColor: 'bg-gray-800', title: 'Hoàn tất và ký tắt văn bản hiệp định', desc: 'Sau các nỗ lực đấu tranh không mệt mỏi, các điều khoản cốt lõi về độc lập dân tộc đã được bảo vệ thành công trong văn bản cuối cùng.', align: 'left' },
               { year: '27/1/1973',    tag: 'Chính thức', tagColor: 'bg-vn-gold text-black', title: 'Ký kết chính thức Hiệp định Pa-ri', desc: 'Hoa Kỳ cam kết rút toàn bộ quân đội, hoàn thành mục tiêu chiến lược "Đánh cho Mỹ cút", tạo đà cho thắng lợi hoàn toàn năm 1975.', align: 'right' },
             ].map((item, i) => (
@@ -608,9 +601,9 @@ function App() {
       {/* ════════════════════════════════
           NỘI DUNG VÀ Ý NGHĨA PHÁP LÝ
       ════════════════════════════════ */}
-      <section id="treaty-content" className="py-24 bg-[#fdf6e3] relative overflow-hidden font-sans">
+      <section id="treaty-content" className="py-24 bg-[#fdf6e3] relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/rice-paper.png')] opacity-60" />
-        <div className="container mx-auto px-4 max-w-6xl relative z-10">
+        <div className="container mx-auto px-4 max-w-6xl relative z-10 font-sans">
 
           <Reveal>
             <h2 className="section-title">Nội Dung Hệ Thống Hiệp Định</h2>
@@ -744,7 +737,7 @@ function App() {
                 </div>
                 <ul className="space-y-4 text-sm text-gray-300 leading-relaxed">
                   {[
-                    'Đỉnh cao ngoại giao dân tộc, góp phần vô hiệu hóa hoàn toàn ý chí xâm lược của chính phủ Hoa Kỳ.',
+                    'Đỉnh cao ngoại giao dân tộc, góp phần buộc Hoa Kỳ chấp nhận ký kết Hiệp định Paris và rút quân.',
                     'Hoàn thành mục tiêu chiến lược "Đánh cho Mỹ cút", làm thay đổi căn bản tương quan lực lượng.',
                     'Tạo bước ngoặt quyết định cho cuộc Tổng tiến công và nổi dậy mùa Xuân năm 1975.',
                     { text: 'Xác lập bàn đạp pháp lý và thực địa để thực hiện mục tiêu thống nhất Tổ quốc.', bold: true },
@@ -808,9 +801,9 @@ function App() {
                 </thead>
                 <tbody className="text-[13px] md:text-sm">
                   {[
-                    ['Cơ chế đàm phán', 'Đàm phán đa phương, chịu sự chi phối mạnh mẽ từ trật tự Hai cực.', 'Cơ chế song phương và bốn bên - Việt Nam giữ quyền tự chủ tuyệt đối.', true],
+                    ['Cơ chế đàm phán', 'Đàm phán đa phương, chịu sự chi phối mạnh mẽ từ trật tự Hai cực.', 'Cơ chế song phương và bốn bên - Việt Nam giữ mức độ chủ động cao trong tiến trình đàm phán.', true],
                     ['Thực lực quân sự', 'Kết quả trực tiếp từ chiến thắng Điện Biên Phủ mang tính chấn động.', 'Kết quả của sự vô hiệu hóa các áp lực quân sự tối tân nhất của Mỹ năm 1972.', true],
-                    ['Tính độc lập chiến lược', 'Phụ thuộc nhất định vào sự thỏa hiệp giữa các nước lớn đương thời.', 'Việt Nam hoàn toàn tự quyết tiến trình, phối hợp tranh thủ hỗ trợ đồng minh.', false],
+                    ['Tính độc lập chiến lược', 'Phụ thuộc nhất định vào sự thỏa hiệp giữa các nước lớn đương thời.', 'Việt Nam giữ vai trò chủ động, đồng thời tranh thủ sự ủng hộ quốc tế, phối hợp tranh thủ hỗ trợ đồng minh.', false],
                     ['Tính chất rút quân', 'Thực hiện tập kết quân sự của cả hai bên ra hai khu vực ngăn cách tạm thời.', 'Chỉ lực lượng Hoa Kỳ phải rút quân, lực lượng Việt Nam giữ vững vị thế tại chỗ.', true],
                     ['Tiến trình quốc gia', 'Để lại tình trạng chia cắt và chưa giải quyết dứt điểm mục tiêu thống nhất.', 'Xác lập tiền đề thực tiễn để giải phóng miền Nam, thống nhất đất nước.', true],
                     ['Vị thế chính trị', 'Kết thúc sự hiện diện của thực dân Pháp xâm lược tại miền Bắc.', 'Xác lập thất bại chiến lược của Hoa Kỳ, mở đường cho kỷ nguyên độc lập.', true],
@@ -915,7 +908,7 @@ function App() {
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-vn-red" />
             </h2>
             <p className="text-center text-lg text-gray-400 mb-16 max-w-3xl mx-auto font-serif italic opacity-80 leading-relaxed">
-              Sự kết hợp giữa trí tuệ, bản lĩnh và tính chính nghĩa của phái đoàn Việt Nam trong tiến trình đấu trí lịch sử.
+              Sự kết hợp giữa trí tuệ, bản lĩnh và tính chính nghĩa của phái đoàn Việt Nam trong tiến trình đấu trí tại Paris.
             </p>
           </Reveal>
 
@@ -923,28 +916,28 @@ function App() {
             {[
               {
                 name: 'Phạm Văn Đồng', title: 'Trưởng phái đoàn (1954)', color: 'border-vn-gold', glow: 'hover:shadow-[0_10px_40px_rgba(255,205,0,0.2)]',
-                img: getImg('pham-van-dong.jpg'),
+                img: 'https://upload.wikimedia.org/wikipedia/commons/2/25/PhamVanDong1954.jpg',
                 nameColor: 'text-vn-gold',
                 tagStyle: 'text-vn-red bg-vn-red/10',
                 desc: 'Trưởng phái đoàn Việt Nam Dân chủ Cộng hòa (VNDCCH) tại Hội nghị Giơ-ne-vơ 1954. Với bản lĩnh và sự sắc sảo, ông đã đấu tranh quyết liệt để quốc tế công nhận độc lập, chủ quyền của Việt Nam.',
               },
               {
                 name: 'Lê Đức Thọ', title: 'Cố vấn Đặc biệt (1973)', color: 'border-vn-gold', glow: 'hover:shadow-[0_10px_40px_rgba(255,205,0,0.2)]',
-                img: getImg('le-duc-tho.jpg'),
+                img: 'https://upload.wikimedia.org/wikipedia/vi/1/10/Le_Duc_Tho.jpg',
                 nameColor: 'text-vn-gold',
                 tagStyle: 'text-vn-red bg-vn-red/10',
                 desc: 'Đại diện đàm phán bí mật tại Pa-ri — người trực tiếp đối trọng với Henry Kissinger. Ông nổi tiếng với phong thái kiên định về nguyên tắc chiến lược nhưng linh hoạt trong sách lược ngoại giao.',
               },
               {
                 name: 'Xuân Thủy', title: 'Trưởng đoàn Đàm phán (1973)', color: 'border-gray-400', glow: 'hover:shadow-[0_10px_40px_rgba(255,255,255,0.05)]',
-                img: getImg('xuan-thuy.jpg'),
+                img: 'https://upload.wikimedia.org/wikipedia/vi/c/c2/Xu%C3%A2n_Thu%E1%BB%B7.jpg',
                 nameColor: 'text-white',
                 tagStyle: 'text-gray-400 bg-gray-800',
                 desc: 'Trưởng đoàn VNDCCH tại các phiên họp công khai Hội nghị Pa-ri. Ông đảm nhiệm vai trò cầm nhịp và điều phối, tạo không gian chiến thuật cho các cuộc tiếp xúc bí mật đạt kết quả.',
               },
               {
                 name: 'Nguyễn Thị Bình', title: 'Trưởng đoàn Đàm phán (1973)', color: 'border-vn-red', glow: 'hover:shadow-[0_10px_40px_rgba(218,37,29,0.2)]',
-                img: getImg('nguyen-thi-binh.jpg'),
+                img: 'https://cdn2.tuoitre.vn/thumb_w/730/471584752817336320/2023/1/8/kienthuc-madam-binh-03-copy-16731629946371333670470.jpg',
                 nameColor: 'text-white',
                 tagStyle: 'text-vn-red bg-vn-red/10',
                 desc: 'Trưởng đoàn Chính phủ Cách mạng lâm thời Cộng hòa miền Nam Việt Nam (CP CMLT CHMN VN). Bà là biểu tượng cho tính chính nghĩa và nhạy bén chính trị trên trường quốc tế.',
@@ -992,6 +985,66 @@ function App() {
         </div>
       </section>
 
+      
+
+      {/* ════════════════════════════════
+          PHÍA ĐỐI LẬP (PHÂN TÍCH NHÂN VẬT)
+      ════════════════════════════════ */}
+      <section id="opposing-side" className="py-24 bg-[#0a0a12] text-white relative overflow-hidden font-sans">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#0a0a1a_0%,_#000_80%)]" />
+        <div className="container mx-auto px-4 max-w-6xl relative z-10 text-center">
+          <Reveal>
+            <h2 className="text-4xl md:text-5xl text-blue-400 mb-4 relative pb-4 uppercase tracking-wider font-serif font-bold">
+              Phía Đối Lập
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-blue-600" />
+            </h2>
+            <p className="text-center text-lg text-gray-500 mb-16 max-w-3xl mx-auto font-serif italic opacity-80 leading-relaxed">
+              Các nhân vật đại diện cho các quyết sách và chiến lược từ phía Hoa Kỳ và chính quyền Việt Nam Cộng hòa (VNCH).
+            </p>
+          </Reveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                name: 'Pierre Mendès France', role: 'Thủ tướng Pháp (1954)',
+                img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Pierre_Mend%C3%A8s_France_1968.jpg/250px-Pierre_Mend%C3%A8s_France_1968.jpg',
+                border: 'border-blue-900/40', hoverBorder: 'hover:border-blue-500/60',
+                desc: 'Người đại diện chính phủ Pháp ký kết Hiệp định Giơ-ne-vơ. Ông đã đưa ra cam kết lịch sử về việc giải quyết hòa bình tại Đông Dương trong thời hạn 30 ngày đàm phán.',
+              },
+              {
+                name: 'Richard Nixon', role: 'Tổng thống Hoa Kỳ',
+                img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Richard_Nixon_presidential_portrait.jpg/250px-Richard_Nixon_presidential_portrait.jpg',
+                border: 'border-blue-900/40', hoverBorder: 'hover:border-blue-500/60',
+                desc: 'Người đề ra "Học thuyết Nixon" và triển khai chiến lược "Việt Nam hóa chiến tranh". Ông là người ra các quyết sách leo thang quân sự khốc liệt nhằm tìm kiếm vị thế đàm phán có lợi cho Mỹ.',
+              },
+              {
+                name: 'Henry Kissinger', role: 'Cố vấn An ninh Quốc gia Mỹ',
+                img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Henry_Kissinger.jpg/500px-Henry_Kissinger.jpg',
+                border: 'border-blue-800/40', hoverBorder: 'hover:border-blue-400/60',
+                desc: 'Nhà ngoại giao kỳ cựu trực tiếp tham gia tiến trình đàm phán bí mật. Sau này, ông đã thừa nhận sự kiên định và mưu lược của phái đoàn Việt Nam vượt xa các dự báo chiến lược từ phía Mỹ.',
+              },
+              {
+                name: 'Ngô Đình Diệm', role: 'Tổng thống VNCH (1955-1963)',
+                img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/President_NGO-DINH-DIEM_of_the_Republic_of_Viet-Nam.jpg/250px-President_NGO-DINH-DIEM_of_the_Republic_of_Viet-Nam.jpg',
+                border: 'border-blue-900/40', hoverBorder: 'hover:border-blue-700/60',
+                desc: 'Nhân vật tiêu biểu cho chính sách phá hoại Hiệp định Giơ-ne-vơ sau năm 1954 tại miền Nam. Liên minh Mỹ - Diệm bị ghi nhận với các hành động từ chối hiệp thương tổng tuyển cử quốc gia.',
+              },
+            ].map((person, i) => (
+              <Reveal key={i} delay={i * 120}>
+                <div className={`bg-[#111] border ${person.border} p-10 rounded-sm ${person.hoverBorder} transition-all duration-700 group h-full flex flex-col`}>
+                  <div className={`w-40 h-40 mx-auto rounded-full overflow-hidden border-4 ${person.border} mb-8 grayscale group-hover:grayscale-0 transition-all duration-1000 shadow-2xl`}>
+                    <img src={person.img} alt={person.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
+                  </div>
+                  <h3 className="text-2xl font-serif font-bold text-blue-400 mb-2 uppercase tracking-widest">{person.name}</h3>
+                  <p className="text-blue-500 font-bold uppercase text-[9px] mb-6 tracking-[0.2em] bg-blue-500/10 py-1.5 px-4 inline-block rounded-sm">{person.role}</p>
+                  <p className="text-gray-400 text-[13px] leading-relaxed italic opacity-90 flex-1">{person.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ════════════════════════════════
           TIẾN TRÌNH ĐÀM PHÁN BÍ MẬT
       ════════════════════════════════ */}
@@ -1020,7 +1073,7 @@ function App() {
             <Reveal dir="left">
               <div className="bg-[#1a0505] border-r border-white/5 p-10 flex flex-col items-center text-center h-full group">
                 <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-vn-red mb-6 shadow-2xl relative">
-                  <img src={getImg('le-duc-tho.jpg')} alt="Lê Đức Thọ"
+                  <img src="https://upload.wikimedia.org/wikipedia/vi/1/10/Le_Duc_Tho.jpg" alt="Lê Đức Thọ"
                     className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0" />
                 </div>
                 <h3 className="text-2xl font-serif font-bold text-vn-gold uppercase tracking-widest mb-1 leading-none">Lê Đức Thọ</h3>
@@ -1035,7 +1088,7 @@ function App() {
             <Reveal dir="right">
               <div className="bg-[#00050f] p-10 flex flex-col items-center text-center h-full group">
                 <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-blue-800 mb-6 shadow-2xl relative">
-                  <img src={getImg('kissinger.jpg')} alt="Henry Kissinger"
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Henry_Kissinger.jpg/500px-Henry_Kissinger.jpg" alt="Henry Kissinger"
                     className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0" />
                 </div>
                 <h3 className="text-2xl font-serif font-bold text-blue-400 uppercase tracking-widest mb-1 leading-none">Henry Kissinger</h3>
@@ -1051,7 +1104,7 @@ function App() {
           <div className="space-y-6 mb-16">
             {[
               {
-                date: '21/2/1970',
+                date: '4/8/1969',
                 title: 'Khởi đầu đàm phán kín — Thăm dò lập trường căn bản',
                 vn: 'Xác lập 4 nguyên tắc chiến lược không thể nhân nhượng, bác bỏ các đề xuất mang tính thỏa hiệp của phía Hoa Kỳ.',
                 us: 'Thăm dò các khả năng thiết lập một khu vực trung lập hóa tại miền Nam nhằm bảo toàn lợi ích chính trị.',
@@ -1077,7 +1130,7 @@ function App() {
               {
                 date: '23/11–13/12/1972',
                 title: 'Khủng hoảng đàm phán — Sự thay đổi lập trường của Hoa Kỳ',
-                vn: 'Kiên quyết bác bỏ các yêu cầu sửa đổi phi lý từ phía Mỹ và tuyên bỏ đình chỉ các cuộc tiếp xúc bí mật.',
+                vn: 'Kiên quyết bác bỏ các yêu cầu sửa đổi phi lý từ phía Mỹ và tuyên bố đình chỉ các cuộc tiếp xúc bí mật.',
                 us: 'Thực hiện hành động quân sự cực đoan (Linebacker II) nhằm ép buộc Việt Nam chấp nhận các điều kiện có lợi cho Mỹ.',
                 result: 'Thất bại quân sự sau 12 ngày đêm đã buộc Hoa Kỳ phải từ bỏ các áp lực cưỡng chế ngoại giao.',
                 tag: 'Kháng cự', tagColor: 'bg-orange-900',
@@ -1146,64 +1199,6 @@ function App() {
       </section>
 
       {/* ════════════════════════════════
-          PHÍA ĐỐI LẬP (PHÂN TÍCH NHÂN VẬT)
-      ════════════════════════════════ */}
-      <section id="opposing-side" className="py-24 bg-[#0a0a12] text-white relative overflow-hidden font-sans">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#0a0a1a_0%,_#000_80%)]" />
-        <div className="container mx-auto px-4 max-w-6xl relative z-10 text-center">
-          <Reveal>
-            <h2 className="text-4xl md:text-5xl text-blue-400 mb-4 relative pb-4 uppercase tracking-wider font-serif font-bold">
-              Phía Đối Lập
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-blue-600" />
-            </h2>
-            <p className="text-center text-lg text-gray-500 mb-16 max-w-3xl mx-auto font-serif italic opacity-80 leading-relaxed">
-              Các nhân vật đại diện cho các quyết sách và chiến lược từ phía Pháp, Hoa Kỳ và chính quyền Việt Nam Cộng hòa (VNCH).
-            </p>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                name: 'Pierre Mendès France', role: 'Thủ tướng Pháp (1954)',
-                img: getImg('pierre-mendes-france.jpg'),
-                border: 'border-blue-900/40', hoverBorder: 'hover:border-blue-500/60',
-                desc: 'Người đại diện chính phủ Pháp ký kết Hiệp định Giơ-ne-vơ. Ông đã đưa ra cam kết lịch sử về việc giải quyết hòa bình tại Đông Dương trong thời hạn 30 ngày đàm phán.',
-              },
-              {
-                name: 'Richard Nixon', role: 'Tổng thống Hoa Kỳ',
-                img: getImg('nixon.jpg'),
-                border: 'border-blue-900/40', hoverBorder: 'hover:border-blue-500/60',
-                desc: 'Người đề ra "Học thuyết Nixon" và triển khai chiến lược "Việt Nam hóa chiến tranh". Ông là người ra các quyết sách leo thang quân sự khốc liệt nhằm tìm kiếm vị thế đàm phán có lợi cho Mỹ.',
-              },
-              {
-                name: 'Henry Kissinger', role: 'Cố vấn An ninh Quốc gia Mỹ',
-                img: getImg('kissinger.jpg'),
-                border: 'border-blue-800/40', hoverBorder: 'hover:border-blue-400/60',
-                desc: 'Nhà ngoại giao kỳ cựu trực tiếp tham gia tiến trình đàm phán bí mật. Sau này, ông đã thừa nhận sự kiên định và mưu lược của phái đoàn Việt Nam vượt xa các dự báo chiến lược từ phía Mỹ.',
-              },
-              {
-                name: 'Ngô Đình Diệm', role: 'Tổng thống VNCH (1955-1963)',
-                img: getImg('ngo-dinh-diem.jpg'),
-                border: 'border-blue-900/40', hoverBorder: 'hover:border-blue-700/60',
-                desc: 'Nhân vật tiêu biểu cho chính sách phá hoại Hiệp định Giơ-ne-vơ sau năm 1954 tại miền Nam. Liên minh Mỹ - Diệm bị ghi nhận với các hành động từ chối hiệp thương tổng tuyển cử quốc gia.',
-              },
-            ].map((person, i) => (
-              <Reveal key={i} delay={i * 120}>
-                <div className={`bg-[#111] border ${person.border} p-10 rounded-sm ${person.hoverBorder} transition-all duration-700 group h-full flex flex-col`}>
-                  <div className={`w-40 h-40 mx-auto rounded-full overflow-hidden border-4 ${person.border} mb-8 grayscale group-hover:grayscale-0 transition-all duration-1000 shadow-2xl`}>
-                    <img src={person.img} alt={person.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
-                  </div>
-                  <h3 className="text-2xl font-serif font-bold text-blue-400 mb-2 uppercase tracking-widest">{person.name}</h3>
-                  <p className="text-blue-500 font-bold uppercase text-[9px] mb-6 tracking-[0.2em] bg-blue-500/10 py-1.5 px-4 inline-block rounded-sm">{person.role}</p>
-                  <p className="text-gray-400 text-[13px] leading-relaxed italic opacity-90 flex-1">{person.desc}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════
           HỆ THỐNG TƯ LIỆU THAM KHẢO
       ════════════════════════════════ */}
       <section id="references" className="py-24 bg-[#fdf6e3] relative font-sans">
@@ -1215,12 +1210,12 @@ function App() {
 
           <div className="grid md:grid-cols-2 gap-8 mt-16">
             {[
-              { icon: '📖', title: 'Giáo trình Lịch sử Đảng Cộng sản Việt Nam (VNR202)', desc: 'Chương 2 về nội dung Đảng lãnh đạo hai cuộc kháng chiến chống ngoại xâm, thống nhất đất nước (1945–1975).', links: [{ label: 'Tư liệu học tập', url: '#' }] },
-              { icon: '🏛️', title: 'Cổng thông tin điện tử Bộ Ngoại giao Việt Nam', desc: 'Các chuyên đề nghiên cứu về ý nghĩa và bài học ngoại giao của các Hiệp định lịch sử trong thế kỷ XX.', links: [{ label: 'Truy cập MOFA', url: 'https://www.mofa.gov.vn/' }] },
-              { icon: '📰', title: 'Hệ thống lưu trữ báo chí - Báo Nhân Dân', desc: 'Các tài liệu, văn kiện và timeline chi tiết về các tiến trình đàm phán tại Giơ-ne-vơ và Pa-ri.', links: [{ label: 'Hồ sơ sự kiện', url: 'https://nhandan.vn/' }] },
-              { icon: '🇺🇸', title: 'Hồ sơ giải mật - Bộ Ngoại giao Hoa Kỳ', desc: 'Cung cấp các tư liệu từ phía Mỹ phục vụ cho việc nghiên cứu đối chứng và khách quan tiến trình lịch sử.', links: [{ label: 'Foreign Relations', url: 'https://history.state.gov/' }] },
-              { icon: '🏆', title: 'Tư liệu giải thưởng Nobel (NobelPrize.org)', desc: 'Ghi nhận về đề cử và quyết định từ chối giải Nobel Hòa bình năm 1973 của cố vấn Việt Nam.', links: [{ label: 'Nobel Facts 1973', url: 'https://www.nobelprize.org/prizes/peace/1973/tho/facts/' }] },
-              { icon: '🏛️', title: 'Bảo tàng Lịch sử Quốc gia', desc: 'Các hiện vật và tài liệu lưu trữ về công tác hỗ trợ phục vụ đoàn đàm phán tại nước ngoài.', links: [{ label: 'Tài liệu lưu trữ', url: 'http://baotanglichsu.vn/' }] },
+              { icon: '📖', title: 'Giáo trình Lịch sử Đảng Cộng sản Việt Nam (VNR202)', desc: 'Chương 2 về nội dung Đảng lãnh đạo hai cuộc kháng chiến chống ngoại xâm, thống nhất đất nước (1945–1975).', links: [] },
+              { icon: '🏛️', title: 'Cổng thông tin điện tử Bộ Ngoại giao Việt Nam', desc: 'Các chuyên đề nghiên cứu về ý nghĩa và bài học ngoại giao của các Hiệp định lịch sử trong thế kỷ XX.', links: [{ label: 'Hội nghị Giơ-ne-vơ năm 1954', url: 'https://mofa.gov.vn/tin-chi-tiet/chi-tiet/-hoi-nghi-gionevo-nam-1954-y-nghia-va-nhung-bai-hoc-lich-su--139.html' }, { label: 'Hiệp định Paris năm 1973', url: 'https://mofa.gov.vn/tin-chi-tiet/chi-tiet/-hiep-dinh-paris-nam-1973-moc-son-choi-loi-cua-ngoai-giao-cach-mang-viet-nam--168.html' }] },
+              { icon: '📰', title: 'Hệ thống lưu trữ báo chí - Báo Nhân Dân', desc: 'Các tài liệu, văn kiện và timeline chi tiết về các tiến trình đàm phán tại Giơ-ne-vơ và Pa-ri.', links: [{ label: 'Chuyên trang Hiệp định Geneva 1954', url: 'https://special.nhandan.vn/hiep-dinh-geneva-1954/index.html' }, { label: 'Chuyên trang Hiệp định Paris 1973', url: 'https://nhandan.vn/special/hiepdinhparis/index.html' }] },
+              { icon: '🇺🇸', title: 'Hồ sơ giải mật - Bộ Ngoại giao Hoa Kỳ', desc: 'Cung cấp các tư liệu từ phía Mỹ phục vụ cho việc nghiên cứu đối chứng và khách quan tiến trình lịch sử.', links: [{ label: 'Paris Peace Accords (FRUS, Volume XLII - Preface)', url: 'https://history.state.gov/historicaldocuments/frus1969-76v42/preface' }, { label: 'First secret-contact record (FRUS, Document 1)', url: 'https://history.state.gov/historicaldocuments/frus1969-76v42/d1' }] },
+              { icon: '🏆', title: 'Tư liệu giải thưởng Nobel (NobelPrize.org)', desc: 'Ghi nhận về đề cử và quyết định từ chối giải Nobel Hòa bình năm 1973 của cố vấn Việt Nam.', links: [{ label: 'Sự thật về giải Nobel 1973', url: 'https://www.nobelprize.org/prizes/peace/1973/tho/facts/' }] },
+              { icon: '🏛️', title: 'Bảo tàng Lịch sử Quốc gia', desc: 'Các hiện vật và tài liệu lưu trữ về công tác hỗ trợ phục vụ đoàn đàm phán tại nước ngoài.', links: [{ label: 'Những nẻo đường hòa bình tới Hiệp định Paris', url: 'https://baotanglichsu.vn/vi/Articles/3096/13366/nhung-neo-djuong-hoa-binh-toi-hiep-djinh-paris.html' }, { label: 'Hiệp định Paris: Bí mật về căn phòng khép kín', url: 'https://baotanglichsu.vn/vi/Articles/3096/13551/hiep-djinh-paris-bi-mat-ve-can-phong-khep-kin.html' }] },
             ].map((ref, i) => (
               <Reveal key={i} delay={i * 80}>
                 <div className="bg-white p-8 border-l-4 border-vn-gold shadow-lg flex gap-6 items-start hover:-translate-y-1 hover:shadow-2xl transition-all duration-500 rounded-sm h-full flex flex-col">
@@ -1252,30 +1247,56 @@ function App() {
       </section>
 
       {/* ════════════════════════════════
-          DANH SÁCH NHÂN SỰ THỰC HIỆN
+          DANH SÁCH CÔNG CỤ AI ĐÃ DÙNG
       ════════════════════════════════ */}
-      <section id="team" className="py-24 bg-white border-t-4 border-vn-red relative font-sans">
-        <div className="container mx-auto px-4 max-w-5xl relative z-10 text-center">
+      <section id="ai-tools" className="py-24 bg-[#0d0b09] text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_#0d1a0d_0%,_#0d0b09_70%)]" />
+        <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <Reveal>
-            <h2 className="section-title">Thành Viên Nhóm Nghiên Cứu</h2>
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="h-px w-16 bg-green-700/60" />
+              <span className="text-green-500 text-xs font-bold uppercase tracking-[0.4em]">Công nghệ hỗ trợ</span>
+              <div className="h-px w-16 bg-green-700/60" />
+            </div>
+            <h2 className="text-4xl md:text-5xl text-green-400 text-center relative pb-4 uppercase tracking-wider font-serif font-bold mb-4">
+              Công Cụ AI Đã Sử Dụng
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-green-600" />
+            </h2>
+            <p className="text-center text-gray-400 mb-16 max-w-2xl mx-auto font-serif italic">
+              Các mô hình trí tuệ nhân tạo được nhóm sử dụng trong quá trình nghiên cứu, tổng hợp nội dung và thiết kế web.
+            </p>
           </Reveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 text-center">
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
             {[
-              { name: 'Nguyễn Văn A', role: 'Thuyết trình viên 1', task: 'Phần 1–2 · Phân tích bối cảnh', slides: 'Nội dung Slide 1–2' },
-              { name: 'Trần Thị B',   role: 'Thuyết trình viên 2', task: 'Phần 3–4 · Nghiên cứu sử liệu', slides: 'Nội dung Slide 3–4' },
-              { name: 'Lê Văn C',     role: 'Thuyết trình viên 3', task: 'Phần 5–7 · Thiết kế kỹ thuật',      slides: 'Nội dung Slide 5–7' },
-              { name: 'Phạm Thị D',   role: 'Thuyết trình viên 4', task: 'Phần 8–10 · Tổng hợp bài học', slides: 'Nội dung Slide 8–10' },
-            ].map((member, i) => (
+              {
+                name: 'Claude (Anthropic)',
+                logo: '🤖',
+                version: '4.6',
+                role: 'Thiết kế web',
+                desc: 'Thiết kế toàn bộ mã nguồn giao diện website.',
+                color: 'border-orange-500',
+                tagColor: 'bg-orange-500 text-white',
+              },
+              {
+                name: 'ChatGPT (OpenAI)',
+                logo: '💬',
+                version: '5.4',
+                role: 'Phác thảo ý tưởng · Kiểm tra chéo',
+                desc: 'Tìm kiếm nguồn, xác nhận thông tin trên website.',
+                color: 'border-green-500',
+                tagColor: 'bg-green-700 text-white',
+              },
+            ].map((tool, i) => (
               <Reveal key={i} delay={i * 100}>
-                <div className="bg-[#fcfcfc] p-8 text-center border-t-4 border-vn-red shadow-xl hover:-translate-y-3 transition-all duration-700 rounded-sm group flex flex-col items-center h-full">
-                  <div className="w-20 h-20 bg-history-dark text-vn-gold flex items-center justify-center rounded-full text-3xl font-serif font-bold mb-6 group-hover:bg-vn-red group-hover:text-white transition-all duration-500 shadow-2xl">
-                    {member.name.charAt(0)}
+                <div className={`bg-white/5 border ${tool.color} border-opacity-40 rounded-sm p-7 hover:bg-white/10 hover:border-opacity-80 transition-all duration-300 group h-full flex flex-col`}>
+                  <div className="flex items-start justify-between mb-4">
+                    <span className="text-4xl">{tool.logo}</span>
                   </div>
-                  <h4 className="font-serif font-bold text-history-dark text-lg mb-2 uppercase tracking-wide leading-none">{member.name}</h4>
-                  <p className="text-vn-red text-[10px] font-bold uppercase tracking-[0.2em] mb-2">{member.role}</p>
-                  <p className="text-vn-gold text-[9px] font-bold uppercase tracking-widest mb-4 border-b border-vn-gold/20 pb-1">{member.slides}</p>
-                  <p className="text-gray-500 text-[11px] font-medium leading-relaxed italic mt-auto">{member.task}</p>
+                  <h3 className="font-serif font-bold text-white text-lg mb-1">{tool.name}</h3>
+                  <p className="text-gray-500 text-xs font-mono mb-2">{tool.version}</p>
+                  <p className={`text-xs font-bold uppercase tracking-wider mb-4 ${i === 0 ? 'text-orange-400' : i === 1 ? 'text-green-400' : 'text-blue-400'}`}>{tool.role}</p>
+                  <p className="text-gray-400 text-sm leading-relaxed flex-1">{tool.desc}</p>
                 </div>
               </Reveal>
             ))}

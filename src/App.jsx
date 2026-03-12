@@ -375,7 +375,7 @@ function App() {
               {
                 icon: '🛡️',
                 title: 'Cô lập đối trọng ngoại giao',
-                text: 'Mặt trận ngoại giao thực hiện nhiệm vụ cô lập các thế lực xâm lược về phương diện pháp lý và chính trị trên các diễn đàn đa phương, đồng thời khẳng định tính chính nghĩa tối thượng của cuộc đấu tranh dân tộc Việt Nam.',
+                text: 'Mặt trận ngoại giao thực hiện nhiệm vụ cô lập các thế lực xâm lược về phương diện pháp lý và chính trị trên các diễn đàn đa phương, đồng thời khẳng định tính chính nghĩa của cuộc đấu tranh dân tộc Việt Nam.',
                 color: 'border-vn-gold',
               },
               {
@@ -502,7 +502,7 @@ function App() {
               </h3>
               <p className="text-gray-700 leading-relaxed text-base font-sans">
                 Sau Hiệp định Giơ-ne-vơ, thực tiễn đất nước tồn tại tình trạng chia cắt tạm thời với hai chế độ chính trị khác biệt.
-                Hoa Kỳ đã thay thế vị thế của thực dân Pháp tại miền Nam, thiết lập chính quyền tay sai và thực hiện các chính sách phá hoại hiệp định, 
+                Hoa Kỳ đã thay thế vị thế của thực dân Pháp tại miền Nam, thiết lập chính quyền Việt Nam Cộng hòa do Hoa Kỳ hậu thuẫn và thực hiện các chính sách phá hoại hiệp định, 
                 đặc biệt là việc từ chối tổ chức hiệp thương tổng tuyển cử thống nhất quốc gia. Trong bối cảnh đó, Phái đoàn Việt Nam đã chuyển trọng tâm sang đấu tranh
                 pháp lý và ngoại giao trên các diễn đàn quốc tế nhằm bảo vệ quyền tự quyết dân tộc và tính chính đáng của công cuộc thống nhất.
               </p>
@@ -576,7 +576,7 @@ function App() {
               { year: '30/3/1972',    tag: 'Tác động',   tagColor: 'bg-orange-800','title': 'Ảnh hưởng từ cuộc Tiến công Xuân – Hè', desc: 'Thành tựu quân sự trên chiến trường buộc phía Hoa Kỳ phải chuyển sang giai đoạn thảo luận thực chất về các điều khoản rút quân.', align: 'left' },
               { year: '8/10/1972',    tag: 'Đột phá',    tagColor: 'bg-vn-gold text-black', title: 'Trình dự thảo Hiệp định đầu tiên', desc: 'Việt Nam chủ động đưa ra dự thảo toàn văn hiệp định, tạo bước ngoặt đột phá cho toàn bộ tiến trình đàm phán kéo dài nhiều năm.', align: 'right', img: 'https://ttdn.vn/Uploads/Images/2023/1/26/21/cac-dau-moc-chinh-trong-cuoc-dam-phan-hiep-dinh-paris-20230113091825.jpg' },
               { year: '20/10/1972',   tag: 'Thỏa thuận', tagColor: 'bg-vn-gold text-black', title: 'Đạt khung thỏa thuận nguyên tắc', desc: 'Hai bên cơ bản thống nhất các nội dung chính, tuy nhiên phía Hoa Kỳ sau đó đã có các hành động trì hoãn và leo thang quân sự.', align: 'left' },
-              { year: '18–30/12/1972',tag: 'Vô hiệu hóa',tagColor: 'bg-vn-red',   title: 'Vô hiệu hóa các áp lực quân sự của Mỹ', desc: 'Chiến thắng "Điện Biên Phủ trên không" đã đập tan ý đồ sử dụng sức mạnh quân sự B-52 để ép buộc Việt Nam chấp nhận các điều kiện phi lý.', align: 'right', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh9QiiszSpGWEazIVoNBIrH1arCL6y4RcjXQ&s' },
+              { year: '18–30/12/1972',tag: 'Vô hiệu hóa',tagColor: 'bg-vn-red',   title: 'Vô hiệu hóa các áp lực quân sự của Mỹ', desc: 'Chiến thắng "Điện Biên Phủ trên không" đã làm suy giảm hiệu quả của sức ép quân sự do Hoa Kỳ sử dụng trong giai đoạn cuối đàm phán.', align: 'right', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh9QiiszSpGWEazIVoNBIrH1arCL6y4RcjXQ&s' },
               { year: '8–23/1/1973',  tag: 'Hoàn thiện', tagColor: 'bg-gray-800', title: 'Hoàn tất và ký tắt văn bản hiệp định', desc: 'Sau các nỗ lực đấu tranh không mệt mỏi, các điều khoản cốt lõi về độc lập dân tộc đã được bảo vệ thành công trong văn bản cuối cùng.', align: 'left' },
               { year: '27/1/1973',    tag: 'Chính thức', tagColor: 'bg-vn-gold text-black', title: 'Ký kết chính thức Hiệp định Pa-ri', desc: 'Hoa Kỳ cam kết rút toàn bộ quân đội, hoàn thành mục tiêu chiến lược "Đánh cho Mỹ cút", tạo đà cho thắng lợi hoàn toàn năm 1975.', align: 'right' },
             ].map((item, i) => (
@@ -737,7 +737,7 @@ function App() {
                 </div>
                 <ul className="space-y-4 text-sm text-gray-300 leading-relaxed">
                   {[
-                    'Đỉnh cao ngoại giao dân tộc, góp phần vô hiệu hóa hoàn toàn ý chí xâm lược của chính phủ Hoa Kỳ.',
+                    'Đỉnh cao ngoại giao dân tộc, góp phần buộc Hoa Kỳ chấp nhận ký kết Hiệp định Paris và rút quân.',
                     'Hoàn thành mục tiêu chiến lược "Đánh cho Mỹ cút", làm thay đổi căn bản tương quan lực lượng.',
                     'Tạo bước ngoặt quyết định cho cuộc Tổng tiến công và nổi dậy mùa Xuân năm 1975.',
                     { text: 'Xác lập bàn đạp pháp lý và thực địa để thực hiện mục tiêu thống nhất Tổ quốc.', bold: true },
@@ -801,9 +801,9 @@ function App() {
                 </thead>
                 <tbody className="text-[13px] md:text-sm">
                   {[
-                    ['Cơ chế đàm phán', 'Đàm phán đa phương, chịu sự chi phối mạnh mẽ từ trật tự Hai cực.', 'Cơ chế song phương và bốn bên - Việt Nam giữ quyền tự chủ tuyệt đối.', true],
+                    ['Cơ chế đàm phán', 'Đàm phán đa phương, chịu sự chi phối mạnh mẽ từ trật tự Hai cực.', 'Cơ chế song phương và bốn bên - Việt Nam giữ mức độ chủ động cao trong tiến trình đàm phán.', true],
                     ['Thực lực quân sự', 'Kết quả trực tiếp từ chiến thắng Điện Biên Phủ mang tính chấn động.', 'Kết quả của sự vô hiệu hóa các áp lực quân sự tối tân nhất của Mỹ năm 1972.', true],
-                    ['Tính độc lập chiến lược', 'Phụ thuộc nhất định vào sự thỏa hiệp giữa các nước lớn đương thời.', 'Việt Nam hoàn toàn tự quyết tiến trình, phối hợp tranh thủ hỗ trợ đồng minh.', false],
+                    ['Tính độc lập chiến lược', 'Phụ thuộc nhất định vào sự thỏa hiệp giữa các nước lớn đương thời.', 'Việt Nam giữ vai trò chủ động, đồng thời tranh thủ sự ủng hộ quốc tế, phối hợp tranh thủ hỗ trợ đồng minh.', false],
                     ['Tính chất rút quân', 'Thực hiện tập kết quân sự của cả hai bên ra hai khu vực ngăn cách tạm thời.', 'Chỉ lực lượng Hoa Kỳ phải rút quân, lực lượng Việt Nam giữ vững vị thế tại chỗ.', true],
                     ['Tiến trình quốc gia', 'Để lại tình trạng chia cắt và chưa giải quyết dứt điểm mục tiêu thống nhất.', 'Xác lập tiền đề thực tiễn để giải phóng miền Nam, thống nhất đất nước.', true],
                     ['Vị thế chính trị', 'Kết thúc sự hiện diện của thực dân Pháp xâm lược tại miền Bắc.', 'Xác lập thất bại chiến lược của Hoa Kỳ, mở đường cho kỷ nguyên độc lập.', true],
@@ -1044,7 +1044,7 @@ function App() {
           <div className="space-y-6 mb-16">
             {[
               {
-                date: '21/2/1970',
+                date: '4/8/1969',
                 title: 'Khởi đầu đàm phán kín — Thăm dò lập trường căn bản',
                 vn: 'Xác lập 4 nguyên tắc chiến lược không thể nhân nhượng, bác bỏ các đề xuất mang tính thỏa hiệp của phía Hoa Kỳ.',
                 us: 'Thăm dò các khả năng thiết lập một khu vực trung lập hóa tại miền Nam nhằm bảo toàn lợi ích chính trị.',
@@ -1213,7 +1213,7 @@ function App() {
               { icon: '📰', title: 'Hệ thống lưu trữ báo chí - Báo Nhân Dân', desc: 'Các tài liệu, văn kiện và timeline chi tiết về các tiến trình đàm phán tại Giơ-ne-vơ và Pa-ri.', links: [{ label: 'Chuyên trang Hiệp định Geneva 1954', url: 'https://special.nhandan.vn/hiep-dinh-geneva-1954/index.html' }, { label: 'Chuyên trang Hiệp định Paris 1973', url: 'https://nhandan.vn/special/hiepdinhparis/index.html' }] },
               { icon: '🇺🇸', title: 'Hồ sơ giải mật - Bộ Ngoại giao Hoa Kỳ', desc: 'Cung cấp các tư liệu từ phía Mỹ phục vụ cho việc nghiên cứu đối chứng và khách quan tiến trình lịch sử.', links: [{ label: 'Paris Peace Accords (FRUS, Volume XLII - Preface)', url: 'https://history.state.gov/historicaldocuments/frus1969-76v42/preface' }, { label: 'First secret-contact record (FRUS, Document 1)', url: 'https://history.state.gov/historicaldocuments/frus1969-76v42/d1' }] },
               { icon: '🏆', title: 'Tư liệu giải thưởng Nobel (NobelPrize.org)', desc: 'Ghi nhận về đề cử và quyết định từ chối giải Nobel Hòa bình năm 1973 của cố vấn Việt Nam.', links: [{ label: 'Sự thật về giải Nobel 1973', url: 'https://www.nobelprize.org/prizes/peace/1973/tho/facts/' }] },
-              { icon: '🏛️', title: 'Bảo tàng Lịch sử Quốc gia', desc: 'Các hiện vật và tài liệu lưu trữ về công tác hỗ trợ phục vụ đoàn đàm phán tại nước ngoài.', links: [{ label: 'Những nẻo đường hòa bình tới Hiệp định Paris', url: 'https://special.nhandan.vn/hiep-dinh-geneva-1954/index.html' }, { label: 'Hiệp định Paris: Bí mật về căn phòng khép kín', url: 'https://baotanglichsu.vn/vi/Articles/3096/13551/hiep-djinh-paris-bi-mat-ve-can-phong-khep-kin.html' }] },
+              { icon: '🏛️', title: 'Bảo tàng Lịch sử Quốc gia', desc: 'Các hiện vật và tài liệu lưu trữ về công tác hỗ trợ phục vụ đoàn đàm phán tại nước ngoài.', links: [{ label: 'Những nẻo đường hòa bình tới Hiệp định Paris', url: 'https://baotanglichsu.vn/vi/Articles/3096/13366/nhung-neo-djuong-hoa-binh-toi-hiep-djinh-paris.html' }, { label: 'Hiệp định Paris: Bí mật về căn phòng khép kín', url: 'https://baotanglichsu.vn/vi/Articles/3096/13551/hiep-djinh-paris-bi-mat-ve-can-phong-khep-kin.html' }] },
             ].map((ref, i) => (
               <Reveal key={i} delay={i * 80}>
                 <div className="bg-white p-8 border-l-4 border-vn-gold shadow-lg flex gap-6 items-start hover:-translate-y-1 hover:shadow-2xl transition-all duration-500 rounded-sm h-full flex flex-col">

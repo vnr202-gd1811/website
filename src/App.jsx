@@ -915,7 +915,7 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {[
               {
-                name: 'Phạm Văn Đồng', title: 'Trưởng phái đoàn (1954)', color: 'border-vn-gold', glow: 'hover:shadow-[0:10px_40px_rgba(255,205,0:0.2)]',
+                name: 'Phạm Văn Đồng', title: 'Trưởng phái đoàn (1954)', color: 'border-vn-gold', glow: 'hover:shadow-[0_10px_40px_rgba(255,205,0,0.2)]',
                 img: 'https://upload.wikimedia.org/wikipedia/commons/2/25/PhamVanDong1954.jpg',
                 nameColor: 'text-vn-gold',
                 tagStyle: 'text-vn-red bg-vn-red/10',
@@ -929,7 +929,7 @@ function App() {
                 desc: 'Đại diện đàm phán bí mật tại Pa-ri — người trực tiếp đối trọng với Henry Kissinger. Ông nổi tiếng với phong thái kiên định về nguyên tắc chiến lược nhưng linh hoạt trong sách lược ngoại giao.',
               },
               {
-                name: 'Xuân Thủy', title: 'Trưởng đoàn Đàm phán (1973)', color: 'border-gray-400', glow: 'hover:shadow-[0_255,255,255,0.05)]',
+                name: 'Xuân Thủy', title: 'Trưởng đoàn Đàm phán (1973)', color: 'border-gray-400', glow: 'hover:shadow-[0_10px_40px_rgba(255,255,255,0.05)]',
                 img: 'https://upload.wikimedia.org/wikipedia/vi/c/c2/Xu%C3%A2n_Thu%E1%BB%B7.jpg',
                 nameColor: 'text-white',
                 tagStyle: 'text-gray-400 bg-gray-800',
@@ -1208,19 +1208,34 @@ function App() {
 
           <div className="grid md:grid-cols-2 gap-8 mt-16">
             {[
-              { icon: '📖', title: 'Giáo trình Lịch sử Đảng Cộng sản Việt Nam (VNR202)', desc: 'Chương 2 về nội dung Đảng lãnh đạo hai cuộc kháng chiến chống ngoại xâm, thống nhất đất nước (1945–1975).' },
-              { icon: '🏛️', title: 'Cổng thông tin điện tử Bộ Ngoại giao Việt Nam', desc: 'Các chuyên đề nghiên cứu về ý nghĩa và bài học ngoại giao của các Hiệp định lịch sử trong thế kỷ XX.' },
-              { icon: '📰', title: 'Hệ thống lưu trữ báo chí - Báo Nhân Dân', desc: 'Các tài liệu, văn kiện và timeline chi tiết về các tiến trình đàm phán tại Giơ-ne-vơ và Pa-ri.' },
-              { icon: '🇺🇸', title: 'Hồ sơ giải mật - Bộ Ngoại giao Hoa Kỳ', desc: 'Cung cấp các tư liệu từ phía Mỹ phục vụ cho việc nghiên cứu đối chứng và khách quan tiến trình lịch sử.' },
-              { icon: '🏆', title: 'Tư liệu giải thưởng Nobel (NobelPrize.org)', desc: 'Ghi nhận về đề cử và quyết định từ chối giải Nobel Hòa bình năm 1973 của cố vấn Việt Nam.' },
-              { icon: '🏛️', title: 'Bảo tàng Lịch sử Quốc gia', desc: 'Các hiện vật và tài liệu lưu trữ về công tác hỗ trợ phục vụ đoàn đàm phán tại nước ngoài.' },
+              { icon: '📖', title: 'Giáo trình Lịch sử Đảng Cộng sản Việt Nam (VNR202)', desc: 'Chương 2 về nội dung Đảng lãnh đạo hai cuộc kháng chiến chống ngoại xâm, thống nhất đất nước (1945–1975).', links: [] },
+              { icon: '🏛️', title: 'Cổng thông tin điện tử Bộ Ngoại giao Việt Nam', desc: 'Các chuyên đề nghiên cứu về ý nghĩa và bài học ngoại giao của các Hiệp định lịch sử trong thế kỷ XX.', links: [{ label: 'Hội nghị Giơ-ne-vơ năm 1954', url: 'https://mofa.gov.vn/tin-chi-tiet/chi-tiet/-hoi-nghi-gionevo-nam-1954-y-nghia-va-nhung-bai-hoc-lich-su--139.html' }, { label: 'Hiệp định Paris năm 1973', url: 'https://mofa.gov.vn/tin-chi-tiet/chi-tiet/-hiep-dinh-paris-nam-1973-moc-son-choi-loi-cua-ngoai-giao-cach-mang-viet-nam--168.html' }] },
+              { icon: '📰', title: 'Hệ thống lưu trữ báo chí - Báo Nhân Dân', desc: 'Các tài liệu, văn kiện và timeline chi tiết về các tiến trình đàm phán tại Giơ-ne-vơ và Pa-ri.', links: [{ label: 'Chuyên trang Hiệp định Geneva 1954', url: 'https://special.nhandan.vn/hiep-dinh-geneva-1954/index.html' }, { label: 'Chuyên trang Hiệp định Paris 1973', url: 'https://nhandan.vn/special/hiepdinhparis/index.html' }] },
+              { icon: '🇺🇸', title: 'Hồ sơ giải mật - Bộ Ngoại giao Hoa Kỳ', desc: 'Cung cấp các tư liệu từ phía Mỹ phục vụ cho việc nghiên cứu đối chứng và khách quan tiến trình lịch sử.', links: [{ label: 'Paris Peace Accords (FRUS, Volume XLII - Preface)', url: 'https://history.state.gov/historicaldocuments/frus1969-76v42/preface' }, { label: 'First secret-contact record (FRUS, Document 1)', url: 'https://history.state.gov/historicaldocuments/frus1969-76v42/d1' }] },
+              { icon: '🏆', title: 'Tư liệu giải thưởng Nobel (NobelPrize.org)', desc: 'Ghi nhận về đề cử và quyết định từ chối giải Nobel Hòa bình năm 1973 của cố vấn Việt Nam.', links: [{ label: 'Sự thật về giải Nobel 1973', url: 'https://www.nobelprize.org/prizes/peace/1973/tho/facts/' }] },
+              { icon: '🏛️', title: 'Bảo tàng Lịch sử Quốc gia', desc: 'Các hiện vật và tài liệu lưu trữ về công tác hỗ trợ phục vụ đoàn đàm phán tại nước ngoài.', links: [{ label: 'Những nẻo đường hòa bình tới Hiệp định Paris', url: 'https://special.nhandan.vn/hiep-dinh-geneva-1954/index.html' }, { label: 'Hiệp định Paris: Bí mật về căn phòng khép kín', url: 'https://baotanglichsu.vn/vi/Articles/3096/13551/hiep-djinh-paris-bi-mat-ve-can-phong-khep-kin.html' }] },
             ].map((ref, i) => (
               <Reveal key={i} delay={i * 80}>
-                <div className="bg-white p-8 border-l-4 border-vn-gold shadow-lg flex gap-6 items-start hover:-translate-y-1 hover:shadow-2xl transition-all duration-500 rounded-sm">
-                  <div className="text-4xl mt-1 opacity-70 group-hover:opacity-100">{ref.icon}</div>
-                  <div>
-                    <h4 className="font-bold text-history-dark text-base mb-2 font-serif uppercase tracking-wider">{ref.title}</h4>
-                    <p className="text-sm text-gray-600 leading-relaxed font-sans opacity-90">{ref.desc}</p>
+                <div className="bg-white p-8 border-l-4 border-vn-gold shadow-lg flex gap-6 items-start hover:-translate-y-1 hover:shadow-2xl transition-all duration-500 rounded-sm h-full flex flex-col">
+                  <div className="flex gap-6 items-start flex-1 w-full">
+                    <div className="text-4xl mt-1 opacity-70 group-hover:opacity-100">{ref.icon}</div>
+                    <div className="flex-1">
+                      <h4 className="font-bold text-history-dark text-base mb-2 font-serif uppercase tracking-wider">{ref.title}</h4>
+                      <p className="text-sm text-gray-600 leading-relaxed font-sans opacity-90 mb-4">{ref.desc}</p>
+                    </div>
+                  </div>
+                  <div className="mt-auto flex flex-wrap gap-2 w-full border-t border-gray-100 pt-4">
+                    {ref.links?.map((link, idx) => (
+                      <a 
+                        key={idx}
+                        href={link.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-vn-red text-[9px] font-bold uppercase tracking-widest hover:text-vn-gold transition-all flex items-center gap-2 border border-vn-red/20 px-3 py-2 rounded-sm hover:bg-vn-red/5 flex-1 justify-center min-w-[120px]"
+                      >
+                        {link.label} ➜
+                      </a>
+                    ))}
                   </div>
                 </div>
               </Reveal>
@@ -1255,39 +1270,26 @@ function App() {
               {
                 name: 'Claude (Anthropic)',
                 logo: '🤖',
-                version: 'claude-sonnet-4-6',
-                role: 'Tổng hợp nội dung · Thiết kế web',
-                desc: 'Dùng để nghiên cứu nội dung lịch sử, soạn thảo văn bản thuyết trình, và viết toàn bộ mã nguồn giao diện web này.',
+                version: '4.6',
+                role: 'Thiết kế web',
+                desc: 'Thiết kế toàn bộ mã nguồn giao diện website.',
                 color: 'border-orange-500',
-                tag: 'Chính',
                 tagColor: 'bg-orange-500 text-white',
               },
               {
                 name: 'ChatGPT (OpenAI)',
                 logo: '💬',
-                version: 'GPT-4o',
+                version: '5.4',
                 role: 'Phác thảo ý tưởng · Kiểm tra chéo',
-                desc: '[Nhóm tự điền] — ví dụ: dùng để phác thảo bố cục slide ban đầu hoặc kiểm tra lại các thông tin lịch sử.',
+                desc: 'Tìm kiếm nguồn, xác nhận thông tin trên website.',
                 color: 'border-green-500',
-                tag: 'Hỗ trợ',
                 tagColor: 'bg-green-700 text-white',
-              },
-              {
-                name: 'Gemini (Google)',
-                logo: '✨',
-                version: 'Gemini 1.5 Pro',
-                role: 'Tìm kiếm · Tóm tắt tài liệu',
-                desc: '[Nhóm tự điền] — ví dụ: dùng để tóm tắt các tài liệu dài hoặc tra cứu nhanh số liệu từ nguồn tiếng Anh.',
-                color: 'border-blue-500',
-                tag: 'Hỗ trợ',
-                tagColor: 'bg-blue-700 text-white',
               },
             ].map((tool, i) => (
               <Reveal key={i} delay={i * 100}>
                 <div className={`bg-white/5 border ${tool.color} border-opacity-40 rounded-sm p-7 hover:bg-white/10 hover:border-opacity-80 transition-all duration-300 group h-full flex flex-col`}>
                   <div className="flex items-start justify-between mb-4">
                     <span className="text-4xl">{tool.logo}</span>
-                    <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm ${tool.tagColor}`}>{tool.tag}</span>
                   </div>
                   <h3 className="font-serif font-bold text-white text-lg mb-1">{tool.name}</h3>
                   <p className="text-gray-500 text-xs font-mono mb-2">{tool.version}</p>
@@ -1297,15 +1299,6 @@ function App() {
               </Reveal>
             ))}
           </div>
-
-          <Reveal>
-            <div className="bg-white/5 border border-white/10 rounded-sm p-6 text-center">
-              <p className="text-gray-500 text-sm italic font-serif">
-                * Toàn bộ nội dung lịch sử được kiểm chứng dựa trên Giáo trình VNR202 và các nguồn tư liệu chính thống.
-                Các công cụ AI chỉ hỗ trợ tổng hợp và trình bày — không phải nguồn sử liệu.
-              </p>
-            </div>
-          </Reveal>
         </div>
       </section>
 

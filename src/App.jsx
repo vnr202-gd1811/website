@@ -1304,6 +1304,39 @@ function App() {
         </div>
       </section>
 
+      {/* ════════════════════════════════
+          DANH SÁCH THÀNH VIÊN NHÓM
+      ════════════════════════════════ */}
+      <section id="team" className="py-24 bg-white border-t-4 border-vn-red relative font-sans">
+        <div className="container mx-auto px-4 max-w-5xl relative z-10 text-center">
+          <Reveal>
+            <h2 className="section-title">Thành Viên Nhóm Nghiên Cứu</h2>
+          </Reveal>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 text-center">
+            {[
+              { name: 'Nguyễn Văn A', id: 'HE123456', role: 'Thuyết trình viên 1', task: 'Phần 1–2 · Phân tích bối cảnh', slides: 'Nội dung Slide 1–2' },
+              { name: 'Trần Thị B',   id: 'HE123457', role: 'Thuyết trình viên 2', task: 'Phần 3–4 · Nghiên cứu sử liệu', slides: 'Nội dung Slide 3–4' },
+              { name: 'Lê Văn C',     id: 'HE123458', role: 'Thuyết trình viên 3', task: 'Phần 5–7 · Thiết kế kỹ thuật',      slides: 'Nội dung Slide 5–7' },
+              { name: 'Phạm Thị D',   id: 'HE123459', role: 'Thuyết trình viên 4', task: 'Phần 8–10 · Tổng hợp bài học', slides: 'Nội dung Slide 8–10' },
+            ].map((member, i) => (
+              <Reveal key={i} delay={i * 100}>
+                <div className="bg-[#fcfcfc] p-8 text-center border-t-4 border-vn-red shadow-xl hover:-translate-y-3 transition-all duration-700 rounded-sm group flex flex-col items-center h-full">
+                  <div className="w-20 h-20 bg-history-dark text-vn-gold flex items-center justify-center rounded-full text-3xl font-serif font-bold mb-6 group-hover:bg-vn-red group-hover:text-white transition-all duration-500 shadow-2xl">
+                    {member.name.charAt(0)}
+                  </div>
+                  <h4 className="font-serif font-bold text-history-dark text-lg mb-1 uppercase tracking-wide leading-none">{member.name}</h4>
+                  <p className="text-gray-500 text-[10px] font-mono mb-3 tracking-widest uppercase">{member.id}</p>
+                  <p className="text-vn-red text-[10px] font-bold uppercase tracking-[0.2em] mb-2">{member.role}</p>
+                  <p className="text-vn-gold text-[9px] font-bold uppercase tracking-widest mb-4 border-b border-vn-gold/20 pb-1">{member.slides}</p>
+                  <p className="text-gray-500 text-[11px] font-medium leading-relaxed italic mt-auto">{member.task}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <MarqueeTicker />
 
       {/* ── CHÂN TRANG (FOOTER) ── */}
